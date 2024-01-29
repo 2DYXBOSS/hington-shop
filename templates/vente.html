@@ -1,0 +1,74 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/CSS/vente.css">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+        <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+
+
+    </header>
+    <!-- <label for="selectOption">Choisissez la categorie :</label>
+            
+    <select id="selectOption" name="selectOptione">
+        <option value="Sac">Sac</option>
+        <option value="Vetement">Vetement</option>
+        <option value="Fourniture">Livre</option>
+    </select> -->
+    <div class="selcte">
+        
+            
+        <select id="selectOption" name="selectOptione">
+            <option value="Sac">Sac</option>
+            <option value="Vetement">Vetement</option>
+            <option value="Fourniture">Livre</option>
+        </select>
+    </div>
+    
+    <div class="image">
+        {% for i in data %}
+        <a href="">
+            
+            <form action="/info/{{i.id}}" class="image1" method="post">
+                <button type="submit"><img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%" alt=""></button>
+            </form>
+           
+        </a>
+        {%endfor%}
+        
+        
+    </div>
+    <footer>
+        <div class="log">
+            <div class="al">
+                <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+                <h1 id="logo" >HING<span id="logo1">TON SHOP </span></h1>
+            </div>
+            
+            <p style="color: white;">Vous remercie !</p>
+        </div>
+        
+        <div class="log1">
+            
+            <div class="log11">
+                <img src="{{ url_for('static', filename='IMAGE/whats.png')}}" width="20px" style="filter: invert();" alt="">
+            </div>
+            <div class="log12">
+                <img src="{{ url_for('static', filename='IMAGE/face.png')}}" width="20px" style="filter: invert();" alt="">
+            </div>
+            <div class="log13">
+                <img src="{{ url_for('static', filename='IMAGE/instag.png')}}" width="20px" style="filter: invert();" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
