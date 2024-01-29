@@ -36,11 +36,9 @@
     
     <div class="image">
         {% for i in data %}
-        <a href="">
+        <a href="/info/{{i.id}}" class="image1">
+            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%" alt="">
             
-            <form action="/info/{{i.id}}" class="image1" method="post">
-                <button type="submit"><img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%" alt=""></button>
-            </form>
            
         </a>
         {%endfor%}
