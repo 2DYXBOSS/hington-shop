@@ -212,7 +212,7 @@ def ajou():
     eude = Maboutik.query.all()
     return render_template("/ajoufini.html")
 
-@app.route('/info/<int:id>',methods=["GET"])
+@app.route('/info/<int:id>')
 def info(id):
     
     user = Maboutik.query.filter_by(id=id).first()
@@ -221,6 +221,12 @@ def info(id):
         return render_template('info.html',user = user)
     print("MO")
     return redirect("/vente")
+
+# @app.route('/zet/<int:id>')
+# def zet(id):
+    
+#     user = Maboutik.query.filter_by(id=id).first()
+#     return render_template('info.html',user = user)
 
 # @app.route('/info/<int:id>',methods=["POST"])
 # def info(id):
