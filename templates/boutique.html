@@ -8,9 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster - Blay Library</title>
+    <title>Poster</title>
     <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
-    
+    <link rel="stylesheet" href="/static/CSS/ajout.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
@@ -38,7 +38,10 @@
                     {% endif %}
                     {% endwith %} -->
                 <div class="hea2">
-                    <h1>HINGTON SHOP</h1>
+                    <div class="pes">
+                        <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+                        <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+                    </div>
                 </div>
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -81,7 +84,7 @@
                     {% endif %}
                     <label >nom</label>
                     <input required  type="text" name="nom" id="">
-                    <label >description</label>
+                    <label >taille</label>
                     <input required type="text" name="description" id="">
                     <label >prix</label>
                     <input  required type="text" name="prix" id="">

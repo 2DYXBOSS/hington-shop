@@ -185,7 +185,7 @@ def objet():
         db.session.commit()
              
 
-        return redirect("/ajou")
+        return redirect("/vente")
     except :
         return render_template("/boutique.html")
     

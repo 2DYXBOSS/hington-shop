@@ -9,11 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/static/CSS/vente.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
-        <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+        <div class="nav">
+            
+        </div>
+        <div class="pes">
+            <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+            <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+        </div>
+        <div class="nav">
+            
+        </div>
 
 
     </header>
@@ -24,7 +35,7 @@
         <option value="Vetement">Vetement</option>
         <option value="Fourniture">Livre</option>
     </select> -->
-    <div class="selcte">
+    <!-- <div class="selcte">
         
             
         <select id="selectOption" name="selectOptione">
@@ -32,8 +43,11 @@
             <option value="Vetement">Vetement</option>
             <option value="Fourniture">Livre</option>
         </select>
+    </div> -->
+    <div class="tex">
+        
+        <h1 >LE MONDE AU FEMININ...........</h1>
     </div>
-    
     <div class="image">
         {% for i in data %}
         <a href="/info/{{i.id}}" class="image1">
@@ -41,7 +55,9 @@
             
            
         </a>
+        
         {%endfor%}
+       
         
         
     </div>
@@ -70,3 +86,21 @@
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
