@@ -249,9 +249,9 @@ def ssm(id):
     # Encode the message string before passing it to the quote function
     # encoded_message = ms.encode('utf-8')
     # pywhatkit.sendwhats_image("+2250787022061", "bonjou", formatted_time, 45)
-    # pywhatkit.sendwhats_image("+2250787022061", "https://web.whatsapp.com/send?phone=+2250102330470&text={ms}", formatted_time, formatted)
-    # return redirect(f"https://web.whatsapp.com/send?phone=+2250102330470&text={ms}")
-    return redirect(f"https://api.whatsapp.com/send/?phone=2250102330470&text={ms}&type=phone_number&app_absent=0")
+    # pywhatkit.sendwhats_image("+2250787022061", "https://web.whatsapp.com/send?phone=+22578587708&text={ms}", formatted_time, formatted)
+    # return redirect(f"https://web.whatsapp.com/send?phone=+22578587708&text={ms}")
+    return redirect(f"https://api.whatsapp.com/send/?phone=22578587708&text={ms}&type=phone_number&app_absent=0")
     # return redirect("/vente")
     
 if __name__ == '__main__' :
