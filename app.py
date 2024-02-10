@@ -215,11 +215,13 @@ def ajou():
 @app.route('/info/<int:id>')
 def info(id):
     
+    
     user = Maboutik.query.filter_by(id=id).first()
     if user :
-
-        return render_template('info.html',user = user)
+        data = Maboutik.query.all()
+        return render_template('info.html',user = user,data=data)
     print("MO")
+
     return redirect("/vente")
 
 # @app.route('/zet/<int:id>')
@@ -254,5 +256,32 @@ def ssm(id):
     return redirect(f"https://api.whatsapp.com/send/?phone=22578587708&text={ms}&type=phone_number&app_absent=0")
     # return redirect("/vente")
     
+
+
+
+
+@app.route("/administa")
+def administa():
+
+    administa = Maboutik.query.all()
+
+    return render_template("administa.html",administa=administa)
+
+
+@app.route("/Suppesz/<int:id>")
+def Suppesz(id):
+
+    adm= Maboutik.query.get(id)
+    db.session.delete(adm)
+    db.session.commit()
+    
+    
+
+    return redirect("/administa")
+
+
+
+
+
 if __name__ == '__main__' :
     app.run(debug=True,port=5004)

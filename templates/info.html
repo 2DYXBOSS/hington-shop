@@ -24,28 +24,21 @@
     
     <div class="info">
         
-        <div class="im">
-            {% if user %}
-            <div class="im1">
-                <img src="{{url_for('static', filename='uploads/' + user.image)}}" width="100%" height="100%" alt="">
-            </div>
-            {% endif %}
-            <div class="im2">
-                <div class="im21">
-                    <img src="{{ url_for('static', filename='IMAGE/wha.jpeg')}}" width="100%" height="100%" alt="">
-                </div>
+        <div class="image">
+            {% for i in data %}
+            
+            <a href="/info/{{i.id}}" class="image1">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%" alt="">
                 
-                <p>Taille : <span>XL</span></p>
-            </div>
-        </div>
-        <div class="text">
-            {% if user %}
-            <form action="/ssm/{{user.id}}" method="post">
-                <button type="submit" id="but"><img src="{{ url_for('static', filename='IMAGE/whats.png')}}" style="filter: invert();" width="25px" alt="">COMMENDE WHATSAPP !</button>
-            </form>
+               
+            </a>
+            
+            {%endfor%}
             
             
-            {% endif %}
+           
+            
+            
         </div>
     </div>
     <footer>
@@ -73,10 +66,34 @@
             </div>
         </div>
     </footer>
-    <a href="/vente">
-        <div class="bac">
-            <img src="{{ url_for('static', filename='IMAGE/bacj.png')}}" width="20px" alt="">
+    
+
+    <div class="tesf">
+        <div class="pidijd">
+            {% if user %}
+            
+                <img src="{{url_for('static', filename='uploads/' + user.image)}}" width="100%" height="100%" alt="">
+           
+            {% endif %}
         </div>
-    </a>
+        <div class="descf">
+            <p>Taille : <span>{{user.description}}</span></p>
+
+        </div>
+        <div class="text">
+            {% if user %}
+            <form action="/ssm/{{user.id}}" method="post">
+                <button type="submit" id="but"><img src="{{ url_for('static', filename='IMAGE/whats.png')}}" style="filter: invert();" width="25px" alt="">COMMENDE WHATSAPP !</button>
+            </form>
+            
+            
+            {% endif %}
+        </div>
+        <a href="/vente">
+            <div class="bac">
+                <img src="{{ url_for('static', filename='IMAGE/bacj.png')}}" style="filter: invert();" width="20px" alt="">
+            </div>
+        </a>
+    </div>
 </body>
 </html>
