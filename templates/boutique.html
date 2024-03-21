@@ -1,6 +1,146 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
+    <link rel="stylesheet" href="/static/CSS/ajout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
+    ">HING<span id="deuxlogo">TON SHOP</span></h1>
+    </header>
+    
+    <form action="/objet" method="POST" class="formulaire" id="section">
+   
+        <div class="formu">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: orangered;
+    text-align: center;">AJOUTER UN PRODUIT</h1>
+
+        </div>
+        <div class="plain">
+            <div class="nopo">
+                <p>Nom du produit</p>
+            </div>
+            <div class="nope">
+                <input type="text" name="nom" id="" placeholder="Nom du produit">
+            </div>
+            
+        </div>
+        <div class="plain" id="Description">
+            <div class="nopo">
+                <p>Description du produit</p>
+            </div>
+            <div class="nope">
+                <input type="text" name="description" id="" placeholder="Description du produit">
+            </div>
+            
+        </div>
+        <div class="demiplain">
+            <div class="demi1">
+                <div class="nopo">
+                    <p>Couleur du produit</p>
+                </div>
+                <div class="nope">
+                    <select name="couleur" id="">
+                        <option value="NOIR">NOIR</option>
+                        <option value="ROUGE">ROUGE</option>
+                        <option value="ORANGE">ORANGE</option>
+                        <option value="JAUNE">JAUNE</option>
+                        <option value="BLANC">BLANC</option>
+                        <option value="ROSE">ROSE</option>
+                        <option value="BLEU">BLEU</option>
+                        <option value="GRIS">GRIS</option>
+                    </select>
+                    <!-- <input type="text" name="" id="" placeholder="Entrer la categorie du produit"> -->
+                </div>
+            </div>
+            <div class="demi2" >
+                <div class="nopo">
+                    <p>Categorie du produit</p>
+                </div>
+                <div class="nope">
+                    <select name="categorie" id="">
+                        <option value="VetementHomme">Vetement Homme</option>
+                        <option value="VetementFemme">Vetement Femme</option>
+                        <option value="SacHomme">Sac Homme</option>
+                        <option value="SacFemme">Sac Femme</option>
+                        <option value="Montre">Montre</option>
+                    </select>
+                    <!-- <input type="text" name="" id="" placeholder="Entrer la categorie du produit"> -->
+                </div>
+            </div>
+        </div>
+        <div class="demiplain">
+            <div class="demi1">
+                <div class="nopo">
+                    <p>Taille du produit</p>
+                </div>
+                <div class="nope">
+                    <select name="taille" id="">
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="L">L</option>
+                        <option value="M">M</option>
+                        <option value="X">X</option>
+                        <option value="S">S</option>
+                        <option value="XM">XM</option>
+                        <option value="XS">XS</option>
+                    </select>
+                    <!-- <input type="text" name="" id="" placeholder="Entrer la categorie du produit"> -->
+                </div>
+            </div>
+           
+            
+        </div>
+        
+        {% if filename %}
+        
+        <input type="text" style="opacity: 0;height: 0;width: 0;"  value="{{filename}}" name="image">
+        {% endif %}
+       
+        
+        <div class="bourt">
+            <button> <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: orangered;
+                text-align: center;">AJOUTER LE PRODUIT MAINTENANT</h1></button>
+        </div>
+    </form>
+    <div class="plain" id="Description">
+        <form method="post" action="/add_objet" enctype="multipart/form-data" class="demi2">
+            <p>ajouter image</p>
+            <dl>
+                <p>
+                    <input  type="file" name="file" class="form-control" autocomplete="off" required>
+                </p>
+            </dl>
+            <p>
+                <input required  style="padding: 1px 15px;background-color: rgb(0, 0, 0);color: white;border: none;border-radius: 5px;" type="submit" value="valider l'image choisir" class="btn btn-info">
+            </p>
+            
+        </form>
+        
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- 
+
 
 
 <!DOCTYPE html>
@@ -90,4 +230,4 @@
 
 
 
-
+ -->

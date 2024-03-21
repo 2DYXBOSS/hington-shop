@@ -111,8 +111,106 @@ with app.app_context() :
         print("error de creation de la table")
 
 
+class Ajouter(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    nom = db.Column(db.String(15), unique = False , nullable = False)
+    description = db.Column(db.String(100), unique = True , nullable = False)
+    couleur = db.Column(db.String(100), unique = True , nullable = False)
+    categorie = db.Column(db.String(100), unique = True , nullable = False)
+    taille = db.Column(db.String(100), unique = True , nullable = False)
+    image = db.Column(db.String(100), unique = True , nullable = False)
+    
+   
+   
+    def __init__(self,nom,description,couleur,categorie,taille,image):
+        self.nom = nom
+        self.description = description
+        self.couleur = couleur
+        self.categorie = categorie
+        self.taille = taille
+        self.image = image
+        
 
 
+    # db.init_app(app)
+    # with app.app_context() :
+    # #     db.create_all()
+    # def __str__(self):
+    #     # Renvoie une chaîne de caractères représentant l'objet
+    #     return f"Person(nom: {self.nom}, description: {self.description}, age: {self.age})"
+    def __repr__(self):
+        
+        return {
+            "nom": self.nom,
+            "description": self.description,
+            "couleur": self.couleur,
+            "categorie": self.categorie,
+            "taille": self.taille,
+            "image": self.image,
+            
+        }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
+
+class Comment(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    nom = db.Column(db.String(15), unique = False , nullable = False)
+    mail = db.Column(db.String(100), unique = True , nullable = False)
+    message = db.Column(db.String(50), unique = True , nullable = False)
+   
+   
+    def __init__(self,nom,mail,message):
+        self.nom = nom
+        self.mail = mail
+        self.message = message
+        
+
+
+    # db.init_app(app)
+    # with app.app_context() :
+    # #     db.create_all()
+    # def __str__(self):
+    #     # Renvoie une chaîne de caractères représentant l'objet
+    #     return f"Person(nom: {self.nom}, mail: {self.mail}, age: {self.age})"
+    def __repr__(self):
+        
+        return {
+            "nom": self.nom,
+            "mail": self.mail,
+            "message": self.message,
+            
+        }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
+
+
+
+
+@app.route('/commentaire', methods=['POST'])
+def commentaire():
+    nom = request.form.get("nom")
+    mail = request.form.get("mail")
+    message = request.form.get("message")
+
+    envoyer = Comment(nom=nom, message=message,mail=mail)
+
+        
+    db.session.add(envoyer)
+    db.session.commit()
+             
+    return redirect('/')
 
 # AJOUTER IMAGES DES ARTICLES{}
 
@@ -168,31 +266,43 @@ def display_image(filename):
 def objet(): 
     
     try :
+      
         nom = request.form.get("nom")
         description = request.form.get("description")
-        prix = request.form.get("prix")
-        image = request.form.get("image") 
-        like = 0 
-        
-        print('recu1')      
-        categorie = request.form.get('selectOptione')
-        print('recu2',categorie)      
+        image = request.form.get("image")      
+        couleur = request.form.get('couleur')
+        taille = request.form.get('taille')
+        categorie = request.form.get('categorie')
+         
 
-        pani = Maboutik(nom = nom, description = description , prix = prix, image = image, categorie = categorie ,like=like)
+        pani = Ajouter(nom=nom,description=description,couleur=couleur,categorie=categorie,taille=taille,image=image)
         # pani = Panier(nom = nom, description = description , prix = prix)
         
         db.session.add(pani)
         db.session.commit()
              
 
-        return redirect("/vente")
+        return redirect("/")
     except :
         return render_template("/boutique.html")
     
 @app.route("/vente")
 def acc():
-    data = Maboutik.query.all()
+    data = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'VetementHomme':
+            data.append(i)
     return render_template("/vente.html", data = data)
+@app.route("/montre")
+def montre():
+    data = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'Montre':
+            data.append(i)
+    
+    return render_template("/montre.html", data = data)
 
 
 # FIN AJOUTER IMAGES DES ARTICLES{}
@@ -209,16 +319,35 @@ def acc():
 @app.route("/ajou")
 def ajou():
    
-    eude = Maboutik.query.all()
+    eude = Ajouter.query.all()
     return render_template("/ajoufini.html")
 
+@app.route('/montres/<int:id>')
+def montres(id):
+    
+    
+    user = Ajouter.query.filter_by(id=id).first()
+    if user :
+        data = []
+        a = Ajouter.query.all()
+        for i in a:
+            if i.categorie == 'Montre':
+                data.append(i)
+        return render_template('montrederail.html',user = user,data=data)
+    print("MO")
+
+    return redirect("/montre")
 @app.route('/info/<int:id>')
 def info(id):
     
     
-    user = Maboutik.query.filter_by(id=id).first()
+    user = Ajouter.query.filter_by(id=id).first()
     if user :
-        data = Maboutik.query.all()
+        data = []
+        a = Ajouter.query.all()
+        for i in a:
+            if i.categorie == 'VetementHomme':
+                data.append(i)
         return render_template('info.html',user = user,data=data)
     print("MO")
 
@@ -253,7 +382,7 @@ def ssm(id):
     # pywhatkit.sendwhats_image("+2250787022061", "bonjou", formatted_time, 45)
     # pywhatkit.sendwhats_image("+2250787022061", "https://web.whatsapp.com/send?phone=+22578587708&text={ms}", formatted_time, formatted)
     # return redirect(f"https://web.whatsapp.com/send?phone=+22578587708&text={ms}")
-    return redirect(f"https://api.whatsapp.com/send/?phone=22578587708&text={ms}&type=phone_number&app_absent=0")
+    return redirect(f"https://api.whatsapp.com/send/?phone=2250787022061&text={ms}&type=phone_number&app_absent=0")
     # return redirect("/vente")
     
 
@@ -263,15 +392,32 @@ def ssm(id):
 @app.route("/administa")
 def administa():
 
-    administa = Maboutik.query.all()
+    administa = Ajouter.query.all()
 
     return render_template("administa.html",administa=administa)
+
+@app.route("/indisponible")
+def indisponible():
+
+    return render_template("indiso.html")
+
+@app.route("/")
+def acceuil():
+    commenta = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    print(commenta[0].mail)
+    
+    return render_template("acceuil.html",commenta=commenta)
 
 
 @app.route("/Suppesz/<int:id>")
 def Suppesz(id):
 
-    adm= Maboutik.query.get(id)
+    adm= Ajouter.query.get(id)
     db.session.delete(adm)
     db.session.commit()
     
@@ -279,6 +425,61 @@ def Suppesz(id):
 
     return redirect("/administa")
 
+
+@app.route("/informsa")
+def informsa():
+
+    # return redirect(f"image/{id}") dans le html
+    return render_template("informate.html")
+
+ 
+
+
+@app.route("/image/<int:id>")
+def image(id):
+
+    return render_template("selectimage.html")
+
+
+
+# AJOUTER IMAGES DES ARTICLES{}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/add_objetwere', methods=['POST'])
+def add_objetwere():
+    try :
+        if 'file' not in request.files:
+            flash('No file part')
+            print('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        print(file.filename)
+        if file.filename == '':
+            flash('Aucune image sélectionnée pour le téléchargement')
+            print('Aucune image sélectionnée pour le téléchargement')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            #print('upload_image filename: ' + filename)
+            flash('Image téléchargée avec succès et affichée ci-dessous')
+            print('Image téléchargée avec succès et affichée ci-dessous')
+            return render_template('selectimage.html', filename=file.filename)
+            # return render_template('boutique.html', filename=filename)
+    except:
+        flash('Les types dimages autorisés sont - png, jpg, jpeg, gif')
+        print('eerrr')
+        return redirect(request.url)
+
+        # uploads.image
+ 
+# @app.route('/display/<filename>')
+# def display_image(filename):
+#     #print('display_image filename: ' + filename)
+#     return redirect(url_for('static', filename = 'uploads/' + filename), code=301)
+# FIN AJOUTER IMAGES DES ARTICLES{}
 
 
 

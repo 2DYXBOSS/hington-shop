@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/add_objetwere" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input  type="file" name="file" class="form-control" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input required  style="padding: 1px 15px;background-color: rgb(0, 0, 0);color: white;border: none;border-radius: 5px;" type="submit" value="valider l'image choisir" class="btn btn-info">
+        </p>
+    </form>
+ 
+                    
+    <input type="text" style="opacity: 0;height: 0;width: 0;"  value="{{filename}}" name="image">
+    <!-- <p>{{filename}}</p> -->
+    
+    {% if filename %}
+    <img src="{{ url_for('display_image', filename=filename) }}"  height="200px" width="340px" alt="" >
+    {% endif %}
+
+
+
+    <a href="/informsa">boutique</a>
+
+
+    
+
+
+
+   
+
+</body>
+</html>
