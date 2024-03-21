@@ -32,7 +32,7 @@
             <a href="/indisponible" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
             </a>
-            <a href="/indisponible" style="text-decoration: none;">
+            <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
             </a>
             
@@ -69,7 +69,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/sachomme.png')}}" width="20px" alt=""> <span>Sacs hommes </span></p>
             </a>
             
-            <a href="/indisponible">
+            <a href="/montre">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
             </a>
             
@@ -104,7 +104,7 @@
             <a href="/indisponible" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
             </a>
-            <a href="/indisponible" style="text-decoration: none;">
+            <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/phoone.png')}}" width="20px" alt=""> <span>Montres </span></p>
             </a>
             
@@ -136,8 +136,8 @@
            
         </div>
         <div class="entete">
-            <form action="" method="post" id="formulaire">
-                <input type="text" id="input" placeholder="Recherche ton article" style="color: black;">
+            <form action="/mesrecherches" method="post" id="formulaire">
+                <input type="text" id="input" placeholder="Recherche ton article" style="color: black;"name="recher">
                 <button id="bouton">Recherche</button>
             </form>
             <div class="mennn">

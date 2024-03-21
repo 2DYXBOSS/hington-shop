@@ -291,7 +291,7 @@ def acc():
     data = []
     a = Ajouter.query.all()
     for i in a:
-        if i.categorie == 'VetementHomme':
+        if i.categorie == 'VetementFemme':
             data.append(i)
     return render_template("/vente.html", data = data)
 @app.route("/montre")
@@ -304,7 +304,14 @@ def montre():
     
     return render_template("/montre.html", data = data)
 
-
+@app.route('/mesrecherches',methods = ["POST"])
+def rechepo():
+    recher = request.form.get('recher')
+    if recher.lower() == 'montres' or recher.lower() == 'montre' :
+        return redirect('/montre')
+    if recher.lower() == 'robe' or recher.lower() == 'robes' or recher.lower() == 'habit femme' or recher.lower() == 'femmes' or recher.lower() == 'femme':
+        return redirect('/vente')
+    return redirect('/indisponible')
 # FIN AJOUTER IMAGES DES ARTICLES{}
     
 
