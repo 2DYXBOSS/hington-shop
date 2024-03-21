@@ -15,7 +15,58 @@
 
 
     <h1 style="font-family: Arial, Helvetica, sans-serif;text-align:center;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETERE</h1>
-    {% for i in administa %}
+    {% for i in VetementHomme %}
+    <div class="image">
+        <div class="ima1">
+            <a href="/info/{{i.id}}" class="image1">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                
+               
+            </a>
+        </div>
+        <div class="desc">
+            <p>Taille : <span>{{i.description}}</span></p>
+        </div>
+        <div class="bouton">
+            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+        </div>
+    </div>
+    {%endfor%}
+    {% for i in VetementFemme %}
+    <div class="image">
+        <div class="ima1">
+            <a href="/info/{{i.id}}" class="image1">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                
+               
+            </a>
+        </div>
+        <div class="desc">
+            <p>Taille : <span>{{i.description}}</span></p>
+        </div>
+        <div class="bouton">
+            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+        </div>
+    </div>
+    {%endfor%}
+    {% for i in Montre %}
+    <div class="image">
+        <div class="ima1">
+            <a href="/info/{{i.id}}" class="image1">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                
+               
+            </a>
+        </div>
+        <div class="desc">
+            <p>Taille : <span>{{i.description}}</span></p>
+        </div>
+        <div class="bouton">
+            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+        </div>
+    </div>
+    {%endfor%}
+    {% for i in sac %}
     <div class="image">
         <div class="ima1">
             <a href="/info/{{i.id}}" class="image1">

@@ -115,11 +115,11 @@ class Ajouter(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     nom = db.Column(db.String(15), unique = False , nullable = False)
-    description = db.Column(db.String(100), unique = True , nullable = False)
-    couleur = db.Column(db.String(100), unique = True , nullable = False)
-    categorie = db.Column(db.String(100), unique = True , nullable = False)
-    taille = db.Column(db.String(100), unique = True , nullable = False)
-    image = db.Column(db.String(100), unique = True , nullable = False)
+    description = db.Column(db.String(100), unique = False , nullable = False)
+    couleur = db.Column(db.String(100), unique = False , nullable = False)
+    categorie = db.Column(db.String(100), unique = False , nullable = False)
+    taille = db.Column(db.String(100), unique = False , nullable = False)
+    image = db.Column(db.String(100), unique = False , nullable = False)
     
    
    
@@ -162,8 +162,8 @@ class Comment(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
     nom = db.Column(db.String(15), unique = False , nullable = False)
-    mail = db.Column(db.String(100), unique = True , nullable = False)
-    message = db.Column(db.String(50), unique = True , nullable = False)
+    mail = db.Column(db.String(100), unique = False, nullable = False)
+    message = db.Column(db.String(50), unique = False, nullable = False)
    
    
     def __init__(self,nom,mail,message):
@@ -285,7 +285,54 @@ def objet():
         return redirect("/")
     except :
         return render_template("/boutique.html")
+@app.route('/sacs/<int:id>')
+def sacs(id):
     
+    
+    user = Ajouter.query.filter_by(id=id).first()
+    if user :
+        data = []
+        a = Ajouter.query.all()
+        for i in a:
+            if i.categorie == 'sac':
+                data.append(i)
+        return render_template('sacinfo.html',user = user,data=data)
+    print("MO")
+
+    return redirect("/hommes")
+@app.route("/sac")
+def sac():
+    data = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'sac':
+            data.append(i)
+    
+    return render_template("/sac.html", data = data)
+@app.route('/homme/<int:id>')
+def homme(id):
+    
+    
+    user = Ajouter.query.filter_by(id=id).first()
+    if user :
+        data = []
+        a = Ajouter.query.all()
+        for i in a:
+            if i.categorie == 'VetementHomme':
+                data.append(i)
+        return render_template('hommeinfo.html',user = user,data=data)
+    print("MO")
+
+    return redirect("/hommes")
+@app.route("/hommes")
+def hommes():
+    data = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'VetementHomme':
+            data.append(i)
+    
+    return render_template("/homme.html", data = data)
 @app.route("/vente")
 def acc():
     data = []
@@ -400,8 +447,28 @@ def ssm(id):
 def administa():
 
     administa = Ajouter.query.all()
+    VetementHomme = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'VetementHomme':
+            VetementHomme.append(i)
+    VetementFemme = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'VetementFemme':
+            VetementFemme.append(i)
+    Montre = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'Montre':
+            Montre.append(i)
+    sac = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'sac':
+            sac.append(i)
 
-    return render_template("administa.html",administa=administa)
+    return render_template("administa.html",administa=administa,VetementHomme=VetementHomme,VetementFemme=VetementFemme,Montre=Montre,sac=sac)
 
 @app.route("/indisponible")
 def indisponible():

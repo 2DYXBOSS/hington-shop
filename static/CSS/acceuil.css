@@ -5,9 +5,10 @@
     font-family: 'Poppins', sans-serif;
     
 }
-/* body {
-    overscroll-behavior: sc;
-} */
+body {
+    overflow-x: hidden;
+
+}
 
 .ente {
     width: 100%;

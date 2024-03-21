@@ -105,7 +105,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/phoone.png')}}" width="20px" alt=""> <span>Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
             </a>
             
             
@@ -157,7 +157,7 @@
                         </li>
                         <li>
                             <div class="menue">
-                                <a href="#" class="menue" id="cleud" style="color: orangered;">> Montres</a>
+                                <a href="#" class="menue" id="cleud" style="color: orangered;">> sac</a>
                             </div>
                         </li>
                     </ul>
@@ -172,7 +172,7 @@
 
             </div>
             <div class="restrer">
-                <h1 >MONTRES</h1>
+                <h1 >SAC</h1>
                 <p >Le styles vestimentaires est au top ! </p>
             </div>
             
@@ -188,7 +188,7 @@
                 
                 {% for i in data %}
         
-                <a href="/montres/{{i.id}}" id="imgform">                    
+                <a href="/sacs/{{i.id}}" id="imgform">                    
                     
                         <input type="text" style="opacity: 0;width: 0;height: 0;">
                         <button type="submit" style="border: none;">
@@ -214,7 +214,7 @@
         <div class="reatsge2">
             <div class="rectangle">
                 
-                <a href="/montre" class="fec1">
+                <a href="/sac" class="fec1">
                     <img src="{{url_for('static', filename='IMAGE/sup.png')}}" width="20px" alt="">
 
                 </a>
