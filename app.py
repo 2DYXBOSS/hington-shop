@@ -758,7 +758,7 @@ def ssm(id):
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
 
     if tou.categorie == 'chaussure' :
-        ms = f"Le lien : https://hington-shop.onrender.com/sac/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs} {s} {l} {m}{xxl} {xl} {tranwite} {tranneuf} {karente} {tranwiteun} {tranwitedeux} {tranwitrois} {tranwitekate} , Couleur = {rouge} {blanc} {noir} {jaune} {vert} {orange} {bleu} {rose} {marron} {violet} {gris}"
+        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs} {s} {l} {m}{xxl} {xl} {tranwite} {tranneuf} {karente} {tranwiteun} {tranwitedeux} {tranwitrois} {tranwitekate} , Couleur = {rouge} {blanc} {noir} {jaune} {vert} {orange} {bleu} {rose} {marron} {violet} {gris}"
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
     
