@@ -368,7 +368,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.monfixder .croix {
+    width: 100%;
+    height: 50px;
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 .monfixder .retse img{
     filter: invert();
 }
@@ -382,10 +389,7 @@ body {
     justify-content: start;
     gap: 30px;
     font-size: clamp(12px, 1.5vw, 14px);
-
-
 }
-
 .monfixder .retse p:hover{
     color: orangered;
    
@@ -394,42 +398,35 @@ body {
 .monfixder .retse {
     padding-top: 20px;
     width: 100%;
-    height: 250px;
+    height: 200px;
     background-color: rgb(36, 36, 116);
     /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
     font-weight: bolder;
     z-index: 9999999;
-    max-width: 300px;
-
-}
-.monfixder .croix {
-    height: 100%;
-    width: 200px;
-    /* background-color: red; */
 }
 .monfixder {
-    /* width: 60%;
-    max-width: 300px;
-    height: 100px;
-    background-color: rgb(145, 180, 19);
-    position: fixed;
-    top: 120px;
-    z-index: 9999999;
-    right: 80px; */
+    
     display: none;
 }
 .monfixder.active  {
-    width: 100%;
-    /* max-width: 300px; */
-    height: 100px;
-    /* background-color: rgb(96, 116, 36); */
-    position: fixed;
-    top: 120px;
+    top: 170px;
     z-index: 9999999;
-    /* right: 80px; */
-    left: 0;
-    display: flex;
-    padding-top: 100px;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    /* background-color: yellow; */
+    display: block;
+    padding-left: 150px;
+
+}
+.blueusw {
+    width: 80%;
+    max-width: 300px;
+    min-width: 250px;
+    height: 100px;
+    /* background-color: rgb(103, 103, 107); */
+    
+    
 }
 .monfix {
     width: 100%;
@@ -494,8 +491,8 @@ body {
 .catego {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/inp.jpeg) ;
-    
+    background: url(/static/IMAGE/monrre.jpg) 50% no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -507,7 +504,8 @@ body {
 .lesimages.show-animate .catego {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/inp.jpeg) ;
+    background: url(/static/IMAGE/monrre.jpg) 80% no-repeat;
+    background-size: cover;
     transform : translateX(0);
     display: flex;
     align-items: center;
@@ -559,7 +557,7 @@ body {
 .catego3 {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/homme.jpeg) ;
+    background: url(/static/IMAGE/chauss.jpg) ;
     
     display: flex;
     align-items: center;
@@ -572,7 +570,7 @@ body {
 .lesimages.show-animate .catego3 {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/homme.jpeg) ;
+    background: url(/static/IMAGE/chauss.jpg) ;
     transform : translateX(0);
     display: flex;
     align-items: center;
@@ -592,7 +590,7 @@ body {
 .catego4 {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/sacs.jpeg) ;
+    background: url(/static/IMAGE/chua.jpg) ;
     
     display: flex;
     align-items: center;
@@ -605,7 +603,8 @@ body {
 .lesimages.show-animate .catego4 {
     width: 150px;
     height: 150px;
-    background: url(/static/IMAGE/sacs.jpeg) ;
+    background: url(/static/IMAGE/chua.jpg) 50% no-repeat;
+    background-size: cover;
     transform : translateX(0);
     display: flex;
     align-items: center;

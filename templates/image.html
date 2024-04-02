@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter article</title>
+    <link rel="stylesheet" href="/static/CSS/image.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
+    ">HING<span id="deuxlogo">TON SHOP</span></h1>
+    </header>
+    <div class="enveleopp">
+        <!-- <input type="text" name="aaa" id="aaa"> -->
+    <div class="plain" id="Description">
+        <form method="post" action="/add_objet" enctype="multipart/form-data" class="demi2">
+            <p style="text-align: center;color: rgb(36, 36, 116);;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Quel types de produits veux-tu poster ?</p>
+            <div class="secpor">
+                <div class="secpor1">
+                    <input type="checkbox" name="cheki1" id="" value="VetementFemme">
+                    <p style="font-size: 0.5rem;color: rgb(36, 36, 116);">Vetements femmes</p>
+                </div>
+                <div class="secpor2">
+                    <input type="checkbox" name="cheki2" id="">
+                    <p style="font-size: 0.5rem;color: rgb(36, 36, 116);" value="Chaussuresfemmes">Chaussures femmes</p>
+                </div>
+                <div class="secpor3">
+                    <input type="checkbox" name="cheki3" id="">
+                    <p style="font-size: 0.5rem;color: rgb(36, 36, 116);" value="Chaussureshommes">Chaussures hommes</p>
+                </div>
+                <div class="secpor4">
+                    <input type="checkbox" name="cheki4" id="">
+                    <p style="font-size: 0.5rem;color: rgb(36, 36, 116);" value="montre">Montres</p>
+                </div>
+            </div>
+            
+            <dl style="visibility: hidden;">
+                <p>
+                    <input  type="file" name="file" class="form-control" autocomplete="off" id="imagefile1" required>
+                </p>
+            </dl>
+            <dl style="visibility: hidden;">
+                <p>
+                    <input  type="file" name="file1" class="form-control" autocomplete="off"id="imagefile2" required>
+                </p>
+            </dl>
+            <dl style="visibility: hidden;">
+                <p>
+                    <input  type="file" name="file2" class="form-control" autocomplete="off" id="imagefile3" required>
+                </p>
+            </dl>
+            <dl style="visibility: hidden;">
+                <p>
+                    <input  type="file" name="file3" class="form-control" autocomplete="off" id="imagefile4" required>
+                </p>
+            </dl>
+            
+            <p style="visibility: hidden;">
+                <input required  style="padding: 1px 15px;background-color: rgb(0, 0, 0);color: white;border: none;border-radius: 5px;" type="submit" value="valider l'image choisir" class="btn btn-info" id="envoyer">
+            </p>
+            
+        </form>
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: rgb(36, 36, 116);
+    ">AJOUTER IMAGE</h1>
+    
+    </div>
+
+
+    <div class="fauxtele">
+        <label for="imagefile1" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image Principale</label>
+        <label for="imagefile2" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 2</label>
+        <label for="imagefile3" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 3</label>
+        <label for="imagefile4" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 4</label>
+
+    </div>
+    <div class="submite">
+        <label for="envoyer" id="submite1"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/telfg.png')}}" alt="" width="20px"> <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;">TELECHARGER MAINTENANT</h1></label>
+    </div>
+    <div class="noteinform">
+        <div class="nb">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;">NB :</h1>
+        </div>
+        <div class="rxetpoi">
+            <p>- Ajoute l'image principale , ainsi que les autres images , puis clique sur le bouton <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' TELECHARGER MAINTENANT '</span> pour enregistrer toutes les images selectionneés . <br> - Tu dois obligatoirement ajouter toutes les images secondaires soit <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' Image Principale & Image 1,2,3,4 ' </span> .</p>
+        </div>
+    </div>
+
+    </div>
+    <!-- <div class="g">
+
+    </div> -->
+    <script src="/static/CSS/imsge.js"></script>
+</body>
+</html>

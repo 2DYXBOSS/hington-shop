@@ -1,0 +1,140 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(36, 36, 116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* body {
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    
+    
+    
+} */
+
+#deuxlogo {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: orangered;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modiieewe {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(36, 36, 116);
+    position: fixed;
+    z-index: 99999;
+}
+
+
+
+
+
+
+
+
+.inputcouleu {
+    width: 100%;
+    visibility: hidden;
+    /* background-color: gray; */
+}
+.lesimpur {
+    width: 100%;
+    visibility: hidden;
+    /* background-color: gray; */
+}
+
+.couleurerw {
+    height: 500px;
+    width: 100%;
+    background-color: yellow;
+   
+    
+}
+.coloope1 {
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.coloope {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.rangerpre {
+    width: 100%;
+    height: 30px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.formuwpiie {
+    width: 100%;
+    height: 40px;
+    /* background-color: aqua; */
+    padding-left: 50px;
+}
+
+.formuwpiie input {
+    padding-left: 20px;
+    height: 100%;
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+
+select {
+    margin-left: 200px;
+   
+}
+
+
+.boutin {
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px 3px rgba(5, 19, 179, 0.241);
+    
+}
+
+.bshds {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

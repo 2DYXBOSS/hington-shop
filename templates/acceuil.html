@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page acceuil</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='IMAGE/logo.jpg')}}">
+
     <link rel="stylesheet" href="/static/CSS/acceuil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,35 +14,41 @@
 </head>
 <body>
     <div class="monfixder">
-        <div class="croix">
+        <div  class="blueusw">
+            <div class="croix">
+                
+            </div>
+            <div class="retse">
+               
+                
+                <a href="/vente" style="text-decoration: none;">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                </a>
+                <!-- <a href="/hommes">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
+                </a> -->
+                <!-- <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Chaussures </span></p>
+                </a> -->
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes</span></p>
+                </a>
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
+                </a>
+                
+                <a href="/montre">
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
+                </a>
+                
+                
+               
+               
             
-        </div>
-        <div class="retse">
-           
-            
-            <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
-            <a href="/hommes">
-                <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a>
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
-            </a>
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/sachomme.png')}}" width="20px" alt=""> <span>Sacs hommes </span></p>
-            </a>
-            
-            <a href="/montre">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
-            </a>
-            
-            
-           
-           
-        
+            </div>
         </div>
     </div>
+    
     <div class="monfix">
         <div class="croix">
             <div class="croi" >
@@ -57,14 +65,14 @@
             <a href="/vente" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
             </a>
-            <a href="/hommes" style="text-decoration: none;">
+            <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
+            </a> -->
+            <a href="/sac" style="text-decoration: none;">
+                <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes </span></p>
             </a>
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
-            <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes </span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
@@ -131,7 +139,7 @@
         <div class="awqpl">
             <div class="texetse">
                 <div class="ecritqd">
-                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;">ROBES FEMMES & VETEMENTS HOMMES A TRES BON PRIX</h1>
+                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;">ROBES & CHAUSSURES FEMMES TOUTES CATEGORIES A TRES BON PRIX</h1>
                     
                 </div>
             </div>
@@ -158,7 +166,7 @@
                         <!-- <div class="qwimage">
 
                         </div> -->
-                        <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}"  style="filter: invert();"  width="70px" alt=""> 
+                        <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}"  style="filter: invert();"  width="75px" alt=""> 
                     </dic>
                     
                 </div>
@@ -173,7 +181,7 @@
             <a href="/hommes">
                 <div class="catego3">
                     <dic class="qws">
-                        <img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" style="filter: invert();"  width="70px" alt=""> 
+                        <img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" style="filter: invert();"  width="70px" alt=""> 
                     </dic>
                    
                 </div>
@@ -181,7 +189,7 @@
             <a href="/sac">
                 <div class="catego4">
                     <dic class="qws">
-                        <img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" style="filter: invert();"  width="70px" alt=""> 
+                        <img src="{{url_for('static', filename='IMAGE/shoe.png')}}" style="filter: invert();"  width="70px" alt=""> 
                     </dic>
                     
                 </div>
@@ -300,138 +308,45 @@
     </div> -->
     <div class="vtefemmes">
         <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
-        color: rgb(36, 36, 116);padding-left: 20px;">VETEMENTS HOMMES</h1>
-    </div>
-    <div class="afficje">
-        
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/images.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/imagesa.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/image.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/imagesa.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/images.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/imagesa.jpeg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-       
-    </div>
-    <div class="vtefemmes">
-        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
         color: rgb(36, 36, 116);padding-left: 20px;">VETEMENTS FEMMES</h1>
     </div>
     <div class="afficje">
         
-        <div class="b1">
+        
+        {% for i in catefemme %}
+        <a href="/info/{{i.id}}" class="b1">  
             <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho1.jpg')}}" height="100%"   width="100%" alt="">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
             </div>
             <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
+                <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
+        color: rgb(36, 36, 116);">Q23TY</h1> -->
             </div>
 
-        </div>
-        <div class="b1">
+        </a>
+        {% endfor %}
+       
+    </div>
+    <div class="vtefemmes">
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
+        color: rgb(36, 36, 116);padding-left: 20px;">MONTRES</h1>
+    </div>
+    <div class="afficje">
+        
+        
+        {% for i in montre %}
+        <a href="/info/{{i.id}}" class="b1">  
+        
             <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho2.jpg')}}" height="100%"  width="100%" alt="">
+                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
             </div>
             <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
+                <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
+        color: rgb(36, 36, 116);">Q23TY</h1> -->
             </div>
 
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho3.jpg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho1.jpg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho2.jpg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
-        <div class="b1">
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='IMAGE/pho3.jpg')}}" height="100%"  width="100%" alt="">
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </div>
+        </a>
+        {% endfor %}
        
     </div>
    
@@ -480,13 +395,15 @@
                     <input type="text" name="message" id="" placeholder="Entrez votre message">
                 </div>
                 
-            </div>
                 
+            </div>
             <div class="formu1">
-               
-                <!-- <div class="filee">
-                    <input type="file" name="" id="" value="">
-                </div> -->
+                <div class="nomform1">
+                </div>
+                <div class="nomform2">
+                    <input type="text" name="heure" id="" width="0" height="0" style="visibility: hidden;" placeholder="Entrez votre message" >
+                </div>
+                
                 
             </div>
                 
@@ -502,6 +419,7 @@
         <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 50px;
         color: rgb(36, 36, 116);padding-left: 20px;">CE QU'ILS PENSENT ?!</h1>
         {% for i in commenta %}
+        
         <div class="avis1">
             <div class="imageddr">
                 <img src="{{url_for('static', filename='IMAGE/pppp.png')}}" style="border-radius: 100%;" height="100%"  width="100%" alt="">
@@ -511,6 +429,7 @@
                 <h1 style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;font-size: 1rem;">{{ i.nom }}</h1>
                 <p style="color: gray;">{{ i.mail }}</p>
                 <p >{{ i.message }}</p>
+                <p style="color: gray;">{{ i.heure }}</p>
             </div>
         </div>
         {% endfor %}
@@ -530,6 +449,6 @@
     <div class="poset">
         
     </div>
-    <script src="/static/CSS/front.js"></script>
+    <script src="/static/CSS/acceuil.js"></script>
 </body>
 </html>

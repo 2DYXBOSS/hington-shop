@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page admin</title>
     <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
     <link rel="stylesheet" href="/static/CSS/administa.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,11 @@
 </head>
 <body>
 
-
-    <h1 style="font-family: Arial, Helvetica, sans-serif;text-align:center;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETERE</h1>
+    <header>
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
+    ">HING<span id="deuxlogo">TON SHOP</span></h1>
+    </header>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;text-align:center;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETAIRE</h1>
     {% for i in VetementHomme %}
     <div class="image">
         <div class="ima1">
@@ -28,7 +31,12 @@
             <p>Taille : <span>{{i.description}}</span></p>
         </div>
         <div class="bouton">
-            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+            <div class="supeir1">
+                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+            </div>
+            <div class="supeir2">
+                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+            </div>
         </div>
     </div>
     {%endfor%}
@@ -42,10 +50,40 @@
             </a>
         </div>
         <div class="desc">
-            <p>Taille : <span>{{i.description}}</span></p>
+            <p>TAILLES : <span style="font-size: 1rem;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;"><br>
+                {% if not i.xs == 'rien' %}
+                {{i.xs}}
+                {% endif %}
+                {% if not i.s == 'rien' %}
+                {{i.s}}
+                {% endif %}
+                {% if not i.l == 'rien' %}
+                {{i.l}}
+                {% endif %}
+                {% if not i.m == 'rien' %}
+                {{i.m}}
+                {% endif %}
+                {% if not i.xxl == 'rien' %}
+                {{i.xxl}}
+                {% endif %}
+                {% if not i.xl == 'rien' %}
+                {{i.xl}}
+                {% endif %}
+                
+                
+                
+                
+                
+                
+            </span></p>
         </div>
         <div class="bouton">
-            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+            <div class="supeir1">
+                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+            </div>
+            <div class="supeir2">
+                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+            </div>
         </div>
     </div>
     {%endfor%}
@@ -59,36 +97,78 @@
             </a>
         </div>
         <div class="desc">
-            <p>Taille : <span>{{i.description}}</span></p>
+            
         </div>
         <div class="bouton">
-            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
+            <div class="supeir1">
+                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+            </div>
+            <div class="supeir2">
+                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+            </div>
+            
         </div>
     </div>
     {%endfor%}
     {% for i in sac %}
-    <div class="image">
-        <div class="ima1">
-            <a href="/info/{{i.id}}" class="image1">
-                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                
-               
-            </a>
+    
+
+        <div class="image">
+            <div class="ima1">
+                <a href="/info/{{i.id}}" class="image1">
+                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                    
+                   
+                </a>
+            </div>
+            <div class="desc">
+                <p>TAILLES : <span style="font-size: 1rem;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;"><br>
+                    {% if not i.tranwite == 'rien' %}
+                    {{i.tranwite}}
+                    {% endif %}
+                    {% if not i.tranneuf == 'rien' %}
+                    {{i.tranneuf}}
+                    {% endif %}
+                    {% if not i.karente == 'rien' %}
+                    {{i.karente}}
+                    {% endif %}
+                    {% if not i.tranwiteun == 'rien' %}
+                    {{i.tranwiteun}}
+                    {% endif %}
+                    {% if not i.tranwitedeux == 'rien' %}
+                    {{i.tranwitedeux}}
+                    {% endif %}
+                    {% if not i.tranwitrois == 'rien' %}
+                    {{i.tranwitrois}}
+                    {% endif %}
+                    {% if not i.tranwitekate == 'rien' %}
+                    {{i.tranwitekate}}
+                    {% endif %}
+                    
+                    
+                    
+                    
+                    
+                    
+                </span></p>
+            </div>
+            <div class="bouton">
+                <div class="supeir1">
+                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+                </div>
+                <div class="supeir2">
+                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+                </div>
+            </div>
         </div>
-        <div class="desc">
-            <p>Taille : <span>{{i.description}}</span></p>
-        </div>
-        <div class="bouton">
-            <a href="/Suppesz/{{i.id}}" >SUPPRIMER</a>
-        </div>
-    </div>
     {%endfor%}
         
     <div class="dgud">
-        <a href="/vente" >VOIR LES PRODUITS</a>
-        <a href="/add_objet" >AJOUTER DES PRODUITS</a>
+        <a href="/vente" class="voiir">VOIR LES PRODUITS</a>
+        <a href="/add_objet" class="voiir">AJOUTER DES PRODUITS</a>
     </div>
-        
     
+    
+    <script src="/static/CSS/ajout.js"></script>
 </body>
 </html>

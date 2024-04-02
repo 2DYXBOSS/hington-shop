@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boutique</title>
     <link rel="stylesheet" href="/static/CSS/vent.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,14 +23,14 @@
             <a href="/vente" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
             </a>
-            <a href="/hommes" style="text-decoration: none;">
+            <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a>
+            </a>-->
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
+                <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes </span></p>
+            </a> 
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
@@ -50,33 +50,35 @@
     
     </div>
     <div class="monfixder">
-        <div class="croix">
+        <div  class="blueusw">
+            <div class="croix">
+                
+            </div>
+            <div class="retse">
+               
+                
+                <a href="/vente" style="text-decoration: none;">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                </a>
+                <!-- <a href="/hommes">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
+                </a> -->
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes</span></p>
+                </a>
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
+                </a>
+                
+                <a href="/montre">
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
+                </a>
+                
+                
+               
+               
             
-        </div>
-        <div class="retse">
-           
-            
-            <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
-            <a href="/hommes">
-                <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a>
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
-            </a>
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/sachomme.png')}}" width="20px" alt=""> <span>Sacs hommes </span></p>
-            </a>
-            
-            <a href="/montre">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
-            </a>
-            
-            
-           
-           
-        
+            </div>
         </div>
     </div>
     <div class="monfix">
@@ -95,14 +97,14 @@
             <a href="/vente" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
             </a>
-            <a href="/hommes" style="text-decoration: none;">
+            <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a>
+            </a>-->
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
+                <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes </span></p>
+            </a> 
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/sacfem.png')}}" width="20px" alt=""> <span>Sacs femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
@@ -193,7 +195,8 @@
                         <input type="text" style="opacity: 0;width: 0;height: 0;">
                         <button type="submit" style="border: none;">
                             <div class="ima">
-                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="115%"  alt="">
+                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="120px" 
+                                height = "120px" alt="">
                             </div>
                         </button>
                    
@@ -245,7 +248,7 @@
         
         
     </footer>
-    <script src="/static/CSS/front.js"></script>
+    <script src="/static/CSS/acceuil.js"></script>
 </body>
 </html>
 

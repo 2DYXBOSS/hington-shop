@@ -1,0 +1,191 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(36, 36, 116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body {
+    height: 500px;
+    width: 100%;
+    background-color: white;
+    overflow-x: hidden;
+    
+    
+    
+}
+.enveleopp {
+    width: 100%;
+    height: 700px;
+    /* background-color: yellow; */
+}
+
+#deuxlogo {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: orangered;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.plain {
+    height: 270px;
+    width: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.demi2 {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+ 
+}
+.g{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+label {
+    cursor: pointer;
+    height: 50px;
+    width: auto;
+    gap: 10px;
+    background-color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.fauxtele {
+    width: 100%;
+    /* height: 100px; */
+    background-color: rgb(36, 36, 116);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.submite {
+    height: 100px;
+    width: 100%;
+    /* background-color: rgb(36, 36, 116); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submite1 {
+    cursor: pointer;
+    max-width: 500px;
+    gap: 10px;
+    background-color: orangered;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+
+.noteinform {
+    height: 230px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+}
+.nb {
+    width: 50px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-top: 10px;
+}
+.rxetpoi {
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 5px 3px rgba(213, 213, 213, 0.453);
+    
+}
+.secpor {
+    width: 100%;
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.secpor1 {
+    width: 25%;
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.secpor2 {
+    width: 25%;
+    height: 50px;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.secpor3 {
+    width: 25%;
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+.secpor4 {
+    width: 25%;
+    height: 50px;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}

@@ -199,16 +199,24 @@
 
 
 
-
-
-
-
 *{
-    box-sizing: border-box;
-    padding: 0;
+    box-sizing: border-box; 
     margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
-    text-decoration: none;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+}
+.a {
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    color: #ffa500;
+}
+.b {
+    width: 40px;
+    height: 40px;
+    background-color: red;
 }
 header {
     width: 100%;
@@ -219,7 +227,7 @@ header {
     justify-content: center;
 }
 body {
-    height: 500px;
+    /* height: 500px; */
     width: 100%;
     background-color: white;
     overflow-x: hidden;
@@ -236,93 +244,110 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#section {
-    height: 700px;
+form{
     width: 100%;
-    background-color: rgba(255, 68, 0, 0.117);
-    border-radius: 10px;
-    margin-top: 20px;
-
+    max-width: 500px;
+    min-height: 600px;
+    background-color: rgb(36, 36, 116);
+    height: 750px;
+    margin: 10px auto;
 }
 
-.formu {
+
+.lesimadewe {
     width: 100%;
     height: 50px;
-    /* background-color: rgb(168, 51, 51); */
+    /* background-color: aquamarine; */
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
-    color: orangered;
-    margin-bottom: 30px;
+    gap: 20px;
+}
+.lesimahes {
+    height: 50px;
+    width: 50px;
+    /* background-color: red; */
 }
 
-.plain {
+
+.inputcouleu {
     width: 100%;
-    height: 70px;
-    /* background-color: rgb(51, 168, 110); */
-    margin-bottom: 20px;
+    visibility: hidden;
+    /* background-color: gray; */
+}
+.lesimpur {
+    width: 100%;
+    visibility: hidden;
+    /* background-color: gray; */
 }
 
-.nopo {
+.couleurerw {
+    height: 500px;
     width: 100%;
-    height: 30px;
-    padding-left: 20px;
-}
-.nope {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    /* background-color: rebeccapurple; */
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.nope input{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 4px -1px gray;
-    padding-left: 20px;
-    outline: none;
+    background-color: yellow;
+   
     
 }
-
-.demiplain {
+.coloope1 {
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.coloope {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.rangerpre {
     width: 100%;
-    height: 70px;
-    /* background-color: rgb(51, 168, 110); */
-    margin-bottom: 20px;
+    height: 30px;
+    /* background-color: aqua; */
     display: flex;
-}
-
-.demi1 {
-    width: 50%;
-    height: 100%;
-    /* background-color: red; */
-}
-
-.demi2 {
-    width: 50%;
-    height: 100%;
-    /* background-color: blue; */
-}
-
-.bourt {
-    height: 120px;
-    width: 100%;
-    /* background-color: red; */
-    display: flex;
-    align-items: end;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
-.bourt button{
-    padding: 20px 20px;
+
+.formuwpiie {
+    width: 100%;
+    height: 40px;
+    /* background-color: aqua; */
+    padding-left: 50px;
+}
+
+.formuwpiie input {
+    padding-left: 20px;
+    height: 100%;
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+
+select {
+    margin-left: 200px;
+   
+}
+
+
+.boutin {
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+button {
+    padding: 20px 50px;
     border: none;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 1px 1px 4px -1px gray;
-
+    box-shadow: 1px 1px 6px 3px rgba(5, 19, 179, 0.241);
 }
-

@@ -1,68 +1,26 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter article</title>
+    <title>Modifier</title>
     <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
-    <link rel="stylesheet" href="/static/CSS/ajout.css">
+    <link rel="stylesheet" href="/static/CSS/moood.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <header>
         <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
     ">HING<span id="deuxlogo">TON SHOP</span></h1>
     </header>
-    
-    <form action="/objet" method="POST" class="formulaire" id="section">
-        <div class="formu">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: orangered;
-    text-align: center;padding-top: 10px;">HABIT FEMMES</h1>
-        <div class="lesimpur">
-            <input type="text" name="image" id="" value="{{filename}}">
-            <input type="text" name="twoimage" id="" value="{{filename1}}">
-            <input type="text" name="threeimage" id="" value="{{filename2}}">
-            <input type="text" name="forimage" id="" value="{{filename3}}">
-        </div>
-         <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Les images selctionnées de l'article !</p>
-        </div>
-         <div class="lesimadewe">
-            <div class="lesimahes">
-                {% if 'p' in filename %}
-                <img src="{{url_for('static', filename='uploads/' + filename)}}" width=" 100%" alt="">
-                {% endif %}
-            </div>
-            
-            
-            <div class="lesimahes">
-                {% if 'p' in filename1 %}
-                <img src="{{url_for('static', filename='uploads/' + filename1)}}" width=" 100%" alt="">
-                {% endif %}
-            </div>
-            
-            
-            <div class="lesimahes">
-                {% if 'p' in filename2 %}
-                <img src="{{url_for('static', filename='uploads/' + filename2)}}" width=" 100%" alt="">
-                {% endif %}
-            </div>
-            
-            
-            <div class="lesimahes">
-                {% if 'p' in filename3 %}
-                <img src="{{url_for('static', filename='uploads/' + filename3)}}" width=" 100%" alt="">
-                {% endif %}
-            </div>
-            
-        </div>
-        </div>
+    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;text-align: center;
+    ">MODIFICATION</h1>
+    <form action="/mofie/{{id}}" method="POST" class="modiieewe" id="section">
+
         <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Quelles sont les couleurs des articles ?</p>
+
         <div class="inputcouleu">
             <input type="checkbox" name="rouge" id="rouge" value="rouge">
             <input type="checkbox" name="jaune" id="jaune" value="jaune">
@@ -166,8 +124,9 @@
                 </div>
             </label>
         </div>
-        
         <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Quelles sont les tailles des articles ?</p>
+
+
         <div class="inputcouleu">
             <input type="checkbox" name="xs" id="xs" value="xs">
             <input type="checkbox" name="l" id="l" value="l">
@@ -211,137 +170,62 @@
                 </div>
             </label>
         </div>
-        <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Quel est la categorie des articles ?</p>
+        <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Quelles sont les tailles des articles ?</p>
+        <div class="inputcouleu">
+            <input type="checkbox" name="tranwite" id="tranwite" value="38">
+            <input type="checkbox" name="tranneuf" id="tranneuf" value="39">
+            <input type="checkbox" name="karente" id="karente" value="40">
+            <input type="checkbox" name="tranwiteun" id="tranwiteun" value="41">
+            <input type="checkbox" name="tranwitedeux" id="tranwitedeux" value="42">
+            <input type="checkbox" name="tranwitrois" id="tranwitrois" value="43">
+            <input type="checkbox" name="tranwitekate" id="tranwitekate" value="44">
+            
+        </div>
+        <div class="rangerpre">
+            
+            
+            <label for="tranwite">
+                <div class="coloope" id="retyeye">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">38</p>
+                </div>
+            </label>
+            <label for="tranneuf">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">39</p>
+                </div>
+            </label>
+            <label for="karente">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">40</p>
+                </div>
+            </label>
+            <label for="tranwiteun">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">41</p>
+                </div>
+            </label>
+            <label for="tranwitedeux">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">42</p>
+                </div>
+            </label>
+            <label for="tranwitrois">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">43</p>
+                </div>
+            </label>
+            <label for="tranwitekate">
+                <div class="coloope">
+                    <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">44</p>
+                </div>
+            </label>
+        </div>
 
-        <select name="categorie" id="" >
-            <!-- <option value="VetementHomme">Vetement Homme</option> -->
-            <option value="VetementFemme">Vetement Femme</option>
-            <option value="chaussure">Chaussure</option>
-            <!-- <option value="sac">Sac Femme</option> -->
-            <option value="Montre">Montre</option>
-        </select>
-        <p style="text-align: start;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-left: 50px;">Nom du produit !</p>
-        <div class="formuwpiie">
-            <input type="text" name="nom" id="" placeholder="Nom du produit">
+        <div class="bshds">
+            <button type="submit">MODIFIER</button>
         </div>
-        <p style="text-align: start;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-left: 50px;">Description complete du produit !</p>
-        <div class="formuwpiie">
-            <input type="text" name="description" id="" placeholder="Description du produit">
-        </div>
-        <div class="boutin">
-            <button> <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: orangered;
-                text-align: center;">AJOUTER LE PRODUIT MAINTENANT</h1></button>
-        </div>
-        <!-- <div class="couleurerw">
-            
-            
-            
-        </div> -->
-       
+        
     </form>
-
-
     <script src="/static/CSS/ajout.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster</title>
-    <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
-    <link rel="stylesheet" href="/static/CSS/ajout.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="dex2" >
-           
-            <div class="mp1" id="vjk1">
-                {% if filename %}
-                <img src="{{ url_for('display_image', filename=filename) }}"  height="400px" width="340px" alt="" >
-                {% endif %}
-                
-                
-            </div>
-            <div class="mp" id="vjk">
-               
-                <div class="hea2">
-                    <div class="pes">
-                        <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
-                        <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
-                    </div>
-                </div>
-                
-                <div class="hea2">
-                    <h2 style="color: rgb(0, 0, 0);font-size: 1.3rem;margin-bottom: 10px;">AJOUTER DES PRODUITS</h2>
-                </div>
-    
-                <form method="post" action="/add_objet" enctype="multipart/form-data">
-                    <dl>
-                        <p>
-                            <input  type="file" name="file" class="form-control" autocomplete="off" required>
-                        </p>
-                    </dl>
-                    <p>
-                        <input required  style="padding: 1px 15px;background-color: rgb(0, 0, 0);color: white;border: none;border-radius: 5px;" type="submit" value="valider l'image choisir" class="btn btn-info">
-                    </p>
-                </form>
-
-                <form action="/objet" method="POST" class="formulaire">
-                    {% if filename %}
-                    
-                    <input type="text" style="opacity: 0;height: 0;width: 0;"  value="{{filename}}" name="image">
-                    {% endif %}
-                    <label ><h1 id="logo" style="color: rgb(0, 0, 0);">Le nom du produit</h1></label>
-                    <input required  type="text" name="nom" id="">
-                    <label ><h1 id="logo" style="color: rgb(0, 0, 0);">La taille du produit</h1></label>
-                    <input required type="text" name="description" id="">
-                   
-                    <input  type="text" value="0" name="prix" id=""  style="opacity: 0;height: 0;width: 0;">
-                    
-
-                    <label for="selectOption">Choisissez la categorie :</label>
-            
-                    <select id="selectOption" name="selectOptione">
-                        <option value="Sac">Montre</option>
-                        <option value="Vetement">Vetement</option>
-                        
-                    </select>
-            
-                
-
-
-                    
-                    
-                    <button type="submit" style="margin-top: 20px;">Ajouter le produit maintenant</button>
-                </form>
-            </div>
-        </div>
-    </header>
-</body>
-</html>
-
-
-
-
-
-
-
- -->
