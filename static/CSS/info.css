@@ -1518,7 +1518,7 @@ a{
 }
 .bouto {
     border: none;
-    width: 75%;
+    width: 90%;
     height: 40px;
     background-color: rgb(36, 36, 116);
     display: flex;
@@ -1527,6 +1527,19 @@ a{
     color: white;
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.commandewe .bouto {
+    border: none;
+    width: 90%;
+    height: 40px;
+    background-color: rgb(36, 36, 116);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
 }
 .redux {
     width: 100%;
@@ -1581,6 +1594,7 @@ a{
 body {
     width: 100%;
     overflow-x: hidden;
+    
 }
 
 .vtefemmes {
@@ -1588,37 +1602,117 @@ body {
     height: 50px;
    
 }
+#formuhfh1 {
+    padding-bottom: 50px;
+    height: auto;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    /* border: 2px solid rgb(36, 36, 116); */
+    padding-top: 10px;
+    box-shadow: 1px 1px 5px 3px rgb(68, 68, 68);
+   
+    
+}
 
-
-.formuhfh {
+/* .formuhfh {
    
     display: none;
  
     
     
-}
-.formuhfh.active {
+} */
+/* .formuhfh.active {
     position: fixed;
     width: 100%;
-    height: 700px;
-    background-color: rgba(219, 219, 219, 0.428);
-    top: 150px;
+    height: auto;
+    background-color: rgba(43, 43, 43, 0.904);
+   
+    top: 0;
+    padding-bottom:70px;
     display: flex;
-    align-items: start;
+    align-items: end;
     justify-content: center;
-    padding-top: 10px;
-    
-    
-}
-
-#formuhfh1 {
-    height: 470px;
-    width: 350px;
-    background-color: rgb(36, 36, 116);
-    border: 2px solid rgb(36, 36, 116);
+    padding-top: 0;
+    z-index: 999999999999;
    
     
+    
+} */
+.formuhfh {
+   
+    width: 100%;
+    height: auto;
+    background-color: rgba(43, 43, 43, 0.904);
+   
+    position: sticky;
+    top: 0;
+    padding-bottom:70px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-top: 0;
+    z-index: 999999999999;
+   
+    
+    
 }
+.hqeerss {
+    height: auto;
+    width: 100%;
+    background-color: white;
+}
+.nombredexl {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+}
+.nombredexltaille {
+    width: 50%;
+    height: 100%;
+    padding-left: 20px;
+}
+.nombredexlquant {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    padding-right: 20px;
+ 
+}
+.mmoiie {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 68, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px rgba(188, 188, 188, 0.944);
+}
+.mmmoihfrd {
+    height: 30px;
+    width: 40px;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.mmmoihfrd input {
+    padding-left: 12px ;
+    
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
 
 .commandewe {
     width: 100%;
@@ -1656,6 +1750,68 @@ body {
     align-items: center;
     gap: 10px;
 }
+
+#lnum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+}
+#lnum.active {
+    display: block;
+}
+#mnum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+}
+#mnum.active {
+    display: block;
+}
+#snum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+}
+#snum.active {
+    display: block;
+}
+#xlnum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+}
+#xlnum.active {
+    display: block;
+}
+#xsnum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+    border: none;
+}
+#xsnum.active {
+    display: block;
+}
+#xxlnum {
+    display: none;
+    background-color: rgb(36, 36, 116);
+    outline: none;
+    color: white;
+    border: none;
+}
+#xxlnum.active {
+    display: block;
+}
 .coloope1 {
     height: 20px;
     width: 20px;
@@ -1670,27 +1826,71 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+#sp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#xlp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#xxlp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#xsp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#mp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#lp {
+    height: 20px;
+    width: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
 
 
 #livraison {
-    height: 30px;
-    width: 80%;
+    height: 35px;
+    width: 90%;
     background-color: rgb(233, 233, 233);
     outline: none;
     border: none;
     margin-bottom: 10px;
-    margin-left: 40px;
+    margin-left: 20px;
     border-radius: 5px;
     padding-left: 10px;
 }
 
 
 .ccrrooii {
-    height: 50px;
-    width: 50px;
-    /* background-color: red; */
-    position: fixed;
-    top: 160px;
-    right: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+  
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

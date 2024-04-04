@@ -445,297 +445,278 @@
                     <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">XL</p>
                 </div> -->
             </div>
-            <div  class="commande">
-                <div class="regle">
-
-                    <p id="moins">-</p>
-                    <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="numeric">
-                  
-                    <p id="plus">+</p>
-                </div>
-               
-                <button class="bouto" type="submit">COMMANDE ICI</button>
-                <!-- {% if user %}
-                <form action="/ssm/{{user.id}}" method="post">
+            <a href="#formuhfh1">
+                <div class="commande">
+                    <div class="regle">
+    
+                        <p id="moins">-</p>
+                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="numeric">
+                      
+                        <p id="plus">+</p>
+                    </div>
                    
-                    <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
+                    <button class="bouto" type="submit">COMMANDE ICI</button>
+                    <!-- {% if user %}
+                    <form action="/ssm/{{user.id}}" method="post">
+                       
+                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
     
-                </form>
-                {% endif %} -->
+                    </form>
+                    {% endif %} -->
+                </div>
+                </a>
+              
+                <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;padding-top: 15px;">Description</h1>
+                <p style="padding-top: 15px;font-size: 0.7rem;padding-bottom: 30px;">{{user.description}} </p> -->
             </div>
-            
-               
-          
-            <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;padding-top: 15px;">Description</h1>
-            <p style="padding-top: 15px;font-size: 0.7rem;padding-bottom: 30px;">{{user.description}} </p> -->
         </div>
-    </div>
-    <div class="vtefemmes">
-        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.3rem;text-align: center;padding-bottom: 20px;
-        color: rgb(36, 36, 116);padding-left: 20px;">TU POURRAIS AUSSI AIMER</h1>
-    </div>
-    <div class="afficje">
-        {% for i in commenta %}  
-        <a href="/info/{{i.id}}" class="b1">      
+        <div class="vtefemmes">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.3rem;text-align: center;padding-bottom: 20px;
+            color: rgb(36, 36, 116);padding-left: 20px;">TU POURRAIS AUSSI AIMER</h1>
+        </div>
+        <div class="afficje">
+            {% for i in commenta %}  
+            <a href="/info/{{i.id}}" class="b1">      
+        
+                <div class="pheorf">
+                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
     
-            <div class="pheorf">
-                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
-
-            </div>
-            <div class="pheorf2">
-                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-        color: rgb(36, 36, 116);">Q23TY</h1>
-            </div>
-
-        </a>
-        {% endfor %}
-        
-       
-       
-    </div>
-    <footer id="foot">
-        <header id="head">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
-            ">HING<span id="deuxlogo">TON SHOP</span></h1>
-        </header>
-        <p >Nous sommes une boutique de vente en ligne ...</p>
-        
-    </footer>
-
-
-
-    <div class="formuhfh">
-        <form method="post" action="/ssm/{{user.id}}" 
-        enctype="multipart/form-data"  id="formuhfh1">
-        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 10px;text-align: center;color: orangered;">VALIDEZ VOTRE COMMANDE</h1>
-            <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Choisissez les couleurs que vous voulez !</p>
-        <div class="inputcouleu">
-            <input type="checkbox" name="rouge" id="rouge" value="rouge">
-            <input type="checkbox" name="jaune" id="jaune" value="jaune">
-            <input type="checkbox" name="vert" id="vert" value="vert">
-            <input type="checkbox" name="orange" id="orange" value="orange">
-            <input type="checkbox" name="marron" id="marron" value="marron">
-            <input type="checkbox" name="gris" id="gris" value="gris">
-            <input type="checkbox" name="noir" id="noir" value="noir">
-            <input type="checkbox" name="violet" id="violet" value="violet">
-            <input type="checkbox" name="rose" id="rose" value="rose">
-            <input type="checkbox" name="bleu" id="bleu" value="bleu">
-            <input type="checkbox" name="blanc" id="blanc" value="blanc">
+                </div>
+                <div class="pheorf2">
+                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
+            color: rgb(36, 36, 116);">Q23TY</h1>
+                </div>
+    
+            </a>
+            {% endfor %}
             
+           
+           
         </div>
+        <footer id="foot">
+            <header id="head">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
+                ">HING<span id="deuxlogo">TON SHOP</span></h1>
+            </header>
+            <p >Nous sommes une boutique de vente en ligne ...</p>
+            
+        </footer>
+    
+    
+    
+        <div class="formuhfh">
+            <form method="post" action="/ssm/{{user.id}}" 
+            enctype="multipart/form-data"  id="formuhfh1">
+            <p style="padding-top: 20px;text-align: center;color: rgb(36, 36, 116);padding-left: 20px;font-weight: bolder;font-size: 1.2rem;padding-bottom: 20px;padding-right: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COMMANDER MAINTENANT
+            </p>
+              
+                
+                <div  class="commandewe">
+                    <!-- <div class="regle">
         
-        <div class="rangerpre">
-            {% if user.rouge == 'rouge' %}
-            <label for="rouge">
-                <div class="coloope" style="background-color: #ff0000;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(11%) sepia(95%) saturate(7479%) hue-rotate(7deg) brightness(108%) contrast(120%);">
-            
-                    
+                        <p id="moins">-</p>
+                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="eeecran" name="eeecran">
+                      
+                        <p id="plus">+</p>
+                    </div> -->
+                   
+                    <button class="bouto" type="submit">COMMANDE MAINTENANT</button>
+                    <!-- {% if user %}
+                    <form action="/ssm/{{user.id}}" method="post">
+                       
+                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
+        
+                    </form>
+                    {% endif %} -->
                 </div>
-            </label>
-            {% endif %}
-            {% if user.vert == 'vert' %}
-            <label for="vert">
-                <div class="coloope" style="background-color: #008000;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(29%) sepia(69%) saturate(1418%) hue-rotate(89deg) brightness(100%) contrast(105%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.jaune == 'jaune' %}
-            <label for="jaune">
-                <div class="coloope" style="background-color: #a5a515;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(60%) sepia(19%) saturate(1860%) hue-rotate(21deg) brightness(100%) contrast(84%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.orange == 'orange' %}
-            <label for="orange">
-                <div class="coloope" style="background-color: #ff7300;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(52%) sepia(36%) saturate(5712%) hue-rotate(1deg) brightness(105%) contrast(103%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.marron == 'marron' %}
-            <label for="marron">
-                <div class="coloope" style="background-color: #573214;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(17%) sepia(82%) saturate(472%) hue-rotate(346deg) brightness(95%) contrast(93%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.gris == 'gris' %}
-            <label for="gris">
-                <div class="coloope" style="background-color: #808080;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(49%) sepia(6%) saturate(3%) hue-rotate(89deg) brightness(100%) contrast(89%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.noir == 'noir' %}
-
-            <label for="noir">
-                <div class="coloope" style="background-color: #000000;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" >
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.violet == 'violet' %}
-            <label for="violet">
-                <div class="coloope" style="background-color: #800080;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(13%) sepia(76%) saturate(3903%) hue-rotate(290deg) brightness(85%) contrast(117%);">
-            
-                    
-                </div>
-                
-            </label>
-            {% endif %}
-            {% if user.rose == 'rose' %}
-
-            
-            <label for="rose">
-                <div class="coloope" style="background-color: #d87093;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(84%) sepia(22%) saturate(6639%) hue-rotate(294deg) brightness(86%) contrast(97%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.bleu == 'bleu' %}
-            <label for="bleu">
-                <div class="coloope" style="background-color: #0000ff;">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(8%) sepia(96%) saturate(6156%) hue-rotate(245deg) brightness(122%) contrast(139%);">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-            {% if user.blanc == 'blanc' %}
-            <label for="blanc">
-                <div class="coloope" style="background-color: #bebdbd">
-                    <img src="{{url_for('static', filename='IMAGE/chets.png' )}}" width=" 100%" alt="" style="filter: invert(63%) sepia(88%) saturate(0%) hue-rotate(188deg) brightness(100%) contrast(95%);
-
-                    ">
-            
-                    
-                </div>
-            </label>
-            {% endif %}
-        </div>
-            <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">- Choisissez les tailles que vous voulez !</p>
-            <div class="inputcouleu">
-                <input type="checkbox" name="tranwite" id="tranwite" value="38">
-                <input type="checkbox" name="tranneuf" id="tranneuf" value="39">
-                <input type="checkbox" name="karente" id="karente" value="40">
-                <input type="checkbox" name="tranwiteun" id="tranwiteun" value="41">
-                <input type="checkbox" name="tranwitedeux" id="tranwitedeux" value="42">
-                <input type="checkbox" name="tranwitrois" id="tranwitrois" value="43">
-                <input type="checkbox" name="tranwitekate" id="tranwitekate" value="44">
-                
-            </div>
-            <div class="rangerpre">
-                
-                
-                <label for="tranwite">
+                <div class="hqeerss">
+                  
                     {% if user.tranwite == '38' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">38</p>
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">38</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                         <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranwitenump')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitenump" name="tranwitenum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranwitenump')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
                     </div>
                     {% endif %}
-                </label>
-                <label for="tranneuf">
                     {% if user.tranneuf == '39' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">39</p>
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">39</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                         <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranneufnump')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranneufnump" name="tranneufnum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranneufnump')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
                     </div>
                     {% endif %}
-                </label>
-                <label for="karente">
                     {% if user.karente == '40' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">40</p>
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">40</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                         <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('karentenump')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="karentenump" name="karentenum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('karentenump')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
                     </div>
                     {% endif %}
-                </label>
-                <label for="tranwiteun">
+                    
                     {% if user.tranwiteun == '41' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">41</p>
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">41</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                        <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranwiteunp')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwiteunp" name="tranwiteunnum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranwiteunp')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
                     </div>
                     {% endif %}
-                </label>
-                <label for="tranwitedeux">
                     {% if user.tranwitedeux == '42' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">42</p>
-                    </div>
-                    {% endif %}
-                </label>
-                <label for="tranwitrois">
-                    {% if user.tranwitrois == '43' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">43</p>
-                    </div>
-                    {% endif %}
-                </label>
-                <label for="tranwitekate">
-                    {% if user.tranwitekate == '44' %}
-                    <div class="coloope">
-                        <p style="text-align: center;color: black;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">44</p>
-                    </div>
-                    {% endif %}
-                </label>
-            </div>
-            <div  class="commandewe">
-                <div class="regle">
-    
-                    <p id="moins">-</p>
-                    <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="eeecran" name="eeecran">
-                  
-                    <p id="plus">+</p>
-                </div>
-               
-                <button class="bouto" type="submit">COMMANDE ICI</button>
-                <!-- {% if user %}
-                <form action="/ssm/{{user.id}}" method="post">
                    
-                    <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">42</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                        <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranwitedeuxp')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitedeuxp" name="tranwitedeuxnum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranwitedeuxp')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
     
-                </form>
-                {% endif %} -->
-            </div>
-            <p style="text-align: center;color: white;font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre nom</p>
-            <input type="text" name="nom" id="livraison" placeholder="nom">
-            <p style="text-align: center;color: white;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez le lieu de livraison</p>
-            <input type="text" name="livraison" id="livraison" placeholder="livraison">
-            <p style="text-align: center;color: white;font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre numero</p>
-            <input type="text" name="numero" id="livraison" placeholder="numero">
-        </form>
-        
-        <div class="ccrrooii" >
-            <img src="{{url_for('static', filename='IMAGE/croix.png' )}}" width=" 30px" height="30px" alt="">
-        </div>  
-    </div>
-    <!-- <div class="sty">
-
-    </div> -->
-    <!-- <footer id="foot">
-        <header id="head">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
-            ">HING<span id="deuxlogo">TON SHOP</span></h1>
-        </header>
-        <p >Nous sommes une boutique de vente en ligne ...</p>
-        
-    </footer> -->
-    <script src="/static/CSS/chaus.js"></script>
-</body>
-</html>
+                        </div>
+                    </div>
+                    {% endif %}
+                  
+                    {% if user.tranwitrois == '43' %}
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">43</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                        <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranwitroisp')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitroisp" name="tranwitroisnum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranwitroisp')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if user.tranwitekate == '44' %}
+                    <div class="nombredexl">
+                        <div class="nombredexltaille">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">44</h1>
+                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        </div>
+                        <div class="nombredexlquant">
+                            <div class="mmoiie" onclick="moinsp('tranwitekatep')">
+                                <p style="color: white;font-size: 2rem;">-</p>
+                            </div>
+                           
+                            <div class="mmmoihfrd">
+                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitekatep" name="tranwitekatenum">
+                            </div>
+                            
+                            <div class="mmoiie" onclick="plusp('tranwitekatep')">
+                                <p style="color: white;font-size: 2rem;" >+</p>
+                            </div>
+                        
+    
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre nom</p>
+                <input type="text" name="nom" id="livraison" placeholder="nom" >
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez le lieu de livraison</p>
+                <input type="text" name="livraison" id="livraison" placeholder="livraison">
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre numero</p>
+                <input type="text" name="numero" id="livraison" placeholder="numero" required>
+            </form>
+            
+               
+        </div>
+        <!-- <div class="sty">
+    
+        </div> -->
+        <!-- <footer id="foot">
+            <header id="head">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
+                ">HING<span id="deuxlogo">TON SHOP</span></h1>
+            </header>
+            <p >Nous sommes une boutique de vente en ligne ...</p>
+            
+        </footer> -->
+        <script src="/static/CSS/article.js"></script>
+    </body>
+    </html>

@@ -1,16 +1,17 @@
 
-const bouto = document.querySelector('.bouto');
-const formuhfh = document.querySelector('.formuhfh');
-const formuhfhe = document.querySelector('.ccrrooii');
 
-bouto.addEventListener('click',()=>{
-    formuhfh.classList.add("active");
-});
-formuhfhe.addEventListener('click',()=>{
-    formuhfh.classList.remove("active");
-})
+// const bouto = document.querySelector('.bouto');
+// const formuhfh = document.querySelector('.formuhfh');
+// const formuhfhe = document.querySelector('.ccrrooii');
 
-;
+// bouto.addEventListener('click',()=>{
+//     formuhfh.classList.add("active");
+// });
+// formuhfhe.addEventListener('click',()=>{
+//     formuhfh.classList.remove("active");
+// })
+
+// ;
 
 
 
@@ -67,8 +68,6 @@ enleve.addEventListener('click',()=>{
 
 
 
-
-
 const home = document.querySelector('#home')
 const contact = document.querySelector('#contact')
 const couleur = document.querySelector('.monfix')
@@ -98,7 +97,6 @@ monfixder.addEventListener('click',()=>{
 
     monfixder.classList.remove('active');
 })
-
 
 
 
@@ -184,12 +182,6 @@ image3.addEventListener('click',()=>{
 
 
 
-
-
-
-
-
-
 let a = document.querySelectorAll('.coloope')
 // let b = document.querySelector('.b')
 
@@ -197,14 +189,122 @@ a.forEach(a => {
     a.addEventListener('click',()=>{
         // wee.style.border = '10px solid red'
         // a.style.border = '10px solid pink';
-        a.style.background = 'white'
+        a.style.background = 'white';
         // wee.style.background = 'url(/menu.png) 50% no-repeat'
         // wee.backgroundSize= "cover";
-
+        
     }
 
 )
 });
+
+
+
+// const xl = document.querySelector('#xlp');
+
+// const xlnum = document.querySelector('#xlnum');
+
+// xl.addEventListener('click',()=>{
+   
+//     xl.style.background = 'yellow';
+// })
+// ;
+
+// console.log("dedy")
+
+
+let xl = document.querySelector('#xlp')
+let xs = document.querySelector('#xsp')
+let xxl = document.querySelector('#xxlp')
+let l = document.querySelector('#lp')
+let m = document.querySelector('#mp')
+let s = document.querySelector('#sp')
+
+let xsnum = document.querySelector('#xsnum')
+let xlnum = document.querySelector('#xlnum')
+let lnum = document.querySelector('#lnum')
+let snum = document.querySelector('#snum')
+let mnum = document.querySelector('#mnum')
+let xxlnum = document.querySelector('#xxlnum')
+
+// let b = document.querySelector('.b')
+
+
+xl.addEventListener('click',()=>{
+   
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    xl.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    xlnum.classList.add("active")
+    xlnum.value = 0
+})
+
+
+l.addEventListener('click',()=>{
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    l.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    lnum.classList.add("active")
+    lnum.value = 0
+}
+
+)
+s.addEventListener('click',()=>{
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    s.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    snum.classList.add("active")
+    snum.value = 0
+}
+
+)
+m.addEventListener('click',()=>{
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    m.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    mnum.classList.add("active")
+    mnum.value = 0
+}
+
+)
+xxl.addEventListener('click',()=>{
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    xxl.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    xxlnum.classList.add("active")
+    xxlnum.value = 0
+}
+
+)
+xs.addEventListener('click',()=>{
+    
+    // wee.style.border = '10px solid red'
+    // a.style.border = '10px solid pink';
+    xs.style.background = 'green';
+    // wee.style.background = 'url(/menu.png) 50% no-repeat'
+    // wee.backgroundSize= "cover";
+    
+    xsnum.classList.add("active")
+    xsnum.value = 0
+}
+
+)
+
 
 
 
@@ -225,4 +325,46 @@ a.forEach(a => {
 // });
 
 
+function moinsp(ecranid) {
+    et = "#" + ecranid + ""
+    let ecraid  = document.querySelector(et)
+    if (ecraid.value >= 1){
+        ecraid.value = parseInt(ecraid.value) - 1; // Mettre à jour le contenu de l'élément
+    }
+    console.log(et);
+    return 0
+}
 
+function plusp(ecranid) {
+    et = "#" + ecranid + ""
+    let ecraid  = document.querySelector(et)
+    ecraid.value = parseInt(ecraid.value) + 1; // Mettre à jour le contenu de l'élément
+    console.log(et);
+    return 0
+}
+
+
+
+
+
+
+// const moins = document.querySelectorAll('#moins');
+// const numeric = document.querySelector('#numeric'); // Sélectionnez l'élément lui-même
+// const eeecran = document.querySelector('#eeecran'); // Sélectionnez l'élément lui-même
+// const plus = document.querySelectorAll('#plus');
+
+// moins.forEach(moins => {
+    
+// moins.addEventListener('click', () => {
+//     numeric.value = parseInt(numeric.value) - 1; // Mettre à jour le contenu de l'élément
+//     eeecran.value = parseInt(eeecran.value) - 1; // Mettre à jour le contenu de l'élément
+//     console.log(numeric.value);
+// });
+// });
+// plus.forEach(plus => {
+// plus.addEventListener('click', () => {
+//     numeric.value = parseInt(numeric.value) + 1; // Mettre à jour le contenu de l'élément
+//     eeecran.value = parseInt(eeecran.value) + 1; // Mettre à jour le contenu de l'élément
+//     console.log(numeric.value);
+// });
+// });

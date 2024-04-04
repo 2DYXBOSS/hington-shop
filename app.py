@@ -721,49 +721,93 @@ from urllib.parse import quote
 def ssm(id):
     a = str(id)
     xs = request.form.get("xs","")
+    xsnum = request.form.get("xsnum","0")
+    if int(xsnum) > 0 :
+        xs = "xs"
     s = request.form.get("s","")
+    snum = request.form.get("snum","0")
+    if int(snum) > 0 :
+        s = "s"
     m = request.form.get("m","")
+    mnum = request.form.get("mnum","0")
+    if int(mnum) > 0 :
+        m = "m"
     l = request.form.get("l","")
+    lnum = request.form.get("lnum","0")
+    if int(lnum) > 0 :
+        l = "l"
     xl = request.form.get("xl","")
+    xlnum = request.form.get("xlnum","0")
+    if int(xlnum) > 0 :
+        xl = "xl"
+    xxlnum = request.form.get("xxlnum","0")
     xxl = request.form.get("xxl","")
-    rouge = request.form.get("rouge","")
-    blanc = request.form.get("blanc","")
-    noir = request.form.get("noir","")
-    jaune = request.form.get("jaune","")
-    vert = request.form.get("vert","")
-    orange = request.form.get("orange","")
-    bleu = request.form.get("bleu","")
-    rose = request.form.get("rose","")
-    marron = request.form.get("marron","")
-    violet = request.form.get("violet","")
-    gris = request.form.get("gris","")
+    if int(xxlnum) > 0 :
+        xxl = "xxl"
+
+    
+    # rouge = request.form.get("rouge","")
+    # blanc = request.form.get("blanc","")
+    # noir = request.form.get("noir","")
+    # jaune = request.form.get("jaune","")
+    # vert = request.form.get("vert","")
+    # orange = request.form.get("orange","")
+    # bleu = request.form.get("bleu","")
+    # rose = request.form.get("rose","")
+    # marron = request.form.get("marron","")
+    # violet = request.form.get("violet","")
+    # gris = request.form.get("gris","")
     tranwite = request.form.get("tranwite","")
+    tranwitenum = request.form.get("tranwitenum","0")
+    if int(tranwitenum) > 0 :
+        tranwite = "tranwite"
     tranneuf = request.form.get("tranneuf","")
+    tranneufnum = request.form.get("tranneufnum","0")
+    if int(tranneufnum) > 0 :
+        tranneuf = "tranneuf"
     karente = request.form.get("karente","")
+    karentenum = request.form.get("karentenum","0")
+    if int(karentenum) > 0 :
+        karente = "karente"
     tranwiteun = request.form.get("tranwiteun","")
+    tranwiteunnum = request.form.get("tranwiteunnum","0")
+    if int(tranwiteunnum) > 0 :
+        tranwiteun = "tranwiteun"
     tranwitedeux = request.form.get("tranwitedeux","")
+    tranwitedeuxnum = request.form.get("tranwitedeuxnum","0")
+    if int(tranwitedeuxnum) > 0 :
+        tranwitedeux = "tranwitedeux"
     tranwitrois = request.form.get("tranwitrois","")
+    tranwitroisnum = request.form.get("tranwitroisnum","0")
+    if int(tranwitroisnum) > 0 :
+        tranwitrois = "tranwitrois"
     tranwitekate = request.form.get("tranwitekate","")
-    quantite = request.form.get("eeecran")
+    tranwitekatenum = request.form.get("tranwitekatenum","0")
+    if int(tranwitekatenum) > 0 :
+        tranwitekate = "tranwitekate"
+    
     nom = request.form.get("nom")
     livraison = request.form.get("livraison")
     numero = request.form.get("numero")
-   
+    
     tou = Ajouter.query.get(id)
 
 
     if tou.categorie == 'VetementFemme' :
-        ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs} {s} {l} {m}{xxl} {xl} {tranwite} {tranneuf} {karente} {tranwiteun} {tranwitedeux} {tranwitrois} {tranwitekate} , Couleur = {rouge} {blanc} {noir} {jaune} {vert} {orange} {bleu} {rose} {marron} {violet} {gris}"
+        quantite = int(xsnum)+int(snum)+int(xxlnum)+int(xlnum)+int(mnum)+int(lnum)
+        ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
 
     if tou.categorie == 'chaussure' :
-        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs} {s} {l} {m}{xxl} {xl} {tranwite} {tranneuf} {karente} {tranwiteun} {tranwitedeux} {tranwitrois} {tranwitekate} , Couleur = {rouge} {blanc} {noir} {jaune} {vert} {orange} {bleu} {rose} {marron} {violet} {gris}"
+        quantite = int(tranwitenum)+int(tranneufnum)+int(karentenum)+int(tranwiteunnum)+int(tranwitedeuxnum)+int(tranwitroisnum)+int(tranwitekatenum)
+        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
     
     if tou.categorie == 'Montre' :
-        ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs} {s} {l} {m}{xxl} {xl} {tranwite} {tranneuf} {karente} {tranwiteun} {tranwitedeux} {tranwitrois} {tranwitekate} , Couleur = {rouge} {blanc} {noir} {jaune} {vert} {orange} {bleu} {rose} {marron} {violet} {gris}"
+        quantite = request.form.get("quantitdepo")
+        ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
         
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
