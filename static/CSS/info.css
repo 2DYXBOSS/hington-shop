@@ -1912,3 +1912,13 @@ body {
     align-items: end;
     justify-content: start;
 }
+
+.livarsipn {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    height: 50px;
+    width: 100%;
+    /* background-color: red; */
+}
