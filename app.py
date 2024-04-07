@@ -118,6 +118,9 @@ class Ajouter(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nom = db.Column(db.String(15), unique = False , nullable = False)
     description = db.Column(db.String(100), unique = False , nullable = False)
+    prix = db.Column(db.String(100), unique = False , nullable = False)
+    porce = db.Column(db.String(100), unique = False , nullable = False)
+    porceprix = db.Column(db.String(100), unique = False , nullable = False)
     categorie = db.Column(db.String(100), unique = False , nullable = False)
     image = db.Column(db.String(100), unique = True , nullable = False)
     twoimage = db.Column(db.String(100), unique = False , nullable = False)
@@ -150,9 +153,12 @@ class Ajouter(db.Model):
    
    
    
-    def __init__(self,nom,description,categorie,image,twoimage,threeimage,forimage,xs,s,m,l,xl,xxl,rouge,blanc,noir,jaune,vert,orange,bleu,rose,marron,violet,gris,tranwite,tranneuf,karente,tranwiteun,tranwitedeux,tranwitrois,tranwitekate):
+    def __init__(self,nom,description,prix,porce,porceprix,categorie,image,twoimage,threeimage,forimage,xs,s,m,l,xl,xxl,rouge,blanc,noir,jaune,vert,orange,bleu,rose,marron,violet,gris,tranwite,tranneuf,karente,tranwiteun,tranwitedeux,tranwitrois,tranwitekate):
         self.nom = nom
         self.description = description
+        self.prix = prix
+        self.porce = porce
+        self.porceprix = porceprix
         self.categorie = categorie
         self.image = image
         self.twoimage = twoimage
@@ -197,6 +203,9 @@ class Ajouter(db.Model):
         return {
             "nom": self.nom,
             "description": self.description,
+            "prix": self.prix,
+            "porceprix": self.porceprix,
+            "porce": self.porce,
             "categorie": self.categorie,
             "image": self.image,
             "twoimage": self.twoimage,
@@ -426,6 +435,9 @@ def objet():
       
         nom = request.form.get("nom")
         description = request.form.get("description")
+        prix = request.form.get("prix")
+        porce = request.form.get("porce","0")
+        porceprix = str(int(int(prix)-(int(prix) * (int(porce)/100))))
         image = request.form.get("image")      
         categorie = request.form.get('categorie')
         twoimage = request.form.get('twoimage')
@@ -458,7 +470,7 @@ def objet():
         
 
 
-        pani = Ajouter(nom=nom,description=description,categorie=categorie,image=image,twoimage=twoimage,threeimage=threeimage,forimage=forimage,xs=xs,s=s,l=l,m=m,xl=xl,xxl=xxl,rouge=rouge,blanc=blanc,noir=noir,jaune=jaune,vert=vert,orange=orange,bleu=bleu,rose=rose,marron=marron,violet=violet,gris=gris,tranwite=tranwite,tranneuf=tranneuf,karente=karente,tranwiteun=tranwiteun,tranwitedeux=tranwitedeux,tranwitrois=tranwitrois,tranwitekate=tranwitekate)
+        pani = Ajouter(nom=nom,description=description,prix=prix,porceprix=porceprix,porce=porce,categorie=categorie,image=image,twoimage=twoimage,threeimage=threeimage,forimage=forimage,xs=xs,s=s,l=l,m=m,xl=xl,xxl=xxl,rouge=rouge,blanc=blanc,noir=noir,jaune=jaune,vert=vert,orange=orange,bleu=bleu,rose=rose,marron=marron,violet=violet,gris=gris,tranwite=tranwite,tranneuf=tranneuf,karente=karente,tranwiteun=tranwiteun,tranwitedeux=tranwitedeux,tranwitrois=tranwitrois,tranwitekate=tranwitekate)
         # pani = Panier(nom = nom, description = description , prix = prix)
         
         db.session.add(pani)
@@ -724,26 +736,46 @@ def ssm(id):
     xsnum = request.form.get("xsnum","0")
     if int(xsnum) > 0 :
         xs = "xs"
+    if int(xsnum) == 0 :
+        xs = ""
+        xsnum = ""
+
+   
     s = request.form.get("s","")
     snum = request.form.get("snum","0")
     if int(snum) > 0 :
         s = "s"
+    if int(snum) == 0 :
+        s = ""
+        snum = ""
     m = request.form.get("m","")
     mnum = request.form.get("mnum","0")
     if int(mnum) > 0 :
         m = "m"
+    if int(mnum) == 0 :
+        m = ""
+        mnum = ""
     l = request.form.get("l","")
     lnum = request.form.get("lnum","0")
     if int(lnum) > 0 :
         l = "l"
+    if int(lnum) == 0 :
+        l = ""
+        lnum = ""
     xl = request.form.get("xl","")
     xlnum = request.form.get("xlnum","0")
     if int(xlnum) > 0 :
         xl = "xl"
+    if int(xlnum) == 0 :
+        xl = ""
+        xlnum = ""
     xxlnum = request.form.get("xxlnum","0")
     xxl = request.form.get("xxl","")
     if int(xxlnum) > 0 :
         xxl = "xxl"
+    if int(xxlnum) == 0 :
+        xxl = ""
+        xxlnum = ""
 
     
     # rouge = request.form.get("rouge","")
@@ -760,54 +792,88 @@ def ssm(id):
     tranwite = request.form.get("tranwite","")
     tranwitenum = request.form.get("tranwitenum","0")
     if int(tranwitenum) > 0 :
-        tranwite = "tranwite"
+        tranwite = "38 -> "
+        tranwitenum = tranwitenum
+    if int(tranwitenum) == 0 :
+        tranwite = ""
+        tranwitenum = ""
+       
     tranneuf = request.form.get("tranneuf","")
     tranneufnum = request.form.get("tranneufnum","0")
     if int(tranneufnum) > 0 :
-        tranneuf = "tranneuf"
+        tranneuf = "39 -> "
+        tranneufnum = tranneufnum
+    if int(tranneufnum) == 0 :
+        tranneuf = ""
+        tranneufnum = ""
     karente = request.form.get("karente","")
     karentenum = request.form.get("karentenum","0")
     if int(karentenum) > 0 :
-        karente = "karente"
+        karente = "40 -> "
+        karentenum = karentenum
+    if int(karentenum) == 0 :
+        karente = ""
+        karentenum = ""
     tranwiteun = request.form.get("tranwiteun","")
     tranwiteunnum = request.form.get("tranwiteunnum","0")
     if int(tranwiteunnum) > 0 :
-        tranwiteun = "tranwiteun"
+        tranwiteun = "41 -> "
+        tranwiteunnum = tranwiteunnum
+    if int(tranwiteunnum) == 0 :
+        tranwiteun = ""
+        tranwiteunnum = ""
     tranwitedeux = request.form.get("tranwitedeux","")
     tranwitedeuxnum = request.form.get("tranwitedeuxnum","0")
     if int(tranwitedeuxnum) > 0 :
-        tranwitedeux = "tranwitedeux"
+        tranwitedeux = "42 -> "
+        tranwitedeuxnum = tranwitedeuxnum
+    if int(tranwitedeuxnum) == 0 :
+        tranwitedeux = ""
+        tranwitedeuxnum = ""
     tranwitrois = request.form.get("tranwitrois","")
     tranwitroisnum = request.form.get("tranwitroisnum","0")
     if int(tranwitroisnum) > 0 :
-        tranwitrois = "tranwitrois"
+        tranwitrois = "43 -> "
+        tranwitroisnum = tranwitroisnum
+    if int(tranwitroisnum) == 0 :
+        tranwitrois = ""
+        tranwitroisnum = ""
     tranwitekate = request.form.get("tranwitekate","")
     tranwitekatenum = request.form.get("tranwitekatenum","0")
     if int(tranwitekatenum) > 0 :
-        tranwitekate = "tranwitekate"
+        tranwitekate = "44 -> "
+        tranwitekatenum = tranwitekatenum
+    if int(tranwitekatenum) == 0 :
+        tranwitekate = ""
+        tranwitekatenum = ""
     
     nom = request.form.get("nom")
     livraison = request.form.get("livraison")
     numero = request.form.get("numero")
+    prix = request.form.get("prix")
+    quantite = request.form.get("quantiteplos")
     
     tou = Ajouter.query.get(id)
-
+    import urllib.parse
 
     if tou.categorie == 'VetementFemme' :
-        quantite = int(xsnum)+int(snum)+int(xxlnum)+int(xlnum)+int(mnum)+int(lnum)
-        ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
-
+        quantite = quantite
+      
+        ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
+        # ms_encoded = urllib.parse.quote(ms)
+        # print(ms)
+        # print(ms_encoded)
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
 
     if tou.categorie == 'chaussure' :
-        quantite = int(tranwitenum)+int(tranneufnum)+int(karentenum)+int(tranwiteunnum)+int(tranwitedeuxnum)+int(tranwitroisnum)+int(tranwitekatenum)
-        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
+        quantite = quantite 
+        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
     
     if tou.categorie == 'Montre' :
         quantite = request.form.get("quantitdepo")
-        ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
+        ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} ,Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
         
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")

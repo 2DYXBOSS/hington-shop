@@ -21,7 +21,7 @@
             
             
             <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -58,7 +58,7 @@
                
                 
                 <a href="/vente" style="text-decoration: none;">
-                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
                 </a>
                 <!-- <a href="/hommes">
                     <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -95,7 +95,7 @@
             
             
             <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -174,8 +174,8 @@
 
             </div>
             <div class="restrer">
-                <h1 >VETEMENTS FEMMES</h1>
-                <p >Le styles vestimentaires est au top ! </p>
+                <h1 style="color: rgb(36, 36, 116);">VETEMENTS FEMMES</h1>
+                <p >Le style vestimentaire est au top ! </p>
             </div>
             
         </div>
@@ -187,22 +187,40 @@
             <div class="mesimages">
                 
                 
-                
                 {% for i in data %}
         
                 <a href="/info/{{i.id}}" id="imgform">                    
                     
-                        <input type="text" style="opacity: 0;width: 0;height: 0;">
-                        <button type="submit" style="border: none;">
-                            <div class="ima">
-                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="120px" 
-                                height = "120px" alt="">
-                            </div>
-                        </button>
+                        
+                    <div class="ima">
+                        <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="120px" 
+                        height = "120px" alt="">
+                        <div class="poircentag">
+                            {% if i.porce != 0 %}
+                            <p style="font-size:0.8rem;color: orangered;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="priximgform">
+                        <p style="font-size: 0.6rem;color: rgb(121, 121, 121);padding-top: 5px;color: black;">{{i.nom}}</p>
+                        <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);
+                        ">{{i.porceprix}} fcfa</h1>
+                        {% if i.porceprix != 0 %}
+                        <s style="font-size: 0.7rem;color: gray;padding-top: 5px;">{{i.prix}} fcfa</s>
+                        {% endif %}
+                        <div id="imgformidd">
+                            <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                            ">COMMANDER</h1>
+                        </div>
+                        
+                    </div>
                    
                 </a>
                 
+                
                 {%endfor%}
+                
                
             </div>
             

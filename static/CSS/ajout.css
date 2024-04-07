@@ -248,7 +248,7 @@ form{
     width: 100%;
     max-width: 500px;
     min-height: 600px;
-    background-color: rgb(36, 36, 116);
+    background-color: white;
     height: 750px;
     margin: 10px auto;
 }
@@ -326,6 +326,7 @@ form{
     border-radius: 10px;
     border: none;
     outline: none;
+    background-color: rgba(36, 36, 116, 0.211);
 }
 
 
@@ -337,17 +338,18 @@ select {
 
 .boutin {
     height: 100px;
-    width: 100%;
+    width: 90%;
     /* background-color: red; */
     display: flex;
     justify-content: center;
     align-items: end;
+    margin: 0 auto ;
 }
 
 button {
-    padding: 20px 50px;
+    padding: 20px 40px;
     border: none;
-    background-color: white;
+    background-color: rgb(36, 36, 116);
     border-radius: 10px;
     box-shadow: 1px 1px 6px 3px rgba(5, 19, 179, 0.241);
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montre</title>
+    <title>Boutique</title>
     <link rel="stylesheet" href="/static/CSS/vent.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
             </a>
             
             
@@ -50,33 +50,35 @@
     
     </div>
     <div class="monfixder">
-        <div class="croix">
+        <div  class="blueusw">
+            <div class="croix">
+                
+            </div>
+            <div class="retse">
+               
+                
+                <a href="/vente" style="text-decoration: none;">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                </a>
+                <!-- <a href="/hommes">
+                    <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
+                </a> -->
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes</span></p>
+                </a>
+                <a href="/sac">
+                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
+                </a>
+                
+                <a href="/montre">
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
+                </a>
+                
+                
+               
+               
             
-        </div>
-        <div class="retse">
-           
-            
-            <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
-            </a>
-            <!-- <a href="/hommes">
-                <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a>  -->
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes </span></p>
-            </a>
-            <a href="/sac">
-                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
-            </a>
-            
-            <a href="/montre">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
-            </a>
-            
-            
-           
-           
-        
+            </div>
         </div>
     </div>
     <div class="monfix">
@@ -97,7 +99,7 @@
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
-            </a> -->
+            </a>-->
             <a href="/sac" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/chofeme.png')}}" width="20px" alt=""> <span>Chaussures femmes </span></p>
             </a> 
@@ -105,7 +107,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures hommes</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/phoone.png')}}" width="20px" alt=""> <span>Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
             </a>
             
             
@@ -172,8 +174,8 @@
 
             </div>
             <div class="restrer">
-                <h1 >MONTRES</h1>
-                <p >Le styles vestimentaires est au top ! </p>
+                <h1 style="color: rgb(36, 36, 116);">MONTRES</h1>
+                <p >Vivez la qualité des produits ! </p>
             </div>
             
         </div>
@@ -185,21 +187,40 @@
             <div class="mesimages">
                 
                 
-                
                 {% for i in data %}
         
                 <a href="/montres/{{i.id}}" id="imgform">                    
                     
-                        <input type="text" style="opacity: 0;width: 0;height: 0;">
-                        <button type="submit" style="border: none;">
-                            <div class="ima">
-                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="115%"  alt="">
-                            </div>
-                        </button>
+                        
+                    <div class="ima">
+                        <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="120px" 
+                        height = "120px" alt="">
+                        <div class="poircentag">
+                            {% if i.porce != 0 %}
+                            <p style="font-size:0.8rem;color: orangered;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="priximgform">
+                        <p style="font-size: 0.6rem;color: rgb(121, 121, 121);padding-top: 5px;color: black;">{{i.nom}}</p>
+                        <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);
+                        ">{{i.porceprix}} fcfa</h1>
+                        {% if i.porceprix != 0 %}
+                        <s style="font-size: 0.7rem;color: gray;padding-top: 5px;">{{i.prix}} fcfa</s>
+                        {% endif %}
+                        <div id="imgformidd">
+                            <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                            ">COMMANDER</h1>
+                        </div>
+                        
+                    </div>
                    
                 </a>
                 
+                
                 {%endfor%}
+                
                
             </div>
             
@@ -214,7 +235,7 @@
         <div class="reatsge2">
             <div class="rectangle">
                 
-                <a href="/montre" class="fec1">
+                <a href="/vente" class="fec1">
                     <img src="{{url_for('static', filename='IMAGE/sup.png')}}" width="20px" alt="">
 
                 </a>
@@ -248,3 +269,112 @@
     <script src="/static/CSS/acceuil.js"></script>
 </body>
 </html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/CSS/vente.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body> -->
+    <!-- <header>
+        <div class="nav">
+            
+        </div>
+        <div class="pes">
+            <img src="/static/IMAGE/logo.jpg" width="50px" alt="">
+            <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+        </div>
+        <div class="nav">
+            
+        </div>
+
+
+    </header> -->
+    <!-- <div class="acceuil">
+        <div class="testet">
+            <h1 style="color: white;">FAITES VOUS PLAISIR</h1>
+            <p>Chez</p>
+            
+        </div>
+       
+    </div>
+    <div class="pes1">
+        <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+        <h1 id="logo">HING<span id="logo1">TON SHOP</span></h1>
+    </div> -->
+    <!-- <label for="selectOption">Choisissez la categorie :</label>
+            
+    <select id="selectOption" name="selectOptione">
+        <option value="Sac">Sac</option>
+        <option value="Vetement">Vetement</option>
+        <option value="Fourniture">Livre</option>
+    </select> -->
+    <!-- <div class="selcte">
+        
+            
+        <select id="selectOption" name="selectOptione">
+            <option value="Sac">Sac</option>
+            <option value="Vetement">Vetement</option>
+            <option value="Fourniture">Livre</option>
+        </select>
+    </div> -->
+    
+    <!-- <div class="image">
+        {% for i in data %}
+        
+        <a href="/montres/{{i.id}}" class="image1">
+            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%" alt="">
+            
+           
+        </a>
+        
+        {%endfor%}
+        
+        
+       
+        
+        
+    </div>
+    <footer>
+        <div class="log">
+            <div class="al">
+                <img src="{{ url_for('static', filename='IMAGE/logo.jpg')}}" width="50px" alt="">
+                <h1 id="logo" >HING<span id="logo1">TON SHOP </span></h1>
+            </div>
+            
+            <p style="color: white;">Vous remercie !</p>
+        </div>
+        
+        <div class="log1">
+            
+            <div class="log11">
+                <img src="/static/IMAGE/whats.png" width="20px" style="filter: invert();" alt="">
+            </div>
+            <div class="log12">
+                <img src="/static/IMAGE/face.png" width="20px" style="filter: invert();" alt="">
+            </div>
+            <div class="log13">
+                <img src="/static/IMAGE/instag.png" width="20px" style="filter: invert();" alt="">
+            </div>
+        </div>
+    </footer>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
