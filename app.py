@@ -1035,12 +1035,14 @@ def add_objetwere():
 
 @app.route('/mofiedd/<int:id>')
 def mofiedd(id):
+    
     return render_template("modifier.html",id=id)
 @app.route('/mofie/<int:id>',methods = ["POST"])
 def mofie(id):
 
     reu = Ajouter.query.get(id)
     reu.xs = request.form.get("xs",'')
+    reu.porce = request.form.get("porce",'')
     reu.s = request.form.get("s",'')
     reu.m = request.form.get("m",'')
     reu.l = request.form.get("l",'')
