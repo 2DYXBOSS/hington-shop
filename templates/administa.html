@@ -18,6 +18,7 @@
     ">HING<span id="deuxlogo">TON SHOP</span></h1>
     </header>
     <h1 style="font-family: Arial, Helvetica, sans-serif;text-align:center;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETAIRE</h1>
+    
     {% for i in VetementHomme %}
     <div class="image">
         <div class="ima1">
@@ -32,16 +33,28 @@
         </div>
         <div class="bouton">
             <div class="supeir1">
-                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
             </div>
             <div class="supeir2">
-                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
             </div>
         </div>
     </div>
     {%endfor%}
+ 
+    <div id="cahsied2" >
+        
+        <div class="imhdolp" onclick="activatione('cahsied2','blogale2','mondewq2')" >
+            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Vetements femmes</p>
+        </div>
+        <div class="imhdol" onclick="effacfe('cahsied2','blogale2','mondewq2')">
+            <img id="mondewq2" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
+        </div>
+        
+    </div>
+    <div id="blogale2">
     {% for i in VetementFemme %}
-    <div class="image">
+    <div id="cahsiedid">
         <div class="ima1">
             <a href="/info/{{i.id}}" class="image1">
                 <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
@@ -79,41 +92,66 @@
         </div>
         <div class="bouton">
             <div class="supeir1">
-                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
             </div>
             <div class="supeir2">
-                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
             </div>
         </div>
     </div>
     {%endfor%}
-    {% for i in Montre %}
-    <div class="image">
-        <div class="ima1">
-            <a href="/info/{{i.id}}" class="image1">
-                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                
+    </div>
+    <div id="cahsied1" >
+        
+        <div class="imhdolp" onclick="activatione('cahsied1','blogale1','mondewq1')" >
+            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Montres</p>
+        </div>
+        <div class="imhdol" onclick="effacfe('cahsied1','blogale1','mondewq1')">
+            <img id="mondewq1" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
+        </div>
+        
+    </div>
+    <div id="blogale1">
+        {% for i in Montre %}
+
+        <div id="cahsiedid">
+            <div class="ima1">
+                <a href="/info/{{i.id}}" class="image1">
+                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                    
+                   
+                </a>
+            </div>
+            <div class="desc">
                
-            </a>
-        </div>
-        <div class="desc">
-            
-        </div>
-        <div class="bouton">
-            <div class="supeir1">
-                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+                
             </div>
-            <div class="supeir2">
-                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+            <div class="bouton">
+                <div class="supeir1">
+                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
+                </div>
+                <div class="supeir2">
+                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
+                </div>
             </div>
-            
         </div>
+        {%endfor%}
     </div>
-    {%endfor%}
-    {% for i in sac %}
+    <div id="cahsied" >
+        
+        <div class="imhdolp" onclick="activatione('cahsied','blogale','mondewq')" >
+            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Chaussures</p>
+        </div>
+        <div class="imhdol" onclick="effacfe('cahsied','blogale','mondewq')">
+            <img id="mondewq" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
+        </div>
+        
+    </div>
+    <div id="blogale">
+        {% for i in sac %}
     
 
-        <div class="image">
+        <div id="cahsiedid">
             <div class="ima1">
                 <a href="/info/{{i.id}}" class="image1">
                     <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
@@ -154,14 +192,17 @@
             </div>
             <div class="bouton">
                 <div class="supeir1">
-                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" alt=""></a>
+                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
                 </div>
                 <div class="supeir2">
-                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" alt=""></a>
+                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
                 </div>
             </div>
         </div>
     {%endfor%}
+       
+    </div>
+    
         
     <div class="dgud">
         <a href="/vente" class="voiir">VOIR LES PRODUITS</a>
@@ -169,6 +210,6 @@
     </div>
     
     
-    <script src="/static/CSS/ajout.js"></script>
+    <script src="/static/CSS/admins.js"></script>
 </body>
 </html>
