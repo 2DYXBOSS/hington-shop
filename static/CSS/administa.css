@@ -20,30 +20,44 @@ body {
 
 #blogale2 {
     display: none;
+    
 }
 #blogale2.active {
+  
     width: 100%;
     height: auto;
     /* background-color: yellow; */
     display: block;
+    animation: blogale2 1s ease;
+}
+@keyframes blogale2 {
+    0% {
+        transform: translateX(-200px);
+    }
 }
 #blogale1 {
     display: none;
+    
 }
 #blogale1.active {
+   
     width: 100%;
     height: auto;
     /* background-color: yellow; */
     display: block;
+    animation: blogale2 1s ease;
 }
 #blogale {
     display: none;
+   
 }
 #blogale.active {
+
     width: 100%;
     height: auto;
     /* background-color: yellow; */
     display: block;
+    animation: blogale2 1s ease;
 }
 #cahsiedid2 {
     width: 100%;
