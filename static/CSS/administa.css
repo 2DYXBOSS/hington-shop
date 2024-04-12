@@ -30,11 +30,7 @@ body {
     display: block;
     animation: blogale2 1s ease;
 }
-@keyframes blogale2 {
-    0% {
-        transform: translateX(-200px);
-    }
-}
+
 #blogale1 {
     display: none;
     

@@ -332,9 +332,19 @@
                 <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
         color: rgb(36, 36, 116);">Q23TY</h1> -->
             </div>
-
+            {% if i.porce != "0" %}
+            <div class="gdhd">
+               
+                <span>
+                    <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                </span>
+                
+                
+            </div>
+            {% endif %}
         </a>
         {% endfor %}
+       
        
     </div>
     <div class="vtefemmes">
@@ -354,7 +364,20 @@
                 <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
         color: rgb(36, 36, 116);">Q23TY</h1> -->
             </div>
+            
+            {% if i.porce != "0" %}
+            <div class="gdhd">
+               
 
+                <span>
+                    <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                </span>
+                
+
+                
+            </div>
+            {% endif %}
+          
         </a>
         {% endfor %}
        

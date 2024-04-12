@@ -9,6 +9,17 @@ body {
     overflow-x: hidden;
 
 }
+.gdhd {
+    right: 0;
+    top: 0;
+    position: absolute;
+    
+    height: 25px;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
 .mesafheid {
     height: auto;
     width: 100%;
@@ -1011,7 +1022,7 @@ body {
         width: 300px;
         height:400px ;
         background-color: white;
-      
+        position: relative;
         /* box-shadow: 1px 1px 3px 5px rgba(182, 182, 182, 0.094); */
     }
     .pheorf {
@@ -1227,7 +1238,7 @@ body {
         width: 300px;
         height:400px ;
         background-color: white;
-      
+        position: relative;
         /* box-shadow: 1px 1px 3px 5px rgba(182, 182, 182, 0.094); */
     }
     .pheorf {

@@ -11,6 +11,120 @@ body {
     
 }
 
+.csgfr {
+    width: 100px;
+    height: 90px;
+    /* background-color: rebeccapurple; */
+    background: url(/static/IMAGE/robea.png) 50% no-repeat;
+    background-size: 90px;
+    animation: csgfr 5s infinite;
+}
+
+@keyframes csgfr {
+    10%{
+        background: url(/static/IMAGE/robea.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    40%{
+        background: url(/static/IMAGE/robee.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    80%{
+        background: url(/static/IMAGE/robeee.png) 50% no-repeat;
+        background-size: 90px;
+    }
+}
+.csgfr2 {
+    width: 100px;
+    height: 90px;
+    background: url(/static/IMAGE/hansb2.png) 50% no-repeat;
+    
+    background-size: 90px;
+    animation: csgfr2 5s infinite;
+}
+
+@keyframes csgfr2 {
+    
+    10%{
+        background: url(/static/IMAGE/hansb3.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    40%{
+        background: url(/static/IMAGE/hansb2.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    80%{
+        background: url(/static/IMAGE/hansb1.png) 50% no-repeat;
+        background-size: 90px;
+    }
+}
+.csgfr3 {
+    width: 100px;
+    height: 90px;
+    
+    background: url(/static/IMAGE/chas2.png) 50% no-repeat;
+    background-size: 90px;
+    animation: csgfr3 5s infinite;
+}
+
+@keyframes csgfr3 {
+    10%{
+        background: url(/static/IMAGE/chas1.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    40%{
+        background: url(/static/IMAGE/chas2.png) 50% no-repeat;
+        background-size: 90px;
+    }
+    80%{
+        background: url(/static/IMAGE/chas3.png) 50% no-repeat;
+        background-size: 90px;
+    }
+}
+
+.changedmdk {
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 3px 2px gainsboro;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prudud1 {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+   
+}
+.prudud3 {
+    width: 10%;
+    height: 100%;
+    /* background-color: rgb(94, 255, 0); */
+}
+.prudud2 {
+    width: 50%;
+    height: 100%;
+    /* background-color: black; */
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+#redsc {
+    font-size: 2rem;
+    color: black;
+    font-size: clamp(3px, 2.5vw, 20px);
+}
+#redsc2 {
+    font-size: 0.5rem;
+    color: black;
+}
+
 .ente {
     width: 100%;
     position: fixed;
@@ -165,7 +279,7 @@ body {
 .imageinforer {
     width: 20%;
     height: 1000px;
-    background-color: white;
+    background-color: rgb(36, 36, 116);
     position: fixed;
     left: 0;
     top: 200px;
@@ -182,7 +296,7 @@ body {
     padding-left: 10px;
     padding-bottom: 30px;
     /* background-color: red; */
-    color: black;
+    color: white;
     font-size: clamp(4px, 1vw, 24px);
     
 
@@ -190,7 +304,7 @@ body {
 .imageinforer .retse h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
-    color: orangered;
+    color: black;
     font-size: clamp(4px, 1.2vw, 24px);
 
 }
@@ -205,8 +319,8 @@ body {
     /* background-color: orangered; */
     padding-left: 45px;
     padding-top: 45px;
-    color: orangered;
-    text-shadow: 2px 2px 3px rgb(205, 205, 205);
+    color: black;
+    
 }
 .mesimages {
     width: 80%;
@@ -391,6 +505,9 @@ body {
     padding-left: 20px;
     padding-top: 30px;
     color: orangered;
+}
+.menu h1{
+    
     text-shadow: 2px 2px 3px rgb(205, 205, 205);
 }
 .croix {
@@ -686,7 +803,25 @@ body {
     align-items: center;
     justify-content: center;
 }
+.punds {
+    width: 100%;
+    height: 200px;
+    /* background-color: yellow; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 @media (min-width: 800px) {
+    .punds {
+        width: 100%;
+        height: 200px;
+        /* background-color: yellow; */
+        
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
     .formulp {
         height: 80%;
         width: 40%;

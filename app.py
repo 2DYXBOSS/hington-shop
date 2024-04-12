@@ -855,9 +855,12 @@ def ssm(id):
     
     tou = Ajouter.query.get(id)
     import urllib.parse
-
+    
     if tou.categorie == 'VetementFemme' :
         quantite = quantite
+        if int(quantite) < 1 :
+            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+            return redirect(f'/info/{id}#formuhfh1')
       
         ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
         # ms_encoded = urllib.parse.quote(ms)
@@ -866,13 +869,19 @@ def ssm(id):
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
 
     if tou.categorie == 'chaussure' :
-        quantite = quantite 
+        quantite = quantite
+        if int(quantite) < 1 :
+            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+            return redirect(f'/sacs/{id}#formuhfh1')
         ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
 
         return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
     
     if tou.categorie == 'Montre' :
-        quantite = request.form.get("quantitdepo")
+        quantite = quantite
+        if int(quantite) < 1 :
+            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+            return redirect(f'/montres/{id}#formuhfh1')
         ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} ,Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
         
 
@@ -1043,6 +1052,8 @@ def mofie(id):
     reu = Ajouter.query.get(id)
     reu.xs = request.form.get("xs",'')
     reu.porce = request.form.get("porce",'')
+    reu.prix = reu.prix
+    reu.porceprix = str(int(int(reu.prix)-(int(reu.prix) * (int(reu.porce)/100))))
     reu.s = request.form.get("s",'')
     reu.m = request.form.get("m",'')
     reu.l = request.form.get("l",'')
@@ -1072,4 +1083,4 @@ def mofie(id):
 
 
 if __name__ == '__main__' :
-    app.run(debug=True,port=5004)
+    app.run(debug=True,port=5005)

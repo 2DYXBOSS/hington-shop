@@ -38,7 +38,7 @@
                 </div>
             </div>
             
-            <dl style="visibility: hidden;">
+            <dl style="visibility: hidden;" >
                 <p>
                     <input  type="file" name="file" class="form-control" autocomplete="off" id="imagefile1" required>
                 </p>
@@ -70,14 +70,45 @@
     </div>
 
 
-    <div class="fauxtele">
-        <label for="imagefile1" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image Principale</label>
-        <label for="imagefile2" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 2</label>
-        <label for="imagefile3" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 3</label>
-        <label for="imagefile4" id="imagee1lo"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">Image 4</label>
+    <div class="fauxtele" >
+        <!-- <div class="poir">
+            
+        </div>
+        <div class="poir">
+
+        </div> -->
+        <label for="imagefile1" >
+            <div class="imagee1lo">
+                <img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px" >
+                Image Principale
+            </div>
+            
+        </label>
+
+        <label for="imagefile2" >
+            <div class="imagee1lo">
+                <img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">
+                Image 2
+            </div>
+            
+        </label>
+        <label for="imagefile3" >
+            <div class="imagee1lo">
+                <img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">
+                Image 3
+            </div>
+            
+        </label>
+        <label for="imagefile4" >
+            <div class="imagee1lo">
+                <img style="filter: invert();" src="{{url_for('static', filename='IMAGE/downimage.png')}}" alt="" width="20px">
+                Image 4
+            </div>
+            
+        </label>
 
     </div>
-    <div class="submite">
+    <div class="submite" >
         <label for="envoyer" id="submite1"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/telfg.png')}}" alt="" width="20px"> <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;">TELECHARGER MAINTENANT</h1></label>
     </div>
     <div class="noteinform">
@@ -85,7 +116,7 @@
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;">NB :</h1>
         </div>
         <div class="rxetpoi">
-            <p>- Ajoute l'image principale , ainsi que les autres images , puis clique sur le bouton <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' TELECHARGER MAINTENANT '</span> pour enregistrer toutes les images selectionneés . <br> - Tu dois obligatoirement ajouter toutes les images secondaires soit <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' Image Principale & Image 1,2,3,4 ' </span> .</p>
+            <p >- Ajoute l'image principale , ainsi que les autres images , puis clique sur le bouton <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' TELECHARGER MAINTENANT '</span> pour enregistrer toutes les images selectionneés . <br> - Tu dois obligatoirement ajouter toutes les images secondaires soit <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">' Image Principale & Image 1,2,3,4 ' </span> .</p>
         </div>
     </div>
 

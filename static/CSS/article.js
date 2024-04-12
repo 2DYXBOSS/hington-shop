@@ -363,7 +363,24 @@ function plusp(ecranid) {
 }
 
 
-
+function verif(ide,quantep) {
+    et = "#" + quantep + ""
+    let ecraid  = document.querySelector(et)
+    let a = ecraid.innerHTML
+    if ( parseInt(a) > 0){
+        let lien ="'" + `https://hington-shop.onrender.com/ssm/${ide}` + "'"
+        console.log(lien);
+        console.log(window.location);
+        // window.location.remove = lien
+        return window.location = '/ssm/1'
+    }
+    if (parseInt(a) < 1){
+        console.log("000");
+        console.log(window.location);
+        return 0
+    }
+        
+}
 
 
 
