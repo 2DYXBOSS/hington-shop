@@ -866,7 +866,7 @@ def ssm(id):
         # ms_encoded = urllib.parse.quote(ms)
         # print(ms)
         # print(ms_encoded)
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
+        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
 
     if tou.categorie == 'chaussure' :
         quantite = quantite
@@ -875,7 +875,7 @@ def ssm(id):
             return redirect(f'/sacs/{id}#formuhfh1')
         ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
 
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
+        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
     
     if tou.categorie == 'Montre' :
         quantite = quantite
@@ -885,7 +885,7 @@ def ssm(id):
         ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} ,Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
         
 
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250778587708&text={ms}&type=phone_number&app_absent=0")
+        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
 
 
 
