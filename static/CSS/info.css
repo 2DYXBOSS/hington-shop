@@ -605,6 +605,13 @@ a{
 .monfixder .retse img{
     filter: invert();
 }
+.monfixder a{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+ 
+    
+}
 .monfixder .retse p{
     padding-bottom: 20px;
     /* text-shadow: 2px 2px 3px rgb(205, 205, 205); */
@@ -615,6 +622,7 @@ a{
     justify-content: start;
     gap: 30px;
     font-size: clamp(12px, 1.5vw, 14px);
+    /* background-color: RED; */
 }
 .monfixder .retse p:hover{
     color: orangered;
@@ -624,7 +632,7 @@ a{
 .monfixder .retse {
     padding-top: 20px;
     width: 100%;
-    height: 200px;
+    height: 160px;
     background-color: rgb(36, 36, 116);
     /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
     font-weight: bolder;
