@@ -560,7 +560,7 @@ def homme(id):
  
 
 
-
+    
     
     user = Ajouter.query.filter_by(id=id).first()
     if user :
@@ -1042,6 +1042,34 @@ def add_objetwere():
 #     return redirect(url_for('static', filename = 'uploads/' + filename), code=301)
 # FIN AJOUTER IMAGES DES ARTICLES{}
 
+@app.route('/monpanier/<int:id>')
+def panierus(id):
+    catefemme = []
+    montre = []
+    tout = Ajouter.query.all()
+    commenta = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+
+
+    print(commenta[0].mail)
+    
+    return render_template("panierus.html",commenta=commenta,catefemme=catefemme,montre=montre,id=id)
+
+  
 @app.route('/mofiedd/<int:id>')
 def mofiedd(id):
     

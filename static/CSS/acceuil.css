@@ -5,6 +5,186 @@
     font-family: 'Poppins', sans-serif;
     
 }
+a {
+    text-decoration: none;
+}
+
+.jdudu {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    /* background-color: yellow; */
+}
+.marcher {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(36, 36, 116);
+    border-radius: 100%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999;
+    border: 1px solid white;
+}
+.te140 {
+    width: 100%;
+    height: 100px;
+    /* background-color: aqua; */
+    background-color: rgb(36, 36, 116);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+   
+}
+.listedecomm{
+    overflow-x: scroll;
+    width: 100%;
+    height: 1000px;
+    padding-bottom: 500px;
+    padding-right: 10px;
+    max-width: 500px;
+    background-color: rgb(247, 247, 247);
+    position: fixed;
+    top: 0;
+    z-index: 99999999999;
+}
+.listedecomm1 {
+    height: 10px;
+    width: 95%;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.387);
+}
+.listedecomm2 {
+    width: 95%;
+    height: 150px;
+    /* background-color: white; */
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    /* border: 1px solid rgba(128, 128, 128, 0.387); */
+}
+.nomcategroe {
+    width: 100%;
+    height: 100px;
+    display: flex;
+   
+    /* background-color: red; */
+}
+.imagesmondiee1 {
+    height: 100px;
+    width: 100px;
+    /* background-color: white; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10px;
+
+}
+.imagesmondiee2 {
+    height: 100px;
+    width: 80%;
+    /* background-color: white; */
+    
+    padding-left: 10px;
+
+}
+.nomcategroe1 {
+    width: 100%;
+    height: 50px;
+    display: flex;
+   
+    /* background-color: red; */
+}
+
+.suppre {
+    height: 100%;
+    width: 40%;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding-left: 10px;
+}
+.commad {
+    height: 100%;
+    width: 60%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    justify-content: end;
+}
+.mmoiie {
+    height: 40px;
+    width: 40px;
+    background-color: orangered;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mmmoihfrd {
+    height: 40px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+}
+.mmmoihfrd input{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    padding-left: 15px;
+    background-color: transparent;
+    
+}
+.commandermain {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+}
+.commandermain button{
+    padding: 15px 25px;
+    width:95%;
+    /* background-color:  red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:  orangered;
+    color: white;
+    box-shadow: 1px 1px 5px -1px gray;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.rondquant {
+    width: 20px;
+    height: 20px;
+    background-color: #ff4500;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
     overflow-x: hidden;
 
@@ -23,13 +203,16 @@ body {
 .mesafheid {
     height: auto;
     width: 100%;
-    max-width: 400px;
+   
     
   
     margin-bottom: 40px;
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
+
+    align-items: center;
+    justify-content: center;
   
 }
 .nbgds {
@@ -37,6 +220,7 @@ body {
     height: 100%;
     background-color: rgb(36, 36, 116);
     padding-left: 5px;
+    max-width: 100px;
 }
 .gsidke {
     width: 80%;
@@ -47,6 +231,7 @@ body {
     padding-right: 10px;
     padding-top: 15px;
     padding-bottom: 20px;
+    max-width: 350px;
 }
 .ente {
     width: 100%;
@@ -58,6 +243,10 @@ body {
     height: 120px;
     background-color: rgb(36, 36, 116);
     padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 .mennn {
     height: 50px;
@@ -65,8 +254,16 @@ body {
     /* background-color: brown; */
     display: flex;
     align-items: center;
-    justify-content: start;
-    padding-left: 50px;
+    justify-content: center;
+    /* padding-left: 50px; */
+
+
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%; */
 }
 
 .mennn nav ul a{
@@ -91,6 +288,15 @@ body {
 .mennn nav ul {
     gap: 20px;
     display: flex;
+    
+}
+.mennn nav {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    height: 40px;
+    width: 75%;
+    /* background-color: brown; */
     
 }
 .tete {
@@ -453,8 +659,11 @@ body {
     width: 100%;
     height: auto;
     /* background-color: yellow; */
-    display: block;
+    /* display: block; */
     padding-left: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 .blueusw {
@@ -1000,6 +1209,9 @@ body {
     .vtefemmes {
         height: 50px;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         /* background-color: blue; */
     }
     .afficje {
@@ -1151,6 +1363,15 @@ body {
         color: orangered;
         
     }
+    .mennn nav {
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        height: 40px;
+        width: 85%;
+        /* background-color: brown; */
+        
+    }
     .redirectse {
         height: 100px;
         width: 100%;
@@ -1216,6 +1437,9 @@ body {
     .vtefemmes {
         height: 50px;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         /* background-color: blue; */
     }
     .afficje {
@@ -1428,7 +1652,7 @@ body {
    
     height: 500px;
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     background: url(/static/IMAGE/pho2.jpg) 50% no-repeat;
     background-size: cover;
     /* background-color: red; */
@@ -1489,3 +1713,102 @@ body {
     gap: 10px;
   
 }
+
+
+
+
+
+
+
+
+
+
+/* debur */
+.listedeselements {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .listedeselements1 {
+    width: 100%;
+    height: 400px;
+    max-width: 1200px;
+    background-color: yellow;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    
+
+} */
+
+.uneldd {
+    height: 300px;
+    width: 210px;
+    background-color: white;
+    padding-top: 10px;
+    /* box-shadow: 1px 1px 3px 0.3px rgba(171, 171, 171, 0.349); */
+}
+
+.grsgjd {
+    width: 100%;
+    height: 300px;
+    max-width: 1200px;
+    /* background-color: yellow; */
+   
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+    
+}
+.flevdh1 {
+    height: 100%;
+    /* background-color: white; */
+    width: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.imahhd {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    position: relative;
+}
+.reghd {
+    position: absolute;
+    top: 5px ;
+    right: 5px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 220, 220);
+    border-radius: 5px;
+}
+.listedeselements1 {
+    width: 100%;
+    height: 300px;
+    max-width: 1200px;
+    /* background-color: orangered; */
+    
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: 10px;
+    /* padding-left: 20px; */
+    
+}
+.listedeselements1::-webkit-scrollbar {
+    display: none;
+}
+
+/* debur */

@@ -219,118 +219,38 @@
     font-family: 'Poppins', sans-serif;
     
 }
-a{
+a {
     text-decoration: none;
+}
+
+.jdudu {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    /* background-color: yellow; */
 }
 
 /* body {
     overscroll-behavior: sc;
 } */
-.bac {
+/* .bac {
     width: 30px;
     height: 30px;
     position: fixed;
     
     top: 300px;
     left: 5px;
-}
-
-.ente {
-    width: 100%;
-    position: fixed;
-    z-index: 9999;
-}
-.entete{
-    width: 100%;
-    height: 50px;
-    background-color: rgb(36, 36, 116);
-   
-}
-.mennn {
-    height: 50px;
-    width: 100%;
-    /* background-color: brown; */
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-left: 50px;
-}
-
-.mennn nav ul a{
-    list-style-type: none;
-    text-decoration: none;
-    color: white;
-    /* background-color: red; */
-    padding-bottom: 21px;
-    font-size: clamp(12px, 1.5vw, 14px);
-    
-}
-.mennn nav ul a:hover{
-    list-style-type: none;
-    text-decoration: none;
-    color: orangered;
-    
-}
-.mennn nav ul li{
-    list-style-type: none;
-    text-decoration: none;
-    
-}
-.mennn nav ul {
-    gap: 20px;
-    display: flex;
-    
-}
-.tete {
-    width: 100%;
-    height: 100px;
-    background-color: transparent;
-    backdrop-filter: blur(230%);
-    background: url(/static/IMAGE/pho2.jpg) 50% no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171);
-
-}
-.te1 {
-    width: 90%;
-    height: 100%;
-    /* background-color: aqua; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 40px;
-}
+} */
 
 
-.te2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 100%;
-    background-color: orangered;
-}
-#deuxlogo {
+/* #deuxlogo {
     padding-left: 5px;
     padding-right: 5px;
     background-color: orangered;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
-#formulaire {
-    /* background-color: rgb(255, 255, 255); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 100%;
-}
 /* #input placeholder{
     color: aqua;
 } */
@@ -543,154 +463,7 @@ a{
    
 }
 
-.monfix .retse p{
-    padding-bottom: 20px;
-    text-shadow: 2px 2px 3px rgb(205, 205, 205);
-    padding-left: 20px;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
-    font-size: clamp(12px, 1.5vw, 14px);
-}
-.monfix .retse p:hover{
-    color: orangered;
-    /* padding-bottom: 10px; */
-    text-shadow: 2px 2px 3px rgb(205, 205, 205);
-}
-.monfix .retse {
-    width: 100%;
-    height: 400px;
-    background-color: white;
-    box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171);
-    font-weight: bolder;
-    z-index: 9999999;
-    padding-right: 10px;
-}
-.menu {
-    width: 100%;
-    height: 100px;
 
-    /* background-color: orangered; */
-    padding-left: 20px;
-    padding-top: 30px;
-    color: orangered;
-    text-shadow: 2px 2px 3px rgb(205, 205, 205);
-}
-.croix {
-    width: 100%;
-    height: 100px;
-    z-index: 9999999;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.croi {
-    width: 60px;
-    height: 100px;
-    background-color: orangered;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.monfixder .croix {
-    width: 100%;
-    height: 50px;
-    z-index: 9999999;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.monfixder .retse img{
-    filter: invert();
-}
-.monfixder a{
-    display: flex;
-    align-items: center;
-    justify-content: start;
- 
-    
-}
-.monfixder .retse p{
-    padding-bottom: 20px;
-    /* text-shadow: 2px 2px 3px rgb(205, 205, 205); */
-    padding-left: 20px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 30px;
-    font-size: clamp(12px, 1.5vw, 14px);
-    /* background-color: RED; */
-}
-.monfixder .retse p:hover{
-    color: orangered;
-   
-    /* text-shadow: 2px 2px 3px rgb(205, 205, 205); */
-}
-.monfixder .retse {
-    padding-top: 20px;
-    width: 100%;
-    height: 160px;
-    background-color: rgb(36, 36, 116);
-    /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
-    font-weight: bolder;
-    z-index: 9999999;
-}
-.monfixder {
-    
-    display: none;
-}
-.monfixder.active  {
-    top: 100px;
-    z-index: 9999999;
-    position: fixed;
-    width: 100%;
-    height: auto;
-    /* background-color: yellow; */
-    display: block;
-    padding-left: 150px;
-
-}
-.blueusw {
-    width: 80%;
-    max-width: 300px;
-    min-width: 250px;
-    height: 100px;
-    /* background-color: rgb(103, 103, 107); */
-    
-    
-}
-.monfix {
-    width: 100%;
-    height: 100px;
-    /* background-color: aqua; */
-    position: fixed;
-    top: 0;
-    z-index: 9999999;
-    display: none;
-}
-.monfix.active {
-    width: 60%;
-    max-width: 350px;
-    height: 500px;
-    /* background-color: aqua; */
-    position: fixed;
-    top: 0;
-    z-index: 999999999;
-    display: block;
-    animation: monfix 0.3s ease-in;
-    right: 0;
-    
-
-}
-
-@keyframes monfix {
-    0% {
-        transform: translateX(500px);
-    }
-}
 
 
 
@@ -1190,21 +963,8 @@ a{
         gap: 5px;
     }
 }
-@media (min-width:1000px) {
-    /* .resteDeImage {
-        
-        display: none;
-    } */
-    .monfix {
-        display: none;
-    }
-    .croix {
-        display: none;
-    }
-    .te2 {
-        display: none;
-    }
-}
+
+
 .redirectse {
     height: 100px;
     width: 100%;
@@ -1557,6 +1317,7 @@ a{
     border: none;
     width: 90%;
     height: 40px;
+    /* background-color: red; */
     background-color: rgb(36, 36, 116);
     display: flex;
     justify-content: center;
@@ -1565,6 +1326,10 @@ a{
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 5px;
+    z-index: 9999999999999;
+}
+.commandewe {
+    z-index: 9999999999999;
 }
 .commandewe .bouto img{
     position: absolute;
@@ -1629,6 +1394,9 @@ body {
 .vtefemmes {
     background-color: white;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
 }
 #formuhfh1 {
@@ -1674,8 +1442,8 @@ body {
     height: auto;
     background-color: white;
    
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     padding-bottom:70px;
     display: flex;
     align-items: end;
@@ -1950,4 +1718,639 @@ body {
 .mjdg::-webkit-inner-spin-button,
 .mjdg::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+    text-decoration: none;
+}
+
+.jdudu {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    /* background-color: yellow; */
+}
+
+/* debur */
+.listedeselements {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* .listedeselements1 {
+    width: 100%;
+    height: 400px;
+    max-width: 1200px;
+    background-color: yellow;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    
+
+} */
+
+.uneldd {
+    height: 300px;
+    width: 210px;
+    background-color: white;
+    padding-top: 10px;
+    /* box-shadow: 1px 1px 3px 0.3px rgba(171, 171, 171, 0.349); */
+}
+
+.grsgjd {
+    width: 100%;
+    height: 300px;
+    max-width: 1200px;
+    /* background-color: yellow; */
+   
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+    
+}
+.flevdh1 {
+    height: 100%;
+    /* background-color: white; */
+    width: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.imahhd {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    position: relative;
+}
+.reghd {
+    position: absolute;
+    top: 5px ;
+    right: 5px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 220, 220);
+    border-radius: 5px;
+}
+.listedeselements1 {
+    width: 100%;
+    height: 300px;
+    max-width: 1200px;
+    /* background-color: orangered; */
+    
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: 10px;
+    /* padding-left: 20px; */
+    
+}
+.listedeselements1::-webkit-scrollbar {
+    display: none;
+}
+
+/* debur */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .recherche {
+        display: none;
+    }
+    .recherche.active {
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 70px;
+    }
+    #hdhdj  {
+        display: block;
+    }
+    #hdhdj.active {
+        display: none;
+    }
+    #hdhdj2  {
+        display: none;
+    }
+    #hdhdj2.active {
+        display: block;
+    }
+    .menuddg {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        /* background-color: red; */
+        /* display: flex;
+        justify-content: center;
+        align-items: start; */
+        padding-right: 20px;
+        top: 100px;
+        display: none;
+        
+    }
+    
+    .menuddg.active {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        visibility: visible;
+        /* background-color: white; */
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: start;
+        padding-right: 20px;
+        top: 100px;
+        z-index: 9999999;
+       
+        
+    }
+    .menuddg2 {
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        height: 300px;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 10px;
+        /* background-color: yellow; */
+        
+    }
+    .menuddg3 {
+    
+        height: 220px;
+        width: 200px;
+        box-shadow: 1px 1px 5px 0.3px rgba(228, 228, 228, 0.245);
+        /* background-color: red; */
+        background-color: white;
+        border-radius: 5px;
+        padding-top: 10px;
+        
+    }
+    .etdjff {
+        height: 40px;
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+        color: black;
+    }
+    .etdjff:hover{
+        height: 40px;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.14);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+    }
+    .etdjff a{
+        color: black;
+    }
+    .etdjff:hover a{
+        color: #ff4500;
+        
+    }
+    .etdjff:hover img{
+        filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);
+    }
+    header {
+        height: 70px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 9999999999;
+    }
+    
+    
+    
+    
+    .tete {
+        width: 100%;
+        height: 70px;
+        background-color: white;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
+    
+    }
+    .te1 {
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 20px;
+    }
+    
+    #deuxlogo {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: orangered;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .hedaf {
+        height: 100%;
+        width: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+    }
+    .logo {
+        height: 100%;
+        width: 250px;
+        /* background-color: red; */
+    }
+    
+    .menu {
+        height: 100%;
+        width: 150px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        /* background-color: red; */
+    }
+    #hjdsd {
+        height: 100%;
+        width: 80%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+       
+    }
+    #hjdsd input{
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-right: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        padding-left: 10px;
+        outline: none;
+        
+    }
+    .imsdghde{
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1{
+        height: 40px;
+        width: 40px;
+        /* background-color: yellow; */
+        /* border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ; */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1.active{
+        display: none;
+       
+        
+    }
+    .imsdghde12{
+        display: none;
+       
+        
+    }
+    .imsdghde12.active{
+        height: 40px;
+        width: 40px;
+        /* background-color: yellow; */
+        /* border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ; */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    #hjdsd button{
+        height: 40px;
+        margin-left: 10px;
+        background-color: orangered;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        border: none;
+        box-shadow: 1px 1px 2px 0.3px rgba(171, 171, 171, 0.524);
+        
+    }
+
+}
+
+/* gdgdghd */
+
+
+
+@media (min-width: 800px) {
+    .recherche {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hdhdj  {
+        display: block;
+    }
+    #hdhdj.active {
+        display: none;
+    }
+    #hdhdj2  {
+        display: none;
+    }
+    #hdhdj2.active {
+        display: block;
+    }
+    .menuddg {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        /* background-color: red; */
+        /* display: flex;
+        justify-content: center;
+        align-items: start; */
+        padding-right: 20px;
+        top: 100px;
+        display: none;
+        
+    }
+    
+    .menuddg.active {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        visibility: visible;
+        /* background-color: red; */
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: start;
+        padding-right: 20px;
+        top: 100px;
+       
+        
+    }
+    .menuddg2 {
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        height: 300px;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 10px;
+        /* background-color: yellow; */
+        
+    }
+    .menuddg3 {
+    
+        height: 220px;
+        width: 200px;
+        box-shadow: 1px 1px 5px 0.3px rgba(228, 228, 228, 0.245);
+        background-color: white;
+        border-radius: 5px;
+        padding-top: 10px;
+        
+    }
+    .etdjff {
+        height: 40px;
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+        color: black;
+    }
+    .etdjff:hover{
+        height: 40px;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.14);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+    }
+    .etdjff a{
+        color: black;
+    }
+    .etdjff:hover a{
+        color: #ff4500;
+        
+    }
+    .etdjff:hover img{
+        filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);
+    }
+    header {
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 9999999999;
+    }
+    
+    
+    
+    
+    .tete {
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
+    
+    }
+    .te1 {
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+    }
+    
+    #deuxlogo {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: orangered;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .hedaf {
+        height: 100%;
+        width: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+    }
+    .logo {
+        height: 100%;
+        width: 250px;
+        /* background-color: red; */
+    }
+    
+    .menu {
+        height: 100%;
+        width: 100px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hjdsd {
+        height: 100%;
+        width: 80%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+       
+    }
+    #hjdsd input{
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-right: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        padding-left: 10px;
+        outline: none;
+        
+    }
+    .imsdghde{
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1{
+        display: none;
+       
+        
+    }
+    .imsdghde12{
+        display: none;
+       
+        
+    }
+    #hjdsd button{
+        height: 40px;
+        margin-left: 10px;
+        background-color: orangered;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        border: none;
+        box-shadow: 1px 1px 2px 0.3px rgba(171, 171, 171, 0.524);
+        
+    }
+
+
+
+}
+/* gdgdghd */
+
+.monfixder , .monfix , .ente {
+    display: none;
 }

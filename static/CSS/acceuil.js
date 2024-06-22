@@ -24,6 +24,42 @@ enleve.addEventListener('click',()=>{
 
 
 
+// function moinsp(ecranid) {
+//     couterw =document.querySelector("#couterw").value
+//     et = "#" + ecranid + ""
+//     let ecraid  = document.querySelector(et)
+//     if (ecraid.value >= 1){
+//         ecraid.value = parseInt(ecraid.value) - 1; 
+//         somiu = document.querySelector("#somiu")
+    
+//         somiu.innerHTML = parseInt(somiu.innerHTML)  - 1// Mettre à jour le contenu de l'élément
+//         quantiteplos = document.querySelector("#quantiteplos")
+//         quantiteplos.value = somiu.innerHTML
+//         lepris = document.querySelector("#lepris")
+//         lepris.innerHTML = lepris.innerHTML - parseInt(couterw)
+//     }
+    
+//     console.log(et);
+    
+//     return 0
+// }
+
+// function plusp(ecranid) {
+//     couterw =document.querySelector("#couterw").value
+//     et = "#" + ecranid + ""
+//     let ecraid  = document.querySelector(et)
+//     ecraid.value = parseInt(ecraid.value) + 1; // Mettre à jour le contenu de l'élément
+//     console.log(et);
+//     somiu = document.querySelector("#somiu")
+    
+    
+//     somiu.innerHTML = parseInt(somiu.innerHTML)  + 1
+//     quantiteplos = document.querySelector("#quantiteplos")
+//     quantiteplos.value = somiu.innerHTML
+//     lepris = document.querySelector("#lepris")
+//     lepris.innerHTML = somiu.innerHTML * parseInt(couterw)
+//     return 0
+// }
 
 
 
