@@ -219,7 +219,20 @@
     font-family: 'Poppins', sans-serif;
     
 }
-
+body {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: aliceblue;
+}
+.testudjkcld {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    /* background-color: rebeccapurple; */
+}
 .jjhfsdf54 {
     height: 50px;
     width: 100%;
@@ -290,7 +303,8 @@ a {
     height: 100%;
     width: 100%;
     max-width: 1200px;
-    /* background-color: yellow; */
+    background-color: white;
+    margin-top: 30px;
 }
 
 /* body {
@@ -1118,7 +1132,7 @@ a {
    
     width: 100%;
     background-color: white;
-    padding-top: 150px;
+    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px;
@@ -1127,6 +1141,7 @@ a {
     align-items: start;
     justify-content: center;
     padding-bottom: 100px;
+    margin-top: 100px;
 
 }
 .vetemm {

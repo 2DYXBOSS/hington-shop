@@ -105,11 +105,14 @@
     
 </head>
 <body>
-    <a href="/vente">
+    <!-- <a href="/vente">
         <div class="bac">
             <img src="{{ url_for('static', filename='IMAGE/bacj.png')}}" style="filter: invert();" width="20px" alt="">
         </div>
-    </a>
+    </a> -->
+    
+
+    
     <a href="monpanier/1">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
@@ -146,8 +149,6 @@
             </div>
         </div>
     </div>
-
-    
     <header>
        <div class="hedaf">
             <div class="logo">
@@ -185,6 +186,7 @@
         </div>
        
     </header>
+    <div class="testudjkcld">
     <div class="hdueu">
 
     </div>
@@ -197,19 +199,20 @@
                
                 
                 <a href="/vente" style="text-decoration: none;">
-                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
                 </a>
                 <!-- <a href="/hommes">
                     <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
                 </a> -->
+               
                 <a href="/sac">
             
-                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt="" > <span>Chaussures H & F</span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt="" > <span >Chaussures H & F</span></p>
                   
                 </a>
                 
                 <a href="/montre">
-                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
                 </a>
                 
                 
@@ -234,17 +237,17 @@
             
             
             <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span>Vetements femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
             </a> -->
-           
+            
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span>Chaussures H & F</span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span >Chaussures h & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
             </a>
             
             
@@ -735,6 +738,7 @@
             </p> -->
             
         </footer>
+    </div>
         <script src="/static/CSS/article.js"></script>
     </body>
     </html>
