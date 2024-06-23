@@ -12,6 +12,7 @@
     
 </head>
 <body>
+    <div class="body">
     <a href="monpanier/1">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
@@ -172,15 +173,10 @@
     </div>
    
     <div class="lesimages">
-        <div class="tetyrr">
-            <div class="effaces">
-
+        <div class="jjhfsdf54">
+            <div class="jdudu">
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 50px;color: black;padding-left: 25px;">Articles > <a href="/sac" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;">Categorie Chaussures Hommes & Femmmes</a> </p>
             </div>
-            <div class="restrer">
-                <h1 style="color: rgb(36, 36, 116);">CHAUSSURES</h1>
-                <p >Donne la valeur aux pieds ! </p>
-            </div>
-            
         </div>
         <div class="punds">
             <div class="changedmdk">
@@ -280,15 +276,178 @@
         </div>
         
     </div>
+    </div>
+
+    <div class="resfgdg">
+        <a href="monpanier/1">
+            <div class="marcher">
+                <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
+                <div class="rondquant">
+                    <p style="font-size: 1rem;">5</p>
+                </div>
+            </div>
+        </a>  
+        <div class="menuddg">
+            <div class="menuddg2">
+                <div class="menuddg3">
+                    
     
+                    <div class="etdjff">
+                        <img src="{{url_for('static', filename='IMAGE/homedd.png')}}"  width="15px" alt="">
+                        <a href="/" style="font-size: 0.8rem;">Acceuil</a>
+                    </div>
+                    <div class="etdjff">
+                        <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="15px" alt="">
+                        <a href="/vente" style="font-size: 0.8rem;">Vetements femmes</a>
+                    </div>
+                    <div class="etdjff">
+                        <img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="15px" alt="" >
+                        <a href="/sac" style="font-size: 0.8rem;">Chaussures H & F</a>
+                    </div>
+                    <div class="etdjff">
+                        <img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="15px" alt="">
+                        <a href="/montre" style="font-size: 0.8rem;">Montres</a>
+                    </div>
+                    <div class="etdjff">
+                        <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
+                        <a href="/#contace" style="font-size: 0.8rem;">Contacts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header>
+           <div class="hedaf">
+                <div class="logo">
+                    <div class="tete1">
+                        <div class="te1">
+                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: rgb(36, 36, 116);
+                       ;font-size: 1.1rem; ">HING<span id="deuxlogo">TON SHOP</span></h1>
+                        </div>
+                        
+                        
+                       
+                       
+                    </div>
+                </div>
+                <div class="recherche">
+                    <form action="/mesrecherches" method="post" id="hjdsd">
+                        <div class="imsdghde">
+                            <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                        </div>
+                        <input type="text" name="recher" id="" placeholder="Cherchez un produit">
+                        <button type="submit">RECHERCHER</button>
+                    </form>
+                </div>
+                
+                <div class="menu12">
+                    <div class="imsdghde1">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div>
+                    <div class="imsdghde12">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj">
+                    <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj2">
+                </div>
+            </div>
+           
+        </header>
+        <div class="hdueu">
+            
+        </div>
+        
+        <div class="hhsywuysdfhe">
+
+            <div class="hwkediide">
+                <div class="indikdfhef1">
+                    
+                </div>
+                <div class="indikdfhef2">
+                    <div class="jjhfsdf54">
+                        <div class="jdudu">
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;">Articles > <a href="/sac" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;">Categorie Chaussures Hommes & Femmmes</a> </p>
+                        </div>
+                    </div>
+                    <div class="diiepiire">
+
+                   
+                    {% for i in data %}
+        
+                    <a href="/sacs/{{i.id}}" id="imgform">                    
+                        
+                            
+                        <div class="ima">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="120px" 
+                            height = "120px" alt="">
+                            <div class="poircentag">
+                                {% if i.porce != '0' %}
+                                <p style="font-size:0.8rem;color: orangered;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <div class="priximgform">
+                            <p style="font-size: 0.6rem;color: rgb(121, 121, 121);padding-top: 5px;color: black;">{{i.nom}}</p>
+                            <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);
+                            ">{{i.porceprix}} fcfa</h1>
+                            {% if i.porceprix != 0 %}
+                            <s style="font-size: 0.7rem;color: gray;padding-top: 5px;">{{i.prix}} fcfa</s>
+                            {% endif %}
+                            <div id="imgformidd">
+                                <h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                                ">COMMANDER</h1>
+                            </div>
+                            
+                        </div>
+                       
+                    </a>
+                    
+                    
+                    {%endfor%}
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="redirectse2">
+        <div class="reatsge1">
+            
+        </div>
+        <div class="reatsge2">
+            <div class="rectangle">
+                
+                <a href="/vente" class="fec1">
+                    <img src="{{url_for('static', filename='IMAGE/sup.png')}}" width="20px" alt="">
+
+                </a>
+                <div class="posietd">
+                    <h3>1</h3>
+                </div>
+                <div class="posietd2">
+                    <h3>2</h3>
+                </div>
+                <a href="/indisponible" class="fec2">
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}" width="20px" alt="">
+
+                </a>
+                <!-- <div >
+                    
+
+                </div> -->
+            </div>
+        </div>
+        
+    </div>
     <footer id="foot" >
-        <header id="head" >
+        <div id="head" >
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
             ">HING<span id="deuxlogo">TON SHOP</span></h1>
-        </header>
+        </div>
         
         
     </footer>
+
     <script src="/static/CSS/acceuil.js"></script>
 </body>
 </html>

@@ -939,6 +939,7 @@ def indisponible():
 def acceuil():
     catefemme = []
     montre = []
+    chaussure = []
     tout = Ajouter.query.all()
     commenta = []
     recupe = Comment.query.all()
@@ -952,15 +953,20 @@ def acceuil():
 
         if i.categorie == "Montre" :
             montre.append(i)
+
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
     if len(catefemme)>10 :
         catefemme = catefemme[:10]
     if len(montre) >10 :
         montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
 
 
     print(commenta[0].mail)
     
-    return render_template("acceuil.html",commenta=commenta,catefemme=catefemme,montre=montre)
+    return render_template("acceuil.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
 
 
 @app.route("/Suppesz/<int:id>")
