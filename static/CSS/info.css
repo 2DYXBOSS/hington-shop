@@ -219,10 +219,63 @@
     font-family: 'Poppins', sans-serif;
     
 }
+.marcher {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(36, 36, 116);
+    border-radius: 100%;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999999;
+    border: 1px solid white;
+}
+
+.rondquant {
+    width: 20px;
+    height: 20px;
+    background-color: #ff4500;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 a {
     text-decoration: none;
 }
+#deuxlogo23 {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: orangered;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+#foot {
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(36, 36, 116);
+    /* margin-top: 50px; */
+    padding-top: 20px;
+    margin-bottom: 100px;
+}
+#foot p{
+    text-align: center;
+    color: white;
+    padding: 1px 20px;
+    font-size: clamp(4px, 2vw, 24px);
+    
+}
 .jdudu {
     height: 100%;
     width: 100%;
@@ -929,8 +982,17 @@ a {
         align-items: start;
         justify-content: center;
     }
-    #foot p{
-        display: none;
+    
+    #foot {
+        /* height: 200px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: rgb(36, 36, 116);
+        /* margin-top: 50px; */
+       
+        
     }
     .effaces {
         height: 100%;
