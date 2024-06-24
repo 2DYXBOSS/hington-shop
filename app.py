@@ -245,6 +245,33 @@ with app.app_context() :
     except Exception as e:
         print("error de creation de la table")
 
+class Profil(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    first_name = db.Column(db.String(20), unique = False , nullable = False)
+    last_name = db.Column(db.String(20), unique = True , nullable = False)
+    age = db.Column(db.String(8),nullable = False)
+
+    # achat = db.relationship('Panier',back_populates='prendre')
+    def __init__(self,first_name,last_name,age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    # db.init_app(app)
+    # with app.app_context() :
+    #     db.create_all()
+    # def __str__(self):
+    #     # Renvoie une chaîne de caractères représentant l'objet
+    #     return f"Person(first_name: {self.first_name}, last_name: {self.last_name}, age: {self.age})"
+    def __repr__(self):
+        
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "age": self.age
+        }
+    
 class Comment(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -286,6 +313,131 @@ with app.app_context() :
         print("error de creation de la table")
 
 
+class Panieruser(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    identifiant = db.Column(db.String(15), unique = False , nullable = False)
+    image = db.Column(db.String(15), unique = False , nullable = False)
+    produite = db.Column(db.String(15), unique = False , nullable = False)
+    prixtottal = db.Column(db.String(100), unique = False , nullable = False)
+    quantiteto = db.Column(db.String(100), unique = False , nullable = False)
+    tailed = db.Column(db.String(100), unique = False , nullable = False)
+    xs = db.Column(db.String(100), unique = False , nullable = False)
+    xsn = db.Column(db.String(100), unique = False , nullable = False)
+    s = db.Column(db.String(100), unique = False , nullable = False)
+    sn = db.Column(db.String(100), unique = False , nullable = False)
+    m = db.Column(db.String(100), unique = False , nullable = False)
+    mn = db.Column(db.String(100), unique = False , nullable = False)
+    l = db.Column(db.String(100), unique = False , nullable = False)
+    ln = db.Column(db.String(100), unique = False , nullable = False)
+    xl = db.Column(db.String(100), unique = False , nullable = False)
+    xln = db.Column(db.String(100), unique = False , nullable = False)
+    xxl = db.Column(db.String(100), unique = False , nullable = False)
+    xxln = db.Column(db.String(100), unique = False , nullable = False)
+    tranwite = db.Column(db.String(100), unique = False , nullable = False)
+    tranwiten = db.Column(db.String(100), unique = False , nullable = False)
+    tranneuf = db.Column(db.String(100), unique = False , nullable = False)
+    tranneufn = db.Column(db.String(100), unique = False , nullable = False)
+    karente = db.Column(db.String(100), unique = False , nullable = False)
+    karenten = db.Column(db.String(100), unique = False , nullable = False)
+    tranwiteun = db.Column(db.String(100), unique = False , nullable = False)
+    tranwiteunn = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitedeux = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitedeuxn = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitrois = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitroisn = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitekate = db.Column(db.String(100), unique = False , nullable = False)
+    tranwitekaten = db.Column(db.String(100), unique = False , nullable = False)
+   
+   
+   
+    def __init__(self,identifiant,tailed,image,produite,prixtottal,quantiteto,xs,xsn,s,sn,m,mn,l,ln,xl,xln,xxl,xxln,tranwite,tranwiten,tranneuf,tranneufn,karente,karenten,tranwiteun,tranwiteunn,tranwitedeux,tranwitedeuxn,tranwitrois,tranwitroisn,tranwitekate,tranwitekaten):
+        self.identifiant = identifiant
+        self.image = image
+        self.produite = produite
+        self.tailed = tailed
+        self.prixtottal = prixtottal
+        self.quantiteto = quantiteto
+        self.xs = xs
+        self.xsn = xsn
+        self.s = s
+        self.sn = sn
+        self.m = m
+        self.mn = mn
+        self.l = l
+        self.ln = ln
+        self.xl = xl
+        self.xln = xln
+        self.xxl = xxl
+        self.xxln = xxln
+        self.tranwite = tranwite
+        self.tranwiten = tranwiten
+        self.tranneuf = tranneuf
+        self.tranneufn = tranneufn
+        self.karente = karente
+        self.karenten = karenten
+        self.tranwiteun = tranwiteun
+        self.tranwiteunn = tranwiteunn
+        self.tranwitedeux = tranwitedeux
+        self.tranwitedeuxn = tranwitedeuxn
+        self.tranwitrois = tranwitrois
+        self.tranwitroisn = tranwitroisn
+        self.tranwitekate = tranwitekate
+        self.tranwitekaten = tranwitekaten
+      
+        
+
+
+    # db.init_app(app)
+    # with app.app_context() :
+    # #     db.create_all()
+    # def __str__(self):
+    #     # Renvoie une chaîne de caractères représentant l'objet
+    #     return f"Person(nom: {self.nom}, description: {self.description}, age: {self.age})"
+    def __repr__(self):
+        
+        return {
+            "identifiant": self.identifiant,
+            "image": self.image,
+            "produite": self.produite,
+            "tailed": self.tailed,
+            "prixtottal": self.prixtottal,
+            "quantiteto": self.quantiteto,
+            "xs": self.xs,
+            "xsn": self.xsn,
+            "s": self.s,
+            "sn": self.sn,
+            "m": self.m,
+            "mn": self.mn,
+            "l": self.l,
+            "ln": self.ln,
+            "xl": self.xl,
+            "xln": self.xln,
+            "xxl": self.xxl,
+            "xxln": self.xxln,
+            "tranwite" : self.tranwite ,
+            "tranwiten" : self.tranwiten ,
+            "tranneuf" : self.tranneuf,
+            "tranneufn" : self.tranneufn,
+            "karente" : self.karente,
+            "karenten" : self.karenten,
+            "tranwiteun" : self.tranwiteun,
+            "tranwiteunn" : self.tranwiteunn,
+            "tranwitedeux" : self.tranwitedeux,
+            "tranwitedeuxn" : self.tranwitedeuxn,
+            "tranwitrois" : self.tranwitrois,
+            "tranwitroisn" : self.tranwitroisn,
+            "tranwitekate" : self.tranwitekate,
+            "tranwitekaten" : self.tranwitekaten,
+            
+        }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 
 
 @app.route('/commentaire', methods=['POST'])
@@ -509,7 +661,22 @@ def objet():
         return render_template("boutique.html")
 @app.route('/sacs/<int:id>')
 def sacs(id):
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
     
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud) 
     commenta = []
     recupe = Ajouter.query.all()
     
@@ -531,20 +698,37 @@ def sacs(id):
         # for i in a:
         #     if i.categorie == 'VetementFemme':
         #         data.append(i)
-        return render_template('sacinfo.html',user = user,data=data,commenta=commenta)
+        return render_template('sacinfo.html',user = user,data=data,commenta=commenta,conueww=conueww)
     print("MO")
 
     return redirect("/sac")
     
 @app.route("/sac")
 def sac():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
     data = []
     a = Ajouter.query.all()
     for i in a:
         if i.categorie == 'chaussure':
             data.append(i)
     
-    return render_template("sac.html", data = data)
+
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
+    
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud)    
+    return render_template("sac.html", data = data ,conueww=conueww)
 @app.route('/homme/<int:id>')
 def homme(id):
     
@@ -577,6 +761,7 @@ def homme(id):
    
 @app.route("/hommes")
 def hommes():
+
     data = []
     a = Ajouter.query.all()
     for i in a:
@@ -586,21 +771,60 @@ def hommes():
     return render_template("/homme.html", data = data)
 @app.route("/vente")
 def acc():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
     data = []
     a = Ajouter.query.all()
     for i in a:
         if i.categorie == 'VetementFemme':
             data.append(i)
-    return render_template("vente.html", data = data)
+
+    
+    
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
+    
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud)    
+    
+    return render_template("vente.html", data = data , conueww=conueww)
 @app.route("/montre")
 def montre():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
     data = []
     a = Ajouter.query.all()
     for i in a:
         if i.categorie == 'Montre':
             data.append(i)
     
-    return render_template("montre.html", data = data)
+
+    
+    
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
+    
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud)    
+    return render_template("montre.html", data = data,conueww=conueww)
 
 @app.route('/mesrecherches',methods = ["POST"])
 def rechepo():
@@ -655,7 +879,25 @@ def ajou():
 
 @app.route('/montres/<int:id>')
 def montres(id):
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
     
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud)   
+
+
+
     commenta = []
     recupe = Ajouter.query.all()
     
@@ -677,7 +919,7 @@ def montres(id):
         # for i in a:
         #     if i.categorie == 'VetementFemme':
         #         data.append(i)
-        return render_template('montrederail.html',user = user,data=data,commenta=commenta)
+        return render_template('montrederail.html',user = user,data=data,commenta=commenta,conueww=conueww)
     print("MO")
 
     return redirect("/montre")
@@ -685,7 +927,24 @@ def montres(id):
     
 @app.route('/info/<int:id>')
 def info(id):
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
     
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    conueww = len(gdhsuud) 
+    
+
     commenta = []
     recupe = Ajouter.query.all()
     
@@ -707,7 +966,7 @@ def info(id):
         # for i in a:
         #     if i.categorie == 'VetementFemme':
         #         data.append(i)
-        return render_template('info.html',user = user,data=data,commenta=commenta)
+        return render_template('info.html',user = user,data=data,commenta=commenta , useru=useru,conueww=conueww)
     print("MO")
 
     return redirect("/vente")
@@ -729,13 +988,44 @@ def info(id):
 
 
 from urllib.parse import quote
-@app.route('/ssm/<int:id>', methods=["POST"])
-def ssm(id):
+@app.route('/ssm', methods=["POST"])
+def ssm():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
     a = str(id)
+
+    nom = request.form.get("nom")
+    livraison = request.form.get("livraison")
+    image = request.form.get("image")
+    noumeme = request.form.get("noumeme")
+    prix = request.form.get("prix")
+    quantite = request.form.get("quantiteplos")
+
+
+
+    hfshggf = Ajouter.query.get(int(noumeme))
+    # eudeyyt = Profil.query.all()
+    if hfshggf.categorie == "Montre":
+
+        
+        pani = Panieruser(image=image,tailed = "",identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=quantite,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+            
+        db.session.add(pani)
+        db.session.commit()
+        return redirect("/")
+
+
     xs = request.form.get("xs","")
     xsnum = request.form.get("xsnum","0")
     if int(xsnum) > 0 :
         xs = "xs"
+        
+        pani = Panieruser(image=image,tailed=xs,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=xsnum,xs=xs,xsn=xsnum,s="",sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(xsnum) == 0 :
         xs = ""
         xsnum = ""
@@ -745,6 +1035,11 @@ def ssm(id):
     snum = request.form.get("snum","0")
     if int(snum) > 0 :
         s = "s"
+        
+        pani = Panieruser(image=image,tailed=s,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=snum,xs="",xsn="",s=s,sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(snum) == 0 :
         s = ""
         snum = ""
@@ -752,6 +1047,11 @@ def ssm(id):
     mnum = request.form.get("mnum","0")
     if int(mnum) > 0 :
         m = "m"
+        
+        pani = Panieruser(image=image,tailed=m,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=mnum,xs="",xsn="",s="",sn="",l="",ln="",m=m,mn=mnum,xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(mnum) == 0 :
         m = ""
         mnum = ""
@@ -759,6 +1059,11 @@ def ssm(id):
     lnum = request.form.get("lnum","0")
     if int(lnum) > 0 :
         l = "l"
+        
+        pani = Panieruser(image=image,tailed =l,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=lnum,xs="",xsn="",s="",sn="",l=l,ln=lnum,m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(lnum) == 0 :
         l = ""
         lnum = ""
@@ -766,6 +1071,11 @@ def ssm(id):
     xlnum = request.form.get("xlnum","0")
     if int(xlnum) > 0 :
         xl = "xl"
+        
+        pani = Panieruser(image=image, tailed = xl,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=xlnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl=xl,xln=xlnum,xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(xlnum) == 0 :
         xl = ""
         xlnum = ""
@@ -773,6 +1083,11 @@ def ssm(id):
     xxl = request.form.get("xxl","")
     if int(xxlnum) > 0 :
         xxl = "xxl"
+        
+        pani = Panieruser(image=image, tailed = xxl,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=xxlnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl=xxl,xxln=xxlnum,tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(xxlnum) == 0 :
         xxl = ""
         xxlnum = ""
@@ -794,6 +1109,11 @@ def ssm(id):
     if int(tranwitenum) > 0 :
         tranwite = "38 -> "
         tranwitenum = tranwitenum
+        
+        pani = Panieruser(image=image,tailed = tranwite,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranwitenum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite=tranwite,tranwiten=tranwitenum,tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranwitenum) == 0 :
         tranwite = ""
         tranwitenum = ""
@@ -803,6 +1123,11 @@ def ssm(id):
     if int(tranneufnum) > 0 :
         tranneuf = "39 -> "
         tranneufnum = tranneufnum
+        
+        pani = Panieruser(image=image,tailed = tranneuf,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranneufnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf=tranneuf,tranneufn=tranneufnum,karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranneufnum) == 0 :
         tranneuf = ""
         tranneufnum = ""
@@ -811,6 +1136,11 @@ def ssm(id):
     if int(karentenum) > 0 :
         karente = "40 -> "
         karentenum = karentenum
+        
+        pani = Panieruser(image=image,tailed = karente,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=karentenum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente=karente,karenten=karentenum,tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(karentenum) == 0 :
         karente = ""
         karentenum = ""
@@ -819,6 +1149,11 @@ def ssm(id):
     if int(tranwiteunnum) > 0 :
         tranwiteun = "41 -> "
         tranwiteunnum = tranwiteunnum
+        
+        pani = Panieruser(image=image,tailed =tranwiteun ,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranwiteunnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun=tranwiteun,tranwiteunn=tranwiteunnum,tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranwiteunnum) == 0 :
         tranwiteun = ""
         tranwiteunnum = ""
@@ -827,6 +1162,11 @@ def ssm(id):
     if int(tranwitedeuxnum) > 0 :
         tranwitedeux = "42 -> "
         tranwitedeuxnum = tranwitedeuxnum
+        
+        pani = Panieruser(image=image,tailed = tranwitedeux ,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranwitedeuxnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux=tranwitedeux,tranwitedeuxn=tranwitedeuxnum,tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranwitedeuxnum) == 0 :
         tranwitedeux = ""
         tranwitedeuxnum = ""
@@ -835,6 +1175,11 @@ def ssm(id):
     if int(tranwitroisnum) > 0 :
         tranwitrois = "43 -> "
         tranwitroisnum = tranwitroisnum
+        
+        pani = Panieruser(image=image,tailed = tranwitrois,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranwitroisnum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois=tranwitrois,tranwitroisn=tranwitroisnum,tranwitekate="",tranwitekaten="")
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranwitroisnum) == 0 :
         tranwitrois = ""
         tranwitroisnum = ""
@@ -843,51 +1188,58 @@ def ssm(id):
     if int(tranwitekatenum) > 0 :
         tranwitekate = "44 -> "
         tranwitekatenum = tranwitekatenum
+        
+        pani = Panieruser(image=image,tailed = tranwitekate,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=tranwitekatenum,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate=tranwitekate,tranwitekaten=tranwitekatenum)
+        
+        db.session.add(pani)
+        db.session.commit()
     if int(tranwitekatenum) == 0 :
         tranwitekate = ""
         tranwitekatenum = ""
     
-    nom = request.form.get("nom")
-    livraison = request.form.get("livraison")
-    numero = request.form.get("numero")
-    prix = request.form.get("prix")
-    quantite = request.form.get("quantiteplos")
     
-    tou = Ajouter.query.get(id)
-    import urllib.parse
     
-    if tou.categorie == 'VetementFemme' :
-        quantite = quantite
-        if int(quantite) < 1 :
-            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
-            return redirect(f'/info/{id}#formuhfh1')
+
+    # pani = Panieruser(image=image,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=quantite,xs=xs,xsn=xsnum,s=s,sn=snum,l=l,ln=lnum,m=m,mn=mnum,xl=xl,xln=xlnum,xxl=xxl,xxln=xxlnum,tranwite=tranwite,tranwiten=tranwitenum,tranneuf=tranneuf,tranneufn=tranneufnum,karente=karente,karenten=karentenum,tranwiteun=tranwiteun,tranwiteunn=tranwiteunnum,tranwitedeux=tranwitedeux,tranwitedeuxn=tranwitedeuxnum,tranwitrois=tranwitrois,tranwitroisn=tranwitroisnum,tranwitekate=tranwitekate,tranwitekaten=tranwitekatenum)
+        
+    # db.session.add(pani)
+    # db.session.commit()
+
+    # tou = Ajouter.query.get(id)
+    # import urllib.parse
+    
+    # if tou.categorie == 'VetementFemme' :
+    #     quantite = quantite
+    #     if int(quantite) < 1 :
+    #         flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+    #         return redirect(f'/info/{id}#formuhfh1')
       
-        ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
-        # ms_encoded = urllib.parse.quote(ms)
-        # print(ms)
-        # print(ms_encoded)
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
+    #     ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
+        
+    #     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
 
-    if tou.categorie == 'chaussure' :
-        quantite = quantite
-        if int(quantite) < 1 :
-            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
-            return redirect(f'/sacs/{id}#formuhfh1')
-        ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
+    # if tou.categorie == 'chaussure' :
+    #     quantite = quantite
+    #     if int(quantite) < 1 :
+    #         flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+    #         return redirect(f'/sacs/{id}#formuhfh1')
+    #     ms = f"Le lien : https://hington-shop.onrender.com/sacs/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {tranwite}{tranwitenum} {tranneuf}{tranneufnum} {karente}{karentenum} {tranwiteun}{tranwiteunnum} {tranwitedeux}{tranwitedeuxnum} {tranwitrois}{tranwitroisnum} {tranwitekate}{tranwitekatenum} "
 
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
+    #     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
     
-    if tou.categorie == 'Montre' :
-        quantite = quantite
-        if int(quantite) < 1 :
-            flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
-            return redirect(f'/montres/{id}#formuhfh1')
-        ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} ,Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
+    # if tou.categorie == 'Montre' :
+    #     quantite = quantite
+    #     if int(quantite) < 1 :
+    #         flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
+    #         return redirect(f'/montres/{id}#formuhfh1')
+    #     ms = f"Le lien : https://hington-shop.onrender.com/montres/{a} , Quantite = {quantite} ,Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero}  "
         
 
-        return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
+    #     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
 
-
+    # ms_encoded = urllib.parse.quote(ms)
+    # print(ms)
+    # print(ms_encoded)
 
     # Encode the message string before passing it to the quote function
     # encoded_message = ms.encode('utf-8')
@@ -898,6 +1250,7 @@ def ssm(id):
     
 
     # 
+    return redirect("/")
 
 
 @app.route("/administa")
@@ -1048,32 +1401,63 @@ def add_objetwere():
 #     return redirect(url_for('static', filename = 'uploads/' + filename), code=301)
 # FIN AJOUTER IMAGES DES ARTICLES{}
 
-@app.route('/monpanier/<int:id>')
-def panierus(id):
+@app.route('/monpanier')
+def panierus():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    
+    useruo = Profil.query.get(useru.id)
+    eudeyyt = Profil.query.all()
+    tableaus = Panieruser.query.all()
     catefemme = []
     montre = []
+    gdhsuud = []
+    chaussure = []
     tout = Ajouter.query.all()
     commenta = []
+    articeldd = []
     recupe = Comment.query.all()
     
     for i in recupe:
         commenta.append(i)
 
+    for i in eudeyyt:
+        articeldd.append(i)
+
+    
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+
+    conueww = len(gdhsuud)    
+    somme = 0     
+    for i in gdhsuud :
+        somme += int(i["pource"])
     for i in tout:
         if i.categorie == "VetementFemme" :
             catefemme.append(i)
 
         if i.categorie == "Montre" :
             montre.append(i)
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
     if len(catefemme)>10 :
         catefemme = catefemme[:10]
     if len(montre) >10 :
         montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
 
 
     print(commenta[0].mail)
     
-    return render_template("panierus.html",commenta=commenta,catefemme=catefemme,montre=montre,id=id)
+    return render_template("panierus.html",gdhsuud=gdhsuud,commenta=commenta,catefemme=catefemme,montre=montre,id=id,chaussure=chaussure,somme=somme,conueww=conueww)
 
   
 @app.route('/mofiedd/<int:id>')
@@ -1114,6 +1498,96 @@ def mofie(id):
     
     db.session.commit()
     return redirect('/administa')
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/add_data')
+def add_data():
+    
+    return render_template("add_profile.html")
+
+@app.route('/add',methods = ["POST"])
+def profile() :
+    
+    
+    first_name = request.form.get("first_name")
+    last_name = request.form.get("last_name")
+    age = request.form.get("age")
+    conf = request.form.get("conf")
+    
+
+    if conf != age :
+        flash("Entrez le meme mot de passe")
+        return redirect("/add_data")
+    
+    for i in range (len(last_name)) :
+        if last_name[i] == "@" :
+
+            if "moc.liamg" == last_name[:i:-1]:
+
+                pass
+            else :
+                flash("Email ou Mot de passe invalide")
+                return redirect("/add_data")
+            
+
+
+
+    user = Profil.query.filter_by(last_name = request.form.get("last_name")).first()
+    if user :
+        flash("Ce compte existe deja") 
+        return redirect(url_for("add_data"))
+    else :
+        if first_name != " " and last_name != " " and age is not None and len(age)== 8 :
+            p = Profil(first_name = first_name, last_name = last_name , age = age)
+
+            db.session.add(p)
+            db.session.commit()
+            return redirect("/pre")
+        else :
+            return redirect("/add_data")
+        
+# FIN AJOUTER DES USER{} 
+
+
+
+
+
+
+
+# CONNEXION {}
+@app.route('/pre')
+def pree():
+    return render_template('connexion.html')
+@app.route('/sprome',methods = ["GET","POST"])
+def sprome() :
+   
+    user = Profil.query.filter_by(last_name = request.form.get("last_name"),age = request.form.get("age")).first()
+
+    if user :
+        
+      
+        
+        print(f"vous etes connecter{user.first_name}{user.id}")
+        
+
+        session['utilisateur_id'] = user.id
+        return redirect('/')
+
+    else :
+
+        flash("Email ou Mot de passe invalide")
+        return redirect("/pre")
+# FIN CONNEXION {}
+
 
 
 if __name__ == '__main__' :

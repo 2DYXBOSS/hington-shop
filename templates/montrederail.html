@@ -113,11 +113,11 @@
     
 
     
-    <a href="monpanier/1">
+    <a href="/monpanier">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
             <div class="rondquant">
-                <p style="font-size: 1rem;">5</p>
+                <p style="font-size: 1rem;">{{conueww}}</p>
             </div>
         </div>
     </a>  
@@ -199,7 +199,7 @@
                
                 
                 <a href="/vente" style="text-decoration: none;">
-                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: #f60;">Vetements femmes </span></p>
                 </a>
                 <!-- <a href="/hommes">
                     <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -237,7 +237,7 @@
             
             
             <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: orangered;">Vetements femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: #f60;">Vetements femmes </span></p>
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -298,7 +298,7 @@
                         </li>
                         <li>
                             <div class="menue">
-                                <a href="#" class="menue" id="cleud">> Toutes categories</a>
+                                <a href="#" class="menue" id="cleud">> Toutes catégories</a>
                             </div>
                         </li>
                     </ul>
@@ -306,6 +306,11 @@
             </div>
         </div>
     </div>
+
+
+
+
+    
     <!-- <div class="lesimages">
         
         <div class="imageim">
@@ -357,9 +362,10 @@
     </div> 
      -->
 
-    <div class="artivles">
+    
+     <form action="/ssm" method="post" class="artivles">
         <div class="redux">
-            <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;">-20%</h1> -->
+            
         </div>
         <div class="vetemm">
             {% if data[0] %}
@@ -368,17 +374,19 @@
 
             </div>
             
+            
        
             {% endif %}
             {% if user.porce != '0' %}
             <div class="gdhd">
                
                 <span>
-                    <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
+                    <p style="color: #f60;padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
                 </span>
                 
             </div>
             {% endif %}
+            
             <div class="resteDeImage">
                 {% if data[0] != 'vide' %}
                 <div class="restepres" id="image0">
@@ -410,18 +418,22 @@
         
         <div class="infoeisd">
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: rgb(36, 36, 116);text-transform: uppercase;padding-bottom: 10px;">{{user.nom}}</h1>
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: orangered;text-transform: uppercase;">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: #f60;text-transform: uppercase;">
                 {% if user.porce != '0' %}
                 <span>
                     <s style="color: black;">{{user.prix}} FCFA</s>
                 </span>
-                {% endif %} 
+                {% endif %}
+                
                 {{user.porceprix}} FCFA
+            
             </h1>
             <div class="livarsipn">
                 <img src="{{url_for('static', filename='IMAGE/livarsin.png')}}" width="40px" height="40px"  alt="">
                 <p style="color: green;background-color: rgba(220, 220, 220, 0.49);padding: 5px;display: flex;align-items: center;">Livraison gratuite </p>
             </div>
+
+
             <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{user.porceprix}}">
             <!-- <p id="couterw"></p> -->
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 15px;">DESCRIPTION DE L'ARTICLE</h1>
@@ -488,155 +500,69 @@
                 {% endif %}
                
             </div>
-            <a href="#formuhfh1">
-                <div class="commande">
-                    <div class="regle">
-    
-                        <p >-</p>
-                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="numeric">
-                      
-                        <p >+</p>
-                    </div>
-                   
-                    <button class="bouto" type="submit">COMMANDE ICI</button>
-                    <!-- {% if user %}
-                    <form action="/ssm/{{user.id}}" method="post">
-                       
-                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
-    
-                    </form>
-                    {% endif %} -->
-                </div>
-                </a>
-              
-                <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;padding-top: 15px;">Description</h1>
-                <p style="padding-top: 15px;font-size: 0.7rem;padding-bottom: 30px;">{{user.description}} </p> -->
-            </div>
-        </div>
-       
-        <!-- <div class="afficje">
-            {% for i in commenta %}  
-            <a href="/montres/{{i.id}}" class="b1">      
-        
-                <div class="pheorf">
-                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
-    
-                </div>
-                {% if i.porce != "0" %}
-                <div class="gdhd">
-                
-                    <span>
-                        <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
-                    </span>
-                    
-                    
-                </div>
-            {% endif %}
-                <div class="pheorf2">
-                    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:0.8rem;
-            color: rgb(36, 36, 116);">Q23TY</h1>
-                </div>
-    
-            </a>
-            {% endfor %}
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 15px;padding-bottom: 20px;padding-left: 25px;"></h1>
+            
             
            
-           
-        </div> -->
-
-
-
-        <div class="formuhfh">
-            <form method="post" action="/ssm/{{user.id}}" 
-            enctype="multipart/form-data"  id="formuhfh1">
-            <p style="padding-top: 20px;text-align: center;color: rgb(36, 36, 116);padding-left: 20px;font-weight: bolder;font-size: 1.2rem;padding-bottom: 20px;padding-right: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COMMANDER MAINTENANT
-            </p>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul style="text-align: center;">
-                    {% for message in messages %}
-                    <li style="list-style-type: none;"> <p style="color: red;font-size: 0.8rem;padding-bottom: 20px;">{{ message }}</p></li>
-                    {% endfor %}
-                </ul>
-                
-            {% endif %}
-        {% endwith %}
-                
-                <div  class="commandewe">
-                    <!-- <div class="regle">
-        
-                        <p id="moins">-</p>
-                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="eeecran" name="eeecran">
-                      
-                        <p id="plus">+</p>
-                    </div> -->
-                    <button class="bouto" type="submit">
-                        <img src="{{url_for('static', filename='IMAGE/awp.png')}}" width="25px" height="25px"  alt="" style="margin-right: 20px;">
-                         COMMANDER MAINTENANT 
-                    </button>
-                    <!-- {% if user %}
-                    <form action="/ssm/{{user.id}}" method="post">
-                       
-                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
-        
-                    </form>
-                    {% endif %} -->
-                </div>
-                <div class="hqeerss">
-                  
-                    
-                  
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">MONTRE</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            <div class="hqeerss">
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">MONTRE</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                    <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('quantitdepop')">
+                            <p style="color: white;font-size: 2rem;">-</p>
                         </div>
-                         <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('quantitdepop')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="quantitdepop" name="quantitdepo">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('quantitdepop')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="quantitdepop" name="quantitdepo">
+                        </div>
                         
-    
+                        <div class="mmoiie" onclick="plusp('quantitdepop')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <input type="text" name="image" id="livraison" placeholder="numero" value="{{user.image}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="noumeme" id="livraison" placeholder="numero" value="{{user.id}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="prix" id="livraison" placeholder="numero" value="{{user.porceprix}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="quantiteplos" id="quantiteplos" placeholder="numero" value="0" style="visibility: hidden;height: 0;width: 0;">
+            <div class="pierteer">
+                <p style="text-align: start;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Quantité total : </p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> X </p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
+                
+            </div>
+            <div class="pierteer">
+                <p style="text-align: start;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Cout total : </p>
+                <p id="lepris" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
+            </div>
+            <input type="text" name="article" id="" style="width: 0;height: 0;position: absolute;top: -20px;" value="{{user.id}}">
+                    
+            <button type="submit" class="commande" style="display: flex;justify-content: start;border: none;background-color: white;"> 
+                <div style="width: 20%;display: flex;justify-content: start;">
                    
-                    
-                </div>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre nom <span style="color: red;">*</span></p>
-                <input type="text" name="nom" id="livraison" placeholder="Ex : Kouassi Jacques Loic" required>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez le lieu complet de livraison <span style="color: red;">*</span></p>
-                <input type="text" name="livraison" id="livraison" placeholder="Ex : Cocody - Vers la Paroisse Saint Jean" required>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre numero de telephone <span style="color: red;">*</span></p>
-                <input type="number" class="mjdg" name="numero" inputmode="numeric" min="0" id="livraison" placeholder="Ex : +225 0102030405 / +225 0908070603" required>
-                <input type="text" name="prix" id="livraison" placeholder="numero" value="{{user.porceprix}}" style="visibility: hidden;">
-                <input type="text" name="quantiteplos" id="quantiteplos" placeholder="numero" value="0" style="visibility: hidden;">
-                <div class="pierteer">
-                    <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">QTE TOTAL : </p>
-                    <p id="somiu" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">0</p>
-                    <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> X </p>
-                    <p id="somiu" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
-                    <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
-                    
-                </div>
-                <div class="pierteer">
-                    <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">COUT TOTAL : </p>
-                    <p id="lepris" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">0</p>
-                    <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
-                </div>
+                   
                 
+                    <div class="regle" style="background-color: #f60;border: none;">
+                        <img src="{{url_for('static', filename='IMAGE/panier.png')}}" alt="" style="filter: invert();" width="20px">
+                        
+                    </div>
+                </div>
+                <a href="#formuhfh1" style="width: 80%;background-color: red;">
+                <div class="bouto" type="submit" style="width: 100%;">AJOUTER AU PANIER</div>
+                </a>
                 
-            </form>
-            
-               
+            </button>
+           
         </div>
+    </form>
+
         <div class="jjhfsdf54">
             <div class="jdudu">
                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 40px;">Vous aimez peut-etre ceux ci aussi .</p>
@@ -664,7 +590,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -684,7 +610,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>

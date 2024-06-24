@@ -110,11 +110,11 @@
             <img src="{{ url_for('static', filename='IMAGE/bacj.png')}}" style="filter: invert();" width="20px" alt="">
         </div>
     </a> -->
-    <a href="monpanier/1">
+    <a href="/monpanier">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
             <div class="rondquant">
-                <p style="font-size: 1rem;">5</p>
+                <p style="font-size: 1rem;">{{conueww}}</p>
             </div>
         </div>
     </a>  
@@ -203,7 +203,7 @@
                 </a> -->
                 <a href="/sac">
             
-                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt="" > <span style="color: orangered;">Chaussures H & F</span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt="" > <span style="color: #f60;">Chaussures H & F</span></p>
                   
                 </a>
                 
@@ -240,7 +240,7 @@
             </a> -->
            
             <a href="/sac" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span style="color: orangered;">Chaussures H & F</span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span style="color: #f60;">Chaussures H & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span>Montres </span></p>
@@ -294,7 +294,7 @@
                         </li>
                         <li>
                             <div class="menue">
-                                <a href="#" class="menue" id="cleud">> Toutes categories</a>
+                                <a href="#" class="menue" id="cleud">> Toutes catégories</a>
                             </div>
                         </li>
                     </ul>
@@ -353,9 +353,12 @@
     </div> 
      -->
 
-    <div class="artivles">
+
+
+
+    <form action="/ssm" method="post" class="artivles">
         <div class="redux">
-            <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;">-20%</h1> -->
+            
         </div>
         <div class="vetemm">
             {% if data[0] %}
@@ -364,17 +367,19 @@
 
             </div>
             
+            
        
             {% endif %}
             {% if user.porce != '0' %}
             <div class="gdhd">
                
                 <span>
-                    <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
+                    <p style="color: #f60;padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
                 </span>
                 
             </div>
             {% endif %}
+            
             <div class="resteDeImage">
                 {% if data[0] != 'vide' %}
                 <div class="restepres" id="image0">
@@ -406,18 +411,22 @@
         
         <div class="infoeisd">
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: rgb(36, 36, 116);text-transform: uppercase;padding-bottom: 10px;">{{user.nom}}</h1>
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: orangered;text-transform: uppercase;">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: #f60;text-transform: uppercase;">
                 {% if user.porce != '0' %}
                 <span>
                     <s style="color: black;">{{user.prix}} FCFA</s>
                 </span>
-                {% endif %} 
+                {% endif %}
+                
                 {{user.porceprix}} FCFA
+            
             </h1>
             <div class="livarsipn">
                 <img src="{{url_for('static', filename='IMAGE/livarsin.png')}}" width="40px" height="40px"  alt="">
                 <p style="color: green;background-color: rgba(220, 220, 220, 0.49);padding: 5px;display: flex;align-items: center;">Livraison gratuite </p>
             </div>
+
+
             <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{user.porceprix}}">
             <!-- <p id="couterw"></p> -->
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 15px;">DESCRIPTION DE L'ARTICLE</h1>
@@ -484,322 +493,361 @@
                 {% endif %}
                
             </div>
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 15px;">TAILLE</h1>
-            <div class="cerfsd2">
-                
-                <!-- IF user.description # TOI -->
-                {% if user.tranwite == '38' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">38</p>
-                </div>
-                {% endif %}
-                {% if user.tranneuf == '39' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">39</p>
-                </div>
-                {% endif %}
-                {% if user.karente == '40' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">40</p>
-                </div>
-                {% endif %}
-                {% if user.tranwiteun == '41' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">41</p>
-                </div>
-                {% endif %}
-                {% if user.tranwitedeux == '42' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">42</p>
-                </div>
-                {% endif %}
-                {% if user.tranwitrois == '43' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">43</p>
-                </div>
-                {% endif %}
-                {% if user.tranwitekate == '44' %}
-                <div class="rodewq22">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">44</p>
-                </div>
-                {% endif %}
-                
-                
-                <!-- <div class="rodewq33">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">L</p>
-                </div>
-                
-                <div class="rodewq44">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">XXL</p>
-                </div>
-                
-                <div class="rodewq55">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">MX</p>
-                </div>
-                
-                <div class="rodewq55">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;">XL</p>
-                </div> -->
-            </div>
-            <a href="#formuhfh1">
-                <div class="commande">
-                    <div class="regle">
-    
-                        <p >-</p>
-                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="numeric">
-                      
-                        <p >+</p>
-                    </div>
-                   
-                    <button class="bouto" type="submit">COMMANDE ICI</button>
-                    <!-- {% if user %}
-                    <form action="/ssm/{{user.id}}" method="post">
-                       
-                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
-    
-                    </form>
-                    {% endif %} -->
-                </div>
-                </a>
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 15px;padding-bottom: 20px;padding-left: 25px;"></h1>
+            
+            <div class="hqeerss">
               
-                <!-- <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;padding-top: 15px;">Description</h1>
-                <p style="padding-top: 15px;font-size: 0.7rem;padding-bottom: 30px;">{{user.description}} </p> -->
-            </div>
-        </div>
-
-
-
-        <div class="formuhfh">
-            <form method="post" action="/ssm/{{user.id}}" 
-            enctype="multipart/form-data"  id="formuhfh1">
-            <p style="padding-top: 20px;text-align: center;color: rgb(36, 36, 116);padding-left: 20px;font-weight: bolder;font-size: 1.2rem;padding-bottom: 20px;padding-right: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COMMANDER MAINTENANT
-            </p>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul style="text-align: center;">
-                    {% for message in messages %}
-                    <li style="list-style-type: none;"> <p style="color: red;font-size: 0.8rem;padding-bottom: 20px;">{{ message }}</p></li>
-                    {% endfor %}
-                </ul>
-                
-            {% endif %}
-        {% endwith %}
-                
-                <div  class="commandewe">
-                    <!-- <div class="regle">
-        
-                        <p id="moins">-</p>
-                        <input type="text" value="0" style="width: 15px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" id="eeecran" name="eeecran">
-                      
-                        <p id="plus">+</p>
-                    </div> -->
-                   
-                    <button class="bouto" type="submit">
-                        <img src="{{url_for('static', filename='IMAGE/awp.png')}}" width="25px" height="25px"  alt="" style="margin-right: 20px;">
-                         COMMANDER MAINTENANT 
-                    </button>
-                    <!-- {% if user %}
-                    <form action="/ssm/{{user.id}}" method="post">
+                {% if user.xs == 'xs' %}
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgb(36, 36, 116);">XS</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                    <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('xsnumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
                        
-                        <button> <img src="{{url_for('static', filename='IMAGE/awp.png')}}" alt="" width="20px"> Commande via WHATSAPP !</button>
-        
-                    </form>
-                    {% endif %} -->
-                </div>
-                <div class="hqeerss">
-                  
-                    {% if user.tranwite == '38' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">38</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="xsnumq" name="xsnum">
                         </div>
-                         <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranwitenump')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitenump" name="tranwitenum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranwitenump')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
                         
-    
+                        <div class="mmoiie" onclick="plusp('xsnumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
                         </div>
-                    </div>
-                    {% endif %}
-                    {% if user.tranneuf == '39' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">39</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                         <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranneufnump')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranneufnump" name="tranneufnum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranneufnump')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.karente == '40' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">40</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                         <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('karentenump')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="karentenump" name="karentenum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('karentenump')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
-                    </div>
-                    {% endif %}
                     
-                    {% if user.tranwiteun == '41' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">41</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                        <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranwiteunp')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwiteunp" name="tranwiteunnum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranwiteunp')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
+
                     </div>
-                    {% endif %}
-                    {% if user.tranwitedeux == '42' %}
-                   
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">42</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                        <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranwitedeuxp')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitedeuxp" name="tranwitedeuxnum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranwitedeuxp')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
-                    </div>
-                    {% endif %}
-                  
-                    {% if user.tranwitrois == '43' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">43</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                        <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranwitroisp')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitroisp" name="tranwitroisnum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranwitroisp')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.tranwitekate == '44' %}
-                    <div class="nombredexl">
-                        <div class="nombredexltaille">
-                            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">44</h1>
-                            <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
-                        </div>
-                        <div class="nombredexlquant">
-                            <div class="mmoiie" onclick="moinsp('tranwitekatep')">
-                                <p style="color: white;font-size: 2rem;">-</p>
-                            </div>
-                           
-                            <div class="mmmoihfrd">
-                                <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitekatep" name="tranwitekatenum">
-                            </div>
-                            
-                            <div class="mmoiie" onclick="plusp('tranwitekatep')">
-                                <p style="color: white;font-size: 2rem;" >+</p>
-                            </div>
-                        
-    
-                        </div>
-                    </div>
-                    {% endif %}
                 </div>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;padding-top: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre nom <span style="color: red;">*</span></p>
-            <input type="text" name="nom" id="livraison" placeholder="Ex : Kouassi Jacques Loic" required>
-            <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez le lieu complet de livraison <span style="color: red;">*</span></p>
-            <input type="text" name="livraison" id="livraison" placeholder="Ex : Cocody - Vers la Paroisse Saint Jean" required>
-            <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.8rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;">Entrez votre numero de telephone <span style="color: red;">*</span></p>
-            <input type="number" class="mjdg" name="numero" inputmode="numeric" min="0" id="livraison" placeholder="Ex : +225 0102030405 / +225 0908070603" required>
-            <input type="text" name="prix" id="livraison" placeholder="numero" value="{{user.porceprix}}" style="visibility: hidden;">
-            <input type="text" name="quantiteplos" id="quantiteplos" placeholder="numero" value="0" style="visibility: hidden;">
-            <div class="pierteer">
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">QTE TOTAL : </p>
-                <p id="somiu" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">0</p>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> X </p>
-                <p id="somiu" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
-                
-            </div>
-            <div class="pierteer">
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">COUT TOTAL : </p>
-                <p id="lepris" style="text-align: start;padding-left: 20px;color: orangered;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;">0</p>
-                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
-            </div>
-            
-                
-            </form>
-            
+                {% endif %}
+                {% if user.xl == 'xl' %}
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgb(36, 36, 116);">XL</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                     <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('xlnumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="xlnumq" name="xlnum">
+                        </div>
+                        
+                        <div class="mmoiie" onclick="plusp('xlnumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
+                        </div>
+                    
+
+                    </div>
+                </div>
+                {% endif %}
+                {% if user.xxl == 'xxl' %}
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgb(36, 36, 116);">XXL</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                     <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('xxlnumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="xxlnumq" name="xxlnum">
+                        </div>
+                        
+                        <div class="mmoiie" onclick="plusp('xxlnumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
+                        </div>
+                    
+
+                    </div>
+                </div>
+                {% endif %}
+                {% if user.l == 'l' %}
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgb(36, 36, 116);">L</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                    <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('lnumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="lnumq" name="lnum">
+                        </div>
+                        
+                        <div class="mmoiie" onclick="plusp('lnumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
+                        </div>
+                    
+
+                    </div>
+                </div>
+                {% endif %}
+                {% if user.s == 's' %}
                
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgb(36, 36, 116);">S</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                    <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('snumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="snumq" name="snum">
+                        </div>
+                        
+                        <div class="mmoiie" onclick="plusp('snumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
+                        </div>
+                    
+
+                    </div>
+                </div>
+                {% endif %}
+              
+                {% if user.m == 'm' %}
+                <div class="nombredexl">
+                    <div class="nombredexltaille">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">M</h1>
+                        <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+                    </div>
+                    <div class="nombredexlquant">
+                        <div class="mmoiie" onclick="moinsp('mnumq')">
+                            <p style="color: white;font-size: 2rem;">-</p>
+                        </div>
+                       
+                        <div class="mmmoihfrd">
+                            <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="mnumq" name="mnum">
+                        </div>
+                        
+                        <div class="mmoiie" onclick="plusp('mnumq')">
+                            <p style="color: white;font-size: 2rem;" >+</p>
+                        </div>
+                       
+                        
+
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            
+
+    <div class="hqeerss">
+                  
+        {% if user.tranwite == '38' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">38</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+             <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranwitenump')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitenump" name="tranwitenum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranwitenump')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
         </div>
+        {% endif %}
+        {% if user.tranneuf == '39' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">39</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+             <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranneufnump')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranneufnump" name="tranneufnum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranneufnump')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+        {% if user.karente == '40' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">40</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+             <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('karentenump')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="karentenump" name="karentenum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('karentenump')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+        
+        {% if user.tranwiteun == '41' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">41</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+            <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranwiteunp')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwiteunp" name="tranwiteunnum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranwiteunp')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+        {% if user.tranwitedeux == '42' %}
+       
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">42</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+            <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranwitedeuxp')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitedeuxp" name="tranwitedeuxnum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranwitedeuxp')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+      
+        {% if user.tranwitrois == '43' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">43</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+            <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranwitroisp')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitroisp" name="tranwitroisnum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranwitroisp')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+        {% if user.tranwitekate == '44' %}
+        <div class="nombredexl">
+            <div class="nombredexltaille">
+                <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: black;">44</h1>
+                <p style="font-size: 0.6rem;color: black;">Encore des articles restants</p>
+            </div>
+            <div class="nombredexlquant">
+                <div class="mmoiie" onclick="moinsp('tranwitekatep')">
+                    <p style="color: white;font-size: 2rem;">-</p>
+                </div>
+               
+                <div class="mmmoihfrd">
+                    <input type="text" value="0" style="width: 50px;border: none;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;" id="tranwitekatep" name="tranwitekatenum">
+                </div>
+                
+                <div class="mmoiie" onclick="plusp('tranwitekatep')">
+                    <p style="color: white;font-size: 2rem;" >+</p>
+                </div>
+            
+
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+
+
+            <input type="text" name="image" id="livraison" placeholder="numero" value="{{user.image}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="noumeme" id="livraison" placeholder="numero" value="{{user.id}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="prix" id="livraison" placeholder="numero" value="{{user.porceprix}}" style="visibility: hidden;height: 0;width: 0;">
+            <input type="text" name="quantiteplos" id="quantiteplos" placeholder="numero" value="0" style="visibility: hidden;height: 0;width: 0;">
+            <div class="pierteer">
+                <p style="text-align: start;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Quantité total : </p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> X </p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
+                
+            </div>
+            <div class="pierteer">
+                <p style="text-align: start;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Cout total : </p>
+                <p id="lepris" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1.4rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
+            </div>
+            <input type="text" name="article" id="" style="width: 0;height: 0;position: absolute;top: -20px;" value="{{user.id}}">
+                    
+            <button type="submit" class="commande" style="display: flex;justify-content: start;border: none;background-color: white;"> 
+                <div style="width: 20%;display: flex;justify-content: start;">
+                   
+                   
+                
+                    <div class="regle" style="background-color: #f60;border: none;">
+                        <img src="{{url_for('static', filename='IMAGE/panier.png')}}" alt="" style="filter: invert();" width="20px">
+                        
+                    </div>
+                </div>
+                <a href="#formuhfh1" style="width: 80%;background-color: red;">
+                <div class="bouto" type="submit" style="width: 100%;">AJOUTER AU PANIER</div>
+                </a>
+                
+            </button>
+           
+        </div>
+    </form>
         
     <!-- listedeselemet -->
     <div class="jjhfsdf54">
@@ -821,7 +869,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -841,7 +889,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>

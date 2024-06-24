@@ -14,15 +14,15 @@
 </head>
 
 
-<body>
-    <a href="monpanier/1">
+<body> 
+    <a href="/monpanier">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
             <div class="rondquant">
-                <p style="font-size: 1rem;">5</p>
+                <p style="font-size: 1rem;">{{conueww}}</p>
             </div>
         </div>
-    </a>  
+    </a> 
     <div class="menuddg">
         <div class="menuddg2">
             <div class="menuddg3">
@@ -95,24 +95,39 @@
         <div class="monpsjf1">
             <div class="meselele">
                 <div class="jjhfsdf">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 10px;">PANIER { 34 }</p>
+                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 10px;">PANIER { {{conueww}} }</p>
                 </div>
+               
+               
+                {% for i in gdhsuud %}
+                {% if i["categorie" ] == "Montre" %}
+                
                 <div class="lesvrai">
                     <div class="geujdjd">
                         <div class="imahdjd1">
-                            <img src="{{url_for('static', filename='IMAGE/image.jpeg')}}"  width="100%" height="90%" alt="" >
+                            <a href="/montres/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
                         </div>
                         <div class="imahdjd2">
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 0.8rem;">MONTRE HOMME</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: black;">Binatone Blender - BLG-450P MK2 - 1.5L - 350W - Nude - 24 Mois Garantie</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: green;">Livraison gratuite</p>
+                            {% if i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
+                            {% endif %}
+                            {% if not i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
+                            {% endif %}
+                            {% if i.tailed %}
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            {% endif %}
                         </div>
                         <div class="imahdjd3">
                             
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">14.888 FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>14.999 FCFA</s></p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
                             <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- 35 %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
                             </div>
                             
                         </div>
@@ -120,77 +135,55 @@
                     <div class="duudcddc">
                         <div class="jujdcuudwucd">
                             <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: orangered;">SUPPRIMER</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: #f60;">SUPPRIMER</p>
                         </div>
                         <div class="jujdcuudwucd1">
-                            <div class="ududdw2">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
                                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
                             </div>
                             <div class="ududdw1">
-                                <input type="text" name="" id="" style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="0">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
                             </div>
-                            <div class="ududdw">
+                            <div class="ududdw" onclick="plusp('mnumq')">
                                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="lesvrai">
-                    <div class="geujdjd">
-                        <div class="imahdjd1">
-                            <img src="{{url_for('static', filename='IMAGE/image.jpeg')}}"  width="100%" height="90%" alt="" >
-                        </div>
-                        <div class="imahdjd2">
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 0.8rem;">MONTRE HOMME</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: black;">Binatone Blender - BLG-450P MK2 - 1.5L - 350W - Nude - 24 Mois Garantie</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: green;">Livraison gratuite</p>
-                        </div>
-                        <div class="imahdjd3">
-                            
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">14.888 FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>14.999 FCFA</s></p>
-                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- 35 %</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="duudcddc">
-                        <div class="jujdcuudwucd">
-                            <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: orangered;">SUPPRIMER</p>
-                        </div>
-                        <div class="jujdcuudwucd1">
-                            <div class="ududdw2">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
-                            </div>
-                            <div class="ududdw1">
-                                <input type="text" name="" id="" style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="0">
-                            </div>
-                            <div class="ududdw">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                {% endif %}
+                {% if i["categorie" ]== "chaussure" %}
+                
                 
                 <div class="lesvrai">
                     <div class="geujdjd">
+                        
                         <div class="imahdjd1">
-                            <img src="{{url_for('static', filename='IMAGE/image.jpeg')}}"  width="100%" height="90%" alt="" >
+                            <a href="/sacs/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
                         </div>
+                      
                         <div class="imahdjd2">
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 0.8rem;">MONTRE HOMME</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: black;">Binatone Blender - BLG-450P MK2 - 1.5L - 350W - Nude - 24 Mois Garantie</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: green;">Livraison gratuite</p>
+                            {% if i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
+                            {% endif %}
+                            {% if not i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
+                            {% endif %}
+                            {% if i.tailed %}
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            {% endif %}
                         </div>
                         <div class="imahdjd3">
                             
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">14.888 FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>14.999 FCFA</s></p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
                             <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- 35 %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
                             </div>
                             
                         </div>
@@ -198,21 +191,80 @@
                     <div class="duudcddc">
                         <div class="jujdcuudwucd">
                             <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: orangered;">SUPPRIMER</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: #f60;">SUPPRIMER</p>
                         </div>
                         <div class="jujdcuudwucd1">
-                            <div class="ududdw2">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
                                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
                             </div>
                             <div class="ududdw1">
-                                <input type="text" name="" id="" style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="0">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
                             </div>
-                            <div class="ududdw">
+                            <div class="ududdw" onclick="plusp('mnumq')">
                                 <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
                             </div>
                         </div>
                     </div>
                 </div>
+              
+             
+                {% endif %}
+                {% if i["categorie" ] == "VetementFemme" %}
+               
+                
+                <div class="lesvrai">
+                    <div class="geujdjd">
+                        
+                        <div class="imahdjd1">
+                            <a href="/info/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
+                        </div>
+                       
+                        <div class="imahdjd2">
+                            {% if i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
+                            {% endif %}
+                            {% if not i.tailed %}
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
+                            {% endif %}
+                            {% if i.tailed %}
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            {% endif %}
+                        </div>
+                        <div class="imahdjd3">
+                            
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="duudcddc">
+                        <div class="jujdcuudwucd">
+                            <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: #f60;">SUPPRIMER</p>
+                        </div>
+                        <div class="jujdcuudwucd1">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
+                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq')">
+                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                {% endif %}
+                {% endfor %}
                 
             </div>
             <div class="meselele1">
@@ -220,21 +272,30 @@
                     <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">DETAILS DU PANIER</p>
                 </div>
                 <div class="jdidsed2">
-                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Quantite de produits { 34 }</p>
+                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Quantite de produits { {{conueww}} }</p>
                     <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ratione, a</p>
                 </div>
                 <div class="jdidsed2">
                     <p style="padding-top: 5px;color: black;font-size: 0.8rem;">Cout total de produits { FCFA }</p>
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;">14.888 FCFA</p>
+                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;">{{somme}} FCFA</p>
+                    {% if conueww > 4 %}
                     <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 105px;border-radius: 5px;margin-top: 10px;">
                         <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison gratuite</p>
                     </div>
+                    {% endif %}
+                    {% if conueww <= 4 %}
+                    <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 125px;border-radius: 5px;margin-top: 10px;">
+                        <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison a vos frais</p>
+                    </div>
+                    {% endif %}
                 </div>
+              
+                
                 <div class="jdidsed2">
                     <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Pourquoi c'est gratuit ?</p>
                     <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;padding-bottom: 15px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ratione, a</p>
                     <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 97%;border-radius: 5px;margin-top: 10px;">
-                        <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: orangered;width: 100%;">COMMANDER MAINTENANT</button>
+                        <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: #f60;width: 100%;">COMMANDER MAINTENANT</button>
                     </div>
                 </div>
             </div>
@@ -248,7 +309,8 @@
     <!-- listedeselemet -->
     <div class="jjhfsdf54">
         <div class="jdudu">
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 40px;">Categorie montre</p>
+            
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/montre" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie montre</a> </p>
         </div>
     </div>
     
@@ -269,7 +331,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -289,7 +351,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>
@@ -315,7 +377,8 @@
     <!-- listedeselemet -->
     <div class="jjhfsdf54">
         <div class="jdudu">
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 40px;">Categorie vetement femme</p>
+            
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie vetement femme</a> </p>
         </div>
     </div>
     <div class="listedeselements">
@@ -333,7 +396,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -352,7 +415,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -376,7 +439,7 @@
        <!-- listedeselemet -->
        <div class="jjhfsdf54">
         <div class="jdudu">
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 40px;">Autres produits ...</p>
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/sac" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie Chaussures Hommes & Femmmes</a> </p>
         </div>
     </div>
        <div class="listedeselements">
@@ -386,14 +449,14 @@
                 <img src="{{url_for('static', filename='IMAGE/sup.png')}}"  width="30px" alt="" >
             </div>
             <div class="listedeselements1">
-                {% for i in montre %}
-                <a href="/montres/{{i.id}}">
+                {% for i in chaussure %}
+                <a href="/sac/{{i.id}}">
                     <div class="uneldd">
                         <div class="imahhd">
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -404,16 +467,16 @@
                     </div>
                 </a>
                 {% endfor %}
-                {% if not montre[5] %}
-                {% for i in montre %}
-                <a href="/montres/{{i.id}}">
+                {% if not chaussure[5] %}
+                {% for i in chaussure %}
+                <a href="/sac/{{i.id}}">
                     <div class="uneldd">
                         <div class="imahhd">
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>

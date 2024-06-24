@@ -11,7 +11,7 @@
     background-color: rgb(36, 36, 116);
     border-radius: 100%;
     position: fixed;
-    bottom: 10px;
+    bottom: 50px;
     right: 10px;
     display: flex;
     align-items: center;
@@ -25,7 +25,7 @@
     height: 20px;
     background-color: #ff4500;
     position: fixed;
-    bottom: 50px;
+    bottom: 90px;
     right: 10px;
     border-radius: 100%;
     color: white;
@@ -36,7 +36,7 @@
 #deuxlogo23 {
     padding-left: 5px;
     padding-right: 5px;
-    background-color: orangered;
+    background-color: #f60;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -111,13 +111,13 @@
     }
     .menuddg {
         position: fixed;
-        height: 300px;
+        height: 100px;
         width: 100%;
         /* background-color: red; */
         /* display: flex;
         justify-content: center;
         align-items: start; */
-        padding-right: 20px;
+        /* padding-right: 20px; */
         top: 100px;
         display: none;
 
@@ -126,59 +126,67 @@
     
     .menuddg.active {
         position: fixed;
-        height: 300px;
+        height: 100px;
         width: 100%;
         visibility: visible;
         /* background-color: red; */
         display: flex;
-        display: block;
+        
         justify-content: center;
-        align-items: start;
-        padding-right: 20px;
+        align-items: center;
+        /* padding-right: 20px; */
         top: 100px;
         z-index: 99999999;
         
     }
     .menuddg2 {
         display: flex;
-        justify-content: end;
+        
+        justify-content: center;
         align-items: start;
-        height: 300px;
+        height: 100px;
         width: 100%;
         max-width: 1200px;
-        padding-right: 10px;
+        /* padding-right: 10px; */
         /* background-color: yellow; */
+        padding-top: 10px;
         
     }
     .menuddg3 {
     
-        height: 220px;
-        width: 200px;
+        height: 45px;
+        width: 60%;
         box-shadow: 1px 1px 5px 0.3px rgba(228, 228, 228, 0.245);
         background-color: white;
         border-radius: 5px;
-        padding-top: 10px;
+        
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
         
     }
     .etdjff {
         height: 40px;
-        width: 100%;
+       
         /* background-color: red; */
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        padding-left: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         gap: 10px;
         color: black;
     }
     .etdjff:hover{
         height: 40px;
-        width: 100%;
+       
         background-color: rgba(128, 128, 128, 0.14);
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
-        padding-left: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
         gap: 10px;
     }
     .etdjff a{
@@ -232,7 +240,7 @@
     #deuxlogo {
         padding-left: 5px;
         padding-right: 5px;
-        background-color: orangered;
+        background-color: #f60;
         color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -309,7 +317,7 @@
     #hjdsd button{
         height: 40px;
         margin-left: 10px;
-        background-color: orangered;
+        background-color: #f60;
         padding-left: 15px;
         padding-right: 15px;
         color: white;
@@ -438,7 +446,7 @@
 .ududdw {
     height: 40px;
     width: 40px;
-    background-color: orangered;
+    background-color: #f60;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -461,7 +469,7 @@
 }
 
 .meselele1 {
-    height: 400px;
+    height: 410px;
     width: 25%;
     background-color: white;
     box-shadow: 1px 1px 3px 0.3px rgba(171, 171, 171, 0.349);
@@ -623,7 +631,7 @@
     #deuxlogo {
         padding-left: 5px;
         padding-right: 5px;
-        background-color: orangered;
+        background-color: #f60;
         color: white;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
@@ -730,7 +738,7 @@
     #hjdsd button{
         height: 40px;
         margin-left: 10px;
-        background-color: orangered;
+        background-color: #f60;
         padding-left: 15px;
         padding-right: 15px;
         color: white;
@@ -791,9 +799,10 @@
     box-shadow: 1px 1px 3px 0.3px rgba(171, 171, 171, 0.349);
 }
 .meselele1 {
-    height: auto;
-    padding-bottom: 50px;
+    /* height: auto; */
+    padding-bottom: 70px;
     width: 100%;
+   
     background-color: white;
     box-shadow: 1px 1px 3px 0.3px rgba(171, 171, 171, 0.349);
 }
@@ -815,7 +824,7 @@
     background-color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     
 }
 .imahdjd1 {
@@ -833,13 +842,16 @@
 }
 .imahdjd3 {
     height: 100%;
-    width: 40%;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: end;
     padding-right: 20px;
     flex-direction: column;
     /* background-color: yellowgreen; */
+}
+#sadtdyayuda {
+    font-size: 0.8rem;
 }
 .duudcddc {
     width: 100%;
@@ -882,7 +894,7 @@
 .ududdw {
     height: 40px;
     width: 40px;
-    background-color: orangered;
+    background-color: #f60;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -989,7 +1001,7 @@ body {
     width: 100%;
     height: 300px;
     max-width: 1200px;
-    /* background-color: orangered; */
+    /* background-color: #f60; */
     
     display: grid;
     grid-auto-columns: auto;

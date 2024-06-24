@@ -13,11 +13,11 @@
 </head>
 <body>
     <div class="body">
-    <a href="monpanier/1">
+    <a href="/monpanier">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
             <div class="rondquant">
-                <p style="font-size: 1rem;">5</p>
+                <p style="font-size: 1rem;">{{conueww}}</p>
             </div>
         </div>
     </a>  
@@ -25,7 +25,7 @@
        
         <div class="retse">
             <div class="menu">
-                <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: orangered;
+                <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: #f60;
                 ">CATEGORIE</h2>
             </div>
             
@@ -41,7 +41,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" style="filter: invert();" alt=""> <span >Chaussures H & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" style="filter: invert();" alt=""> <span style="color: orangered;">Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" style="filter: invert();" alt=""> <span style="color: #f60;">Montres </span></p>
             </a>
             
             
@@ -77,7 +77,7 @@
                 </a>
                 
                 <a href="/montre">
-                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;">Montres </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: #f60;">Montres </span></p>
                 </a>
                 
                 
@@ -111,7 +111,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span >Chaussures H & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: orangered;"> Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: #f60;"> Montres </span></p>
             </a>
             
             
@@ -163,7 +163,7 @@
                         </li>
                         <li>
                             <div class="menue">
-                                <a href="#" class="menue" id="cleud" style="color: orangered;">> Montres</a>
+                                <a href="#" class="menue" id="cleud" style="color: #f60;">> Montres</a>
                             </div>
                         </li>
                     </ul>
@@ -185,7 +185,7 @@
         </div> -->
         <div class="jjhfsdf54">
             <div class="jdudu">
-                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 50px;color: black;padding-left: 25px;">Articles > <a href="/montre" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;">Categorie Montres</a> </p>
+                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 50px;color: black;padding-left: 25px;">Articles > <a href="/montre" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;">Catégorie Montres</a> </p>
             </div>
         </div>
         <div class="punds">
@@ -226,7 +226,7 @@
                         height = "120px" alt="">
                         <div class="poircentag">
                             {% if i.porce != '0' %}
-                            <p style="font-size:0.8rem;color: orangered;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                            <p style="font-size:0.8rem;color: #f60;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
                             {% endif %}
                         </div>
                     </div>
@@ -289,11 +289,11 @@
     </div>
 
     <div class="resfgdg">
-        <a href="monpanier/1">
+        <a href="/monpanier">
             <div class="marcher">
                 <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
                 <div class="rondquant">
-                    <p style="font-size: 1rem;">5</p>
+                    <p style="font-size: 1rem;">{{conueww}}</p>
                 </div>
             </div>
         </a>  
@@ -375,7 +375,7 @@
                 <div class="indikdfhef2">
                     <div class="jjhfsdf54">
                         <div class="jdudu">
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;">> Categorie Montres </p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;">> Catégorie Montres </p>
                         </div>
                     </div>
                     <div class="diiepiire">
@@ -391,7 +391,7 @@
                             height = "120px" alt="">
                             <div class="poircentag">
                                 {% if i.porce != '0' %}
-                                <p style="font-size:0.8rem;color: orangered;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                                <p style="font-size:0.8rem;color: #f60;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>

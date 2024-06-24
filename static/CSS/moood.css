@@ -28,7 +28,7 @@ header {
 #deuxlogo {
     padding-left: 5px;
     padding-right: 5px;
-    background-color: orangered;
+    background-color: #f60;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -76,7 +76,7 @@ header {
 .coloope {
     height: 20px;
     width: 20px;
-    background-color: orangered;
+    background-color: #f60;
     border-radius: 5px;
     cursor: pointer;
 }

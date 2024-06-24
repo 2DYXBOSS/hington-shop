@@ -13,21 +13,86 @@
     
 </head>
 <body>
-    <a href="monpanier/1">
+    <div class="menuddg">
+        <div class="menuddg2">
+            <div class="menuddg3">
+                
+
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/homedd.png')}}"  width="15px" alt="">
+                    <a href="/" style="font-size: 0.8rem;">Acceuil</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="15px" alt="">
+                    <a href="/vente" style="font-size: 0.8rem;">Vetements femmes</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="15px" alt="" >
+                    <a href="/sac" style="font-size: 0.8rem;">Chaussures H & F</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="15px" alt="">
+                    <a href="/montre" style="font-size: 0.8rem;">Montres</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
+                    <a href="/#contace" style="font-size: 0.8rem;">Contacts</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+       <div class="hedaf">
+            <div class="logo">
+                <div class="tete">
+                    <div class="te1">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: rgb(36, 36, 116);
+                   ;font-size: 1.1rem; ">HING<span id="deuxlogo">TON SHOP</span></h1>
+                    </div>
+                    
+                    
+                   
+                   
+                </div>
+            </div>
+            <div class="recherche">
+                <form action="/mesrecherches" method="post" id="hjdsd">
+                    <div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div>
+                    <input type="text" name="recher" id="" placeholder="Cherchez un produit">
+                    <button type="submit">RECHERCHER</button>
+                </form>
+            </div>
+            
+            <div class="menu12">
+                <div class="imsdghde1">
+                    <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                </div>
+                <div class="imsdghde12">
+                    <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                </div>
+                <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj">
+                <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj2">
+            </div>
+        </div>
+       
+    </header>
+    <!-- <a href="/monpanier">
         <div class="marcher">
             <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
             <div class="rondquant">
                 <p style="font-size: 1rem;">5</p>
             </div>
         </div>
-    </a>    
+    </a>     -->
     <!-- <div class="listedecomm">
         <div class="te140">
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
         ">HING<span id="deuxlogo">TON SHOP</span></h1>
         </div>
         <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;text-align: start;padding-bottom: 10px;padding-top: 20px;
-            color: orangered;padding-left: 10px;">VOTRE PANIER</h1>
+            color: #f60;padding-left: 10px;">VOTRE PANIER</h1>
         <img src="{{url_for('static', filename='IMAGE/croix.png')}}"  width="20px" height="20px" alt="" style="position: absolute;top: 120px;right: 20px;">
         <div class="listedecomm1">
         </div>
@@ -220,7 +285,7 @@
                             </li>
                             <li>
                                 <div class="menue">
-                                    <a href="#" class="menue" id="cleud">> Toutes categories</a>
+                                    <a href="#" class="menue" id="cleud">> Toutes catégories</a>
                                 </div>
                             </li>
                         </ul>
@@ -405,18 +470,19 @@
             <p style="color: white;">A savoir</p>
         </div>
         <div class="gsidke">
-            <p style="font-size: 0.8rem;color: gray;">- les prix de tous nos articles tels que : <span style="color: orangered;"> Vetements femmes ,  Montres ,  Chaussures hommes & femmes</span>  sont a moins de <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);">10.000 FCFA</span></p>
-            <p style="font-size: 0.8rem;color: gray;">- les <span style="color: orangered;">Livraison </span>  sont <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);">GRATUITE </span> sur Abidjan .</p>
+            <p style="font-size: 0.8rem;color: gray;">- les prix de tous nos articles tels que : <span style="color: #f60;"> Vetements femmes ,  Montres ,  Chaussures hommes & femmes</span>  sont a moins de <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);">10.000 FCFA</span></p>
+            <p style="font-size: 0.8rem;color: gray;">- les <span style="color: #f60;">Livraison </span>  sont <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: rgb(36, 36, 116);">GRATUITE </span> sur Abidjan .</p>
         </div>
         
     </div>
-    
-    <div class="vtefemmes">
+    <div class="eyudauae">
+
+    </div>
+    <div class="jjhfsdf54">
         <div class="jdudu">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
-        color: rgb(36, 36, 116);padding-left: 40px;">VETEMENTS FEMMES</h1>
+            
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Découvrez nos vetements pour femmes</a> </p>
         </div>
-       
     </div>
     <!-- listedeselemet -->
     <div class="listedeselements">
@@ -434,7 +500,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -453,7 +519,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -473,12 +539,11 @@
         
     </div>
     <!-- listedeselemet -->
-    <div class="vtefemmes">
+    <div class="jjhfsdf54">
         <div class="jdudu">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
-        color: rgb(36, 36, 116);padding-left: 40px;">MONTRES</h1>
+            
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/montre" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Découvrez nos montres pour hommes & femmes </a> </p>
         </div>
-       
     </div>
     <!-- <div class="afficje">
         
@@ -498,7 +563,7 @@
                
 
                 <span>
-                    <p style="color: orangered;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                    <p style="color: #f60;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                 </span>
                 
 
@@ -526,7 +591,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -546,7 +611,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>
@@ -569,12 +634,11 @@
     </div>
     <!-- listedeselemet -->
 
-    <div class="vtefemmes">
+    <div class="jjhfsdf54">
         <div class="jdudu">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: start;padding-bottom: 50px;
-        color: rgb(36, 36, 116);padding-left: 40px;">CHAUSSURES</h1>
+            
+            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/sac" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Découvrez nos chaussures hommes & femmes</a> </p>
         </div>
-       
     </div>
     <div class="listedeselements">
         <div class="grsgjd">
@@ -590,7 +654,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -610,7 +674,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: orangered;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>
@@ -631,6 +695,9 @@
         </div>
         
     </div>
+    <div class="eyudauae">
+        
+    </div>
     <div class="avisdesgens">
         <a href="/vente" >ACHETER MAINTENANT</a>
     </div>
@@ -641,14 +708,14 @@
     <div class="formulairep">
         <div class="formulp">
             <h1 style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;">CONTACTEZ - NOUS </h1>
-            <p style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: orangered;padding-top: 30px;">1/ Vous rencontrez un probleme ?</p>
+            <p style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: #f60;padding-top: 30px;">1/ Vous rencontrez un probleme ?</p>
             <p style="padding-top: 10px;color: white;">Si vous avez un probleme quelconque sur notre plateforme laissez nous message via ce formulaire .</p>
-            <p style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: orangered;padding-top: 50px;">1/ Avez - vous des suggestions a nous apporteés ?</p>
+            <p style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: #f60;padding-top: 50px;">1/ Avez - vous des suggestions a nous apporteés ?</p>
             <p style="padding-top: 10px;color: white;">Si vous avez une suggestion sur notre plateforme laissez nous message via ce formulaire . </p>
         </div>
         <form action="/commentaire" method="post" >
             <div class="texform">
-                <h1 style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: orangered;text-align: center;font-size: 1.3rem;padding-top: 20px;">CONTACTEZ - NOUS </h1>
+                <h1 style="font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: #f60;text-align: center;font-size: 1.3rem;padding-top: 20px;">CONTACTEZ - NOUS </h1>
             </div>
             <div class="formu1">
                 <div class="nomform1">
@@ -718,10 +785,10 @@
         
     </div>
     <footer id="foot">
-        <header id="head">
+        <div id="head">
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
             ">HING<span id="deuxlogo">TON SHOP</span></h1>
-        </header>
+        </div>
         <!-- <p >Nous sommes une boutique de vente en ligne ...
 
         </p> -->

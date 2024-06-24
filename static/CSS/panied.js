@@ -53,3 +53,60 @@ imsdghde12.addEventListener('click',()=>{
 
 //     monfixder.classList.add('active');
 // })
+let mnum = document.querySelector('#mnum')
+function moinsp(ecranid) {
+    couterw =document.querySelector("#couterw").value
+    et = "#" + ecranid + ""
+    let ecraid  = document.querySelector(et)
+    if (ecraid.value >= 1){
+        ecraid.value = parseInt(ecraid.value) - 1; 
+        somiu = document.querySelector("#somiu")
+    
+        somiu.innerHTML = parseInt(somiu.innerHTML)  - 1// Mettre à jour le contenu de l'élément
+        quantiteplos = document.querySelector("#quantiteplos")
+        quantiteplos.value = somiu.innerHTML
+        lepris = document.querySelector("#lepris")
+        lepris.innerHTML = lepris.innerHTML - parseInt(couterw)
+    }
+    
+    console.log(et);
+    
+    return 0
+}
+
+function plusp(ecranid) {
+    couterw =document.querySelector("#couterw").value
+    et = "#" + ecranid + ""
+    let ecraid  = document.querySelector(et)
+    ecraid.value = parseInt(ecraid.value) + 1; // Mettre à jour le contenu de l'élément
+    console.log(et);
+    somiu = document.querySelector("#somiu")
+    
+    
+    somiu.innerHTML = parseInt(somiu.innerHTML)  + 1
+    quantiteplos = document.querySelector("#quantiteplos")
+    quantiteplos.value = somiu.innerHTML
+    lepris = document.querySelector("#lepris")
+    lepris.innerHTML = somiu.innerHTML * parseInt(couterw)
+    return 0
+}
+
+
+function verif(ide,quantep) {
+    et = "#" + quantep + ""
+    let ecraid  = document.querySelector(et)
+    let a = ecraid.innerHTML
+    if ( parseInt(a) > 0){
+        let lien ="'" + `https://hington-shop.onrender.com/ssm/${ide}` + "'"
+        console.log(lien);
+        console.log(window.location);
+        // window.location.remove = lien
+        return window.location = '/ssm/1'
+    }
+    if (parseInt(a) < 1){
+        console.log("000");
+        console.log(window.location);
+        return 0
+    }
+        
+}
