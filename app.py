@@ -1023,6 +1023,33 @@ def commandeznow():
     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
   
 
+
+@app.route("/Supprimer/<int:id>", methods=["POST","GET"])
+def Supprimer(id):
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    
+    ior =0
+    for i in tableaus : 
+        ior+=1
+        print('produit,',ior)
+        if int(i.identifiant) == useruo.id :
+            user = Panieruser.query.filter_by(produite = id, identifiant = useruo.id).first()
+            zerre = Panieruser.query.get(id)
+            db.session.delete(zerre)
+            db.session.commit()
+            return redirect('/monpanier')
+            print('produit supprimer')
+
+    print('NON supprimer')  
+    return redirect('/monpanier')
+
+
 from urllib.parse import quote
 @app.route('/ssm', methods=["POST"])
 def ssm():
@@ -1050,7 +1077,7 @@ def ssm():
             
         db.session.add(pani)
         db.session.commit()
-        return redirect("/")
+        return redirect("/monpanier")
 
 
     xs = request.form.get("xs","")
@@ -1286,7 +1313,7 @@ def ssm():
     
 
     # 
-    return redirect("/")
+    return redirect("/monpanier")
 
 
 @app.route("/administa")
@@ -1468,7 +1495,7 @@ def panierus():
         if int(i.identifiant) == useruo.id :
             print('prevdg', i.identifiant , 'prevdg' , useruo.id)
             hdhdud = Ajouter.query.get(i.produite)
-            gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+            gdhsuud.append({"id":i.id,"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
 
 
     conueww = len(gdhsuud)    
@@ -1493,7 +1520,7 @@ def panierus():
 
     print(commenta[0].mail)
     
-    return render_template("panierus.html",gdhsuud=gdhsuud,commenta=commenta,catefemme=catefemme,montre=montre,id=id,chaussure=chaussure,somme=somme,conueww=conueww)
+    return render_template("panierus.html",gdhsuud=gdhsuud,commenta=commenta,catefemme=catefemme,montre=montre,id=id,chaussure=chaussure,somme=somme,conueww=conueww,useruo=useruo.id)
 
   
 @app.route('/mofiedd/<int:id>')
