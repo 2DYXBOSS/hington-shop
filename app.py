@@ -985,7 +985,43 @@ def info(id):
 #     print("MO")
 #     return redirect("/vente")
 
+@app.route('/commandeznow', methods=["POST"])
+def commandeznow():
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+    else:
+        return redirect('/pre')
+    
+    useruo = Profil.query.get(useru.id)
+    tableaus = Panieruser.query.all()
+    gdhsuud = []
+    macommande = []
+    
+    for i in tableaus : 
+        
+        if int(i.identifiant) == useruo.id :
+            print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+            hdhdud = Ajouter.query.get(i.produite)
+            if hdhdud.categorie == 'VetementFemme' :
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/info/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
+            if hdhdud.categorie == 'Montre' :
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/montres/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto})
+            if hdhdud.categorie == 'chaussure' :
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/sac/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
 
+    somme = 0
+    
+    for i in macommande :
+        print(int(i["Prix final"]))
+        print(i["Prix final"])
+        somme += int(i["Prix final"])
+    
+    macommande.append({"Somme totale" : somme})
+
+
+    ms = macommande
+    return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
+  
 
 from urllib.parse import quote
 @app.route('/ssm', methods=["POST"])
