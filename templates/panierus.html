@@ -458,7 +458,7 @@
             </div>
             <div class="listedeselements1">
                 {% for i in chaussure %}
-                <a href="/sac/{{i.id}}">
+                <a href="/sacs/{{i.id}}">
                     <div class="uneldd">
                         <div class="imahhd">
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
@@ -477,7 +477,7 @@
                 {% endfor %}
                 {% if not chaussure[5] %}
                 {% for i in chaussure %}
-                <a href="/sac/{{i.id}}">
+                <a href="/sacs/{{i.id}}">
                     <div class="uneldd">
                         <div class="imahhd">
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
