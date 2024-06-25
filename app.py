@@ -1003,11 +1003,11 @@ def commandeznow():
             print('prevdg', i.identifiant , 'prevdg' , useruo.id)
             hdhdud = Ajouter.query.get(i.produite)
             if hdhdud.categorie == 'VetementFemme' :
-                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/info/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/info/{i.produite} ","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
             if hdhdud.categorie == 'Montre' :
-                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/montres/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto})
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/montres/{i.produite} ","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto})
             if hdhdud.categorie == 'chaussure' :
-                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/sac/{i.produite}","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
+                macommande.append({"lien":f"Le lien : https://hington-shop.onrender.com/sac/{i.produite} ","Categorie":hdhdud.categorie,"Nom":hdhdud.nom,"Reduction":hdhdud.porce,"Prixbarré":hdhdud.prix,"Prix final":hdhdud.porceprix,"Quantité":i.quantiteto,"taille":i.tailed})
 
     somme = 0
     
