@@ -294,6 +294,134 @@
             </div>
         </div>
     </div>
+     <!-- {% for i in catefemme %}
+                <div class="hjhdfkswd">
+                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" style="transform: rotate(90deg);" alt="">
+                </div>
+                {% endfor %} -->
+    <div class="vraipageacceuil">
+        <div class="djshjjyswddqe">
+            <div class="ghghsahgwashj">
+
+            
+                <div class="inghsdaghhda1">
+                    
+                </div>
+                <div class="inghsdaghhda2">
+                    
+                
+                    
+                    <div class="hjhdfkswd">
+                        <img src="{{url_for('static', filename='IMAGE/IMG_9832.jpg')}}" style="transform: rotate(90deg);"  alt="">
+                    
+                    </div>
+                    <div class="hjhdfkswd">
+                        <img src="{{url_for('static', filename='IMAGE/chauss.jpg')}}" style="transform: rotate(90deg);"  alt="">
+                    </div>
+                    <div class="hjhdfkswd">
+                        <img src="{{url_for('static', filename='IMAGE/IMG_9838.jpg')}}" style="transform: rotate(90deg);"  alt="">
+                    </div>
+                    <div class="hjhdfkswd">
+                        <img src="{{url_for('static', filename='IMAGE/monrre.jpg')}}" style="transform: rotate(90deg);"  alt="">
+                    </div> 
+                    
+                    <div class="dghssd">
+                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;color: white;border: 1px solid white;">PROFITEZ DES MAINTENANT DE LA PROMOTION ALLANT JUSQU'A -1OO% DE REDUCTION</h1>
+                        
+                    </div>
+                    
+                </div>
+                <div class="inghsdaghhda3">
+                    <div class="diieshhs">
+
+                    </div>
+                </div>
+            </div>
+            <div class="hsdgdayadwws">
+                <div class="jjhfsdf54">
+                    <div class="jdudu" style="background-color: rgba(255, 102, 0, 0.49);">
+                        
+                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Promo -59% de réduction sur tous nos articles</a> </p>
+                    </div>
+                </div>
+                <!-- listedeselemet -->
+                <div class="listedeselements" style="background-color: transparent;">
+                    <div class="grsgjd">
+                        <div class="flevdh1">
+                           
+                            <img src="{{url_for('static', filename='IMAGE/sup.png')}}"  width="30px" alt="" >
+                        </div>
+                        <div class="listedeselements1">
+                            
+
+                            {% for i in catefemme[:2] %}
+                             <a href="/info/{{i.id}}">
+                                <div class="uneldd">
+                                    <div class="imahhd">
+                                        <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                                        <div class="reghd">
+                                            {% if i.porce != "0" %}
+                                            <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+            
+                                </div>
+                            </a>
+                            {% endfor %}
+                            
+                            {% for i in montre[:2] %}
+                             <a href="/info/{{i.id}}">
+                                <div class="uneldd">
+                                    <div class="imahhd">
+                                        <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                                        <div class="reghd">
+                                            {% if i.porce != "0" %}
+                                            <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+            
+                                </div>
+                            </a>
+                            {% endfor %}
+                            {% for i in chaussure[:2] %}
+                             <a href="/info/{{i.id}}">
+                                <div class="uneldd">
+                                    <div class="imahhd">
+                                        <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                                        <div class="reghd">
+                                            {% if i.porce != "0" %}
+                                            <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+            
+                                </div>
+                            </a>
+                            {% endfor %}
+                           
+                        </div>
+                        <div class="flevdh1">
+                            <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="30px" alt="" >
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- listedeselemet -->
+            </div>
+        </div>
+        
+    </div>
     <div class="change">
         <div class="awqpl">
             <div class="texetse">
@@ -312,6 +440,8 @@
     <!-- <section class="sec-1">
         <h1 class="animate">dedy</h1>
     </section> -->
+    
+
     <section class="lesimages">
         <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 50px;
             color: rgb(36, 36, 116);">TOUTES LES CATEGORIES D'ARTICLES</h1>

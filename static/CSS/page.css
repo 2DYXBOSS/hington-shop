@@ -1,0 +1,579 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+a{
+    text-decoration: none;
+}
+.wweee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    /* background-color: white; */
+    z-index: 99999;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    overflow-y: scroll;
+    padding-top: 160px;
+}
+.wweee2 {
+    width: 100%;
+    max-width: 400px;
+    /* height: 100vh; */
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    /* overflow: scroll; */
+   
+}
+.wweee2 input {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    margin-bottom: 10px;
+    border: 1px solid black ;
+    padding-left: 10px;
+    outline: none;
+}
+.wweee2 button {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(36, 36, 116);
+    background-color: #f60;
+    border: none;
+    margin-top: 30px;
+   
+    padding-left: 10px;
+    padding-right: 20px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+@media (max-width: 800px) {
+    .recherche {
+        display: none;
+    }
+    .recherche.active {
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 70px;
+    }
+    #hdhdj  {
+        display: block;
+    }
+    #hdhdj.active {
+        display: none;
+    }
+    #hdhdj2  {
+        display: none;
+    }
+    #hdhdj2.active {
+        display: block;
+    }
+    .menuddg {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        /* background-color: red; */
+        /* display: flex;
+        justify-content: center;
+        align-items: start; */
+        padding-right: 20px;
+        top: 100px;
+        display: none;
+        
+    }
+    
+    .menuddg.active {
+        position: fixed;
+        height: 300px;
+        width: 100%;
+        visibility: visible;
+        /* background-color: white; */
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: start;
+        padding-right: 20px;
+        top: 100px;
+        z-index: 9999999;
+       
+        
+    }
+    .menuddg2 {
+        display: flex;
+        justify-content: end;
+        align-items: start;
+        height: 300px;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 10px;
+        /* background-color: yellow; */
+        
+    }
+    .menuddg3 {
+    
+        height: 220px;
+        width: 200px;
+        box-shadow: 1px 1px 5px 0.3px rgba(228, 228, 228, 0.245);
+        /* background-color: red; */
+        background-color: white;
+        border-radius: 5px;
+        padding-top: 10px;
+        
+    }
+    .etdjff {
+        height: 40px;
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+        color: black;
+    }
+    .etdjff:hover{
+        height: 40px;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.14);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 10px;
+        gap: 10px;
+    }
+    .etdjff a{
+        color: black;
+    }
+    .etdjff:hover a{
+        color: #ff4500;
+        
+    }
+    .etdjff:hover img{
+        filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);
+    }
+    header {
+        height: 70px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 9999999999;
+    }
+    
+    
+    
+    
+    .tete {
+        width: 100%;
+        height: 70px;
+        background-color: white;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
+    
+    }
+    .te1 {
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding-left: 20px;
+    }
+    
+    #deuxlogo {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #f60;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .hedaf {
+        height: 100%;
+        width: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+    }
+    .logo {
+        height: 100%;
+        width: 250px;
+        /* background-color: red; */
+    }
+    
+    .menu {
+        height: 100%;
+        width: 150px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        /* background-color: red; */
+    }
+    #hjdsd {
+        height: 100%;
+        width: 80%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+       
+    }
+    #hjdsd input{
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-right: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        padding-left: 10px;
+        outline: none;
+        
+    }
+    .imsdghde{
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1{
+        height: 40px;
+        width: 40px;
+        /* background-color: yellow; */
+        /* border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ; */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1.active{
+        display: none;
+       
+        
+    }
+    .imsdghde12{
+        display: none;
+       
+        
+    }
+    .imsdghde12.active{
+        height: 40px;
+        width: 40px;
+        /* background-color: yellow; */
+        /* border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ; */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    #hjdsd button{
+        height: 40px;
+        margin-left: 10px;
+        background-color: #f60;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        border: none;
+        box-shadow: 1px 1px 2px 0.3px rgba(171, 171, 171, 0.524);
+        
+    }
+
+}
+
+/* gdgdghd */
+
+
+
+@media (min-width: 800px) {
+    .recherche {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hdhdj  {
+        display: block;
+    }
+    #hdhdj.active {
+        display: none;
+    }
+    #hdhdj2  {
+        display: none;
+    }
+    #hdhdj2.active {
+        display: block;
+    }
+    .menuddg {
+        position: fixed;
+        height: 100px;
+        width: 100%;
+        /* background-color: red; */
+        /* display: flex;
+        justify-content: center;
+        align-items: start; */
+        /* padding-right: 20px; */
+        top: 100px;
+        display: none;
+
+        
+    }
+    
+    .menuddg.active {
+        position: fixed;
+        height: 100px;
+        width: 100%;
+        visibility: visible;
+        /* background-color: red; */
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        
+        top: 100px;
+        z-index: 99999999;
+        
+    }
+    .menuddg2 {
+        display: flex;
+        
+        justify-content: center;
+        align-items: start;
+        height: 100px;
+        width: 100%;
+        max-width: 1200px;
+        /* padding-right: 10px; */
+        /* background-color: yellow; */
+        padding-top: 10px;
+        
+    }
+    .menuddg3 {
+    
+        height: 45px;
+        width: 60%;
+        box-shadow: 1px 1px 5px 0.3px rgba(228, 228, 228, 0.245);
+        background-color: white;
+        border-radius: 5px;
+        
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .etdjff {
+        height: 40px;
+       
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 10px;
+        color: black;
+    }
+    .etdjff:hover{
+        height: 40px;
+       
+        background-color: rgba(128, 128, 128, 0.14);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 10px;
+    }
+    .etdjff a{
+        color: black;
+    }
+    .etdjff:hover a{
+        color: #ff4500;
+        
+    }
+    .etdjff:hover img{
+        filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);
+    }
+    header {
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        z-index: 9999999999;
+    }
+    
+    
+    
+    
+    .tete {
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* box-shadow: 1px 1px 5px 0.3px rgb(171, 171, 171); */
+    
+    }
+    .te1 {
+        width: 100%;
+        height: 100%;
+        /* background-color: aqua; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 10px;
+    }
+    
+    #deuxlogo {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #f60;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .hedaf {
+        height: 100%;
+        width: 100%;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+    }
+    .logo {
+        height: 100%;
+        width: 250px;
+        /* background-color: red; */
+    }
+    
+    .menu {
+        height: 100%;
+        width: 100px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #hjdsd {
+        height: 100%;
+        width: 80%;
+        /* background-color: red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+       
+    }
+    #hjdsd input{
+        height: 40px;
+        width: 100%;
+        background-color: white;
+        border: none;
+        border-right: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        padding-left: 10px;
+        outline: none;
+        
+    }
+    .imsdghde{
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-left: 1px solid black ;
+        border-top: 1px solid black ;
+        border-bottom: 1px solid black ;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        
+    }
+    .imsdghde1{
+        display: none;
+       
+        
+    }
+    .imsdghde12{
+        display: none;
+       
+        
+    }
+    #hjdsd button{
+        height: 40px;
+        margin-left: 10px;
+        background-color: #f60;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        border: none;
+        box-shadow: 1px 1px 2px 0.3px rgba(171, 171, 171, 0.524);
+        
+    }
+
+
+
+}
+/* gdgdghd */

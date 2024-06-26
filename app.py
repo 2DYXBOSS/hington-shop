@@ -1574,8 +1574,38 @@ def mofie(id):
 
 @app.route('/add_data')
 def add_data():
+    catefemme = []
+    montre = []
+    chaussure = []
+    tout = Ajouter.query.all()
+    commenta = []
+    recupe = Comment.query.all()
     
-    return render_template("add_profile.html")
+    for i in recupe:
+        commenta.append(i)
+
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
+
+
+    print(commenta[0].mail)
+    
+    return render_template("add_profile.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
+
+   
 
 @app.route('/add',methods = ["POST"])
 def profile() :
@@ -1629,7 +1659,38 @@ def profile() :
 # CONNEXION {}
 @app.route('/pre')
 def pree():
-    return render_template('connexion.html')
+    catefemme = []
+    montre = []
+    chaussure = []
+    tout = Ajouter.query.all()
+    commenta = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
+
+
+    print(commenta[0].mail)
+    
+    return render_template("connexion.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
+
+    # return render_template('connexion.html')
 @app.route('/sprome',methods = ["GET","POST"])
 def sprome() :
    

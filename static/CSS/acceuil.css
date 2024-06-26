@@ -5,8 +5,54 @@
     font-family: 'Poppins', sans-serif;
     
 }
-
-
+.wweee {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    
+    /* background-color: white; */
+    z-index: 99999999999999999999999;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.wweee2 {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+.wweee2 input {
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    margin-bottom: 10px;
+    border: 1px solid black ;
+    padding-left: 10px;
+    outline: none;
+}
+.wweee2 button {
+    height: 50px;
+    width: 100%;
+    background-color: rgb(36, 36, 116);
+    background-color: #f60;
+    border: none;
+    margin-top: 30px;
+   
+    padding-left: 10px;
+    padding-right: 20px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
 a {
     text-decoration: none;
 }
@@ -459,6 +505,7 @@ a {
 
 body {
     overflow-x: hidden;
+    
 
 }
 .gdhd {
@@ -882,6 +929,7 @@ body {
     /* transform : translateX(500px); */
     /* visibility: hidden; */
 }
+
 .lesimages.show-animate .catego {
     width: 150px;
     height: 150px;
@@ -915,6 +963,7 @@ body {
     /* transform : translateX(-500px) */
 
 }
+
 .lesimages.show-animate .catego2 {
     width: 150px;
     height: 150px;
@@ -948,6 +997,7 @@ body {
    
 
 }
+
 .lesimages.show-animate .catego3 {
     width: 150px;
     height: 150px;
@@ -981,6 +1031,7 @@ body {
    
 
 }
+
 .lesimages.show-animate .catego4 {
     width: 150px;
     height: 150px;
@@ -1277,7 +1328,7 @@ body {
 .appel2 {
     width: 50%;
     height: 100%;
-    background-color: green;
+    /* background-color: green; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1561,8 +1612,10 @@ body {
         flex-wrap: wrap;
         gap: 5px;
     }
+    
 }
 @media (min-width:1000px) {
+    
     body {
         overflow-x: hidden;
         width: 100%;
@@ -1635,7 +1688,8 @@ body {
     .avier {
         width: 100%;
         height: auto;
-        background-color: rgba(172, 173, 174, 0.114);
+        background-color: aliceblue;
+        /* background-color: rgba(172, 173, 174, 0.114); */
         padding-top: 30px;
         padding-bottom: 30px;
         overflow-x: hidden;
@@ -1923,7 +1977,7 @@ body {
 .imahhd {
     height: 200px;
     width: 200px;
-    background-color: red;
+    /* background-color: red; */
     position: relative;
 }
 .reghd {
@@ -1968,15 +2022,144 @@ body {
 
 
 @media (min-width: 800px) {
+   
+   
+    /* .lesimages {
+        background-color: aliceblue;
+    } */
+    .fle {
+        background-color: aliceblue;
+        /* background-color: rgb(36, 36, 116);; */
+    }
+    .avisdesgens {
+        background-color: aliceblue;
+        margin-bottom: 0px;
+    }
+    .vraipageacceuil {
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 102, 0, 0.865);
+       
+        display: flex;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+        /* padding-bottom: 50px; */
+    }
+    .djshjjyswddqe {
+        height: 100%;
+        /* background-color: yellow; */
+        width: 1150px;
+        background: url(/static/IMAGE/fonsjj.jpg) 50% no-repeat;
+        
+        
+        
+    }
+    .hsdgdayadwws {
+        margin-top: 20px;
+        /* height: 50%; */
+        width: 100%;
+        position: absolute;
+        /* background-color: red; */
+        left: 0;
+     
+    }
+    .ghghsahgwashj {
+        height: 50%;
+        /* background-color: yellow; */
+        width: 1150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+        position: relative;
+        
+        
+    }
+    .inghsdaghhda1 {
+        height: 100%;
+        /* width: 300px; */
+        width: 20%;
+        /* background-color: white; */
+        border-radius: 5px;
+    }
+    .inghsdaghhda2 {
+        height: 100%;
+        width: 60%;
+        /* background-color: green; */
 
+        display: grid;
+        grid-auto-columns: auto;
+        grid-auto-flow: column;
+        overflow-x: auto;
+        position: relative;
+        overflow: hidden;
+        
+    }
+    .dghssd {
+        height: 350px;
+        width: 100%;
+        /* background-color: red; */
+        position: absolute;
+        top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .oberfshss {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 86vh;
+        height: 100px;
+        background-color: rgb(36, 36, 116);
+        overflow: hidden;
+        top: 20px;
+        left: 210px;
+        
+    }
+    .oberfshss1 {
+        position: absolute;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 86vh;
+        /* height: 100px; */
+        flex-direction: column;
+        /* background-color: blue; */
+        overflow: hidden;
+        bottom: 50px;
+        left: 210px;
+    }
+    .hjhdfkswd {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* width: 500px; */
+        /* background-color: red; */
+        overflow: hidden;
+    }
+    .inghsdaghhda2::-webkit-scrollbar {
+        display: none;
+    }
+    .inghsdaghhda3 {
+        height: 100%;
+        width: 20%;
+        /* maxwidth: 300px; */
+        /* background-color: white; */
+        border-radius: 5px;
+    }
+    .diieshhs {
+        height: 300px;
+        width: 100%;
+        /* background-color: white; */
+        border-radius: 5px;
+    }
     .change {
     
-        height: 700px;
-        width: 100%;
-    
-    
-        background-color: aliceblue;
-        padding-top: 150px;
+        display: none;
     }
     .recherche {
         height: 100%;
@@ -2374,6 +2557,9 @@ body {
 
 }
 @media (max-width: 800px) {
+    .vraipageacceuil {
+        display: none;
+    }
     header , .menuddg {
         display: none;
     }
@@ -2387,6 +2573,16 @@ body {
         background-color: aliceblue;
         padding-top: 220px;
     }
-
+    .wweee2 {
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 100px;
+    }
 }
 /* gdgdghd */
