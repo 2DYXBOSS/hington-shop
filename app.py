@@ -728,7 +728,10 @@ def sac():
             gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
 
     conueww = len(gdhsuud)    
-    return render_template("sac.html", data = data ,conueww=conueww)
+    somme = 0     
+    for i in gdhsuud :
+        somme += int(i["pource"])  
+    return render_template("sac.html", data = data ,conueww=conueww,somme=somme)
 @app.route('/homme/<int:id>')
 def homme(id):
     
@@ -795,8 +798,10 @@ def acc():
             gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
 
     conueww = len(gdhsuud)    
-    
-    return render_template("vente.html", data = data , conueww=conueww)
+    somme = 0     
+    for i in gdhsuud :
+        somme += int(i["pource"])  
+    return render_template("vente.html", data = data , conueww=conueww,somme=somme)
 @app.route("/montre")
 def montre():
     if 'utilisateur_id' in session:
@@ -823,8 +828,11 @@ def montre():
             hdhdud = Ajouter.query.get(i.produite)
             gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
 
-    conueww = len(gdhsuud)    
-    return render_template("montre.html", data = data,conueww=conueww)
+    conueww = len(gdhsuud)  
+    somme = 0     
+    for i in gdhsuud :
+        somme += int(i["pource"])  
+    return render_template("montre.html", data = data,conueww=conueww,somme=somme)
 
 @app.route('/mesrecherches',methods = ["POST"])
 def rechepo():

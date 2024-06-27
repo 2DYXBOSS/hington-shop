@@ -169,7 +169,8 @@
                         <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
                     </div>
                     <input type="text" name="recher" id="" placeholder="Cherchez un produit">
-                    <button type="submit">RECHERCHER</button>
+                    <button type="submit"><h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                                ">RECHERCHER</h1></button>
                 </form>
             </div>
             
@@ -199,7 +200,7 @@
                
                 
                 <a href="/vente" style="text-decoration: none;">
-                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: #f60;">Vetements femmes </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: rgba(255, 102, 0, 0.865);">Vetements femmes </span></p>
                 </a>
                 <!-- <a href="/hommes">
                     <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -237,7 +238,7 @@
             
             
             <a href="/vente" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: #f60;">Vetements femmes </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="20px" alt=""> <span style="color: rgba(255, 102, 0, 0.865);">Vetements femmes </span></p>
             </a>
             <!-- <a href="/hommes" style="text-decoration: none;">
                 <p ><img src="{{url_for('static', filename='IMAGE/habihomme.png')}}" width="20px" alt=""> <span>Vetements hommes </span></p>
@@ -381,7 +382,7 @@
             <div class="gdhd">
                
                 <span>
-                    <p style="color: #f60;padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
+                    <p style="color: rgba(255, 102, 0, 0.865);padding-left: 5px;padding-right: 5px;">- {{user.porce}} %</p>
                 </span>
                 
             </div>
@@ -418,7 +419,7 @@
         
         <div class="infoeisd">
             <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: rgb(36, 36, 116);text-transform: uppercase;padding-bottom: 10px;">{{user.nom}}</h1>
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: #f60;text-transform: uppercase;">
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;color: rgba(255, 102, 0, 0.865);text-transform: uppercase;">
                 {% if user.porce != '0' %}
                 <span>
                     <s style="color: black;">{{user.prix}} FCFA</s>
@@ -531,15 +532,15 @@
             <input type="text" name="quantiteplos" id="quantiteplos" placeholder="numero" value="0" style="visibility: hidden;height: 0;width: 0;">
             <div class="pierteer">
                 <p style="text-align: start;color: rgb(36, 36, 116);font-size: 0.6rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Quantité total : </p>
-                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: rgba(255, 102, 0, 0.865);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
                 <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.7rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> X </p>
-                <p id="somiu" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
+                <p id="somiu" style="text-align: start;padding-left: 20px;color: rgba(255, 102, 0, 0.865);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">{{user.porceprix}}</p>
                 <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.7rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
                 
             </div>
             <div class="pierteer">
                 <p style="text-align: start;color: rgb(36, 36, 116);font-size: 0.6rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;padding-top: 20PX;">* Cout total de l'article: </p>
-                <p id="lepris" style="text-align: start;padding-left: 20px;color: #f60;font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
+                <p id="lepris" style="text-align: start;padding-left: 20px;color: rgba(255, 102, 0, 0.865);font-size: 1rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 8px;font-weight: bolder;padding-top: 20PX;">0</p>
                 <p style="text-align: start;padding-left: 20px;color: rgb(36, 36, 116);font-size: 0.7rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-bottom: 10px;font-weight: bolder;padding-top: 20PX;"> FCFA</p>
             </div>
             <input type="text" name="article" id="" style="width: 0;height: 0;position: absolute;top: -20px;" value="{{user.id}}">
@@ -549,7 +550,7 @@
                    
                    
                 
-                    <div class="regle" style="background-color: #f60;border: none;">
+                    <div class="regle" style="background-color: rgba(255, 102, 0, 0.865);border: none;">
                         <img src="{{url_for('static', filename='IMAGE/panier.png')}}" alt="" style="filter: invert();" width="20px">
                         
                     </div>
@@ -590,7 +591,7 @@
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
                             <div class="reghd">
                                 {% if i.porce != "0" %}
-                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -610,7 +611,7 @@
                             <div class="reghd">
                                 {% if i.porce != "0" %}
                                 {% if i.porce != "0" %}
-                                <p style="color: #f60;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                                 {% endif %}
                             </div>

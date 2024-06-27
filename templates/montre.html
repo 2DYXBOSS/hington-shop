@@ -25,7 +25,7 @@
        
         <div class="retse">
             <div class="menu">
-                <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: #f60;
+                <h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;color: rgba(255, 102, 0, 0.865);
                 ">CATEGORIE</h2>
             </div>
             
@@ -41,7 +41,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" style="filter: invert();" alt=""> <span >Chaussures H & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" style="filter: invert();" alt=""> <span style="color: #f60;">Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" style="filter: invert();" alt=""> <span style="color: rgba(255, 102, 0, 0.865);">Montres </span></p>
             </a>
             
             
@@ -77,7 +77,7 @@
                 </a>
                 
                 <a href="/montre">
-                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: #f60;">Montres </span></p>
+                    <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: rgba(255, 102, 0, 0.865);">Montres </span></p>
                 </a>
                 
                 
@@ -111,7 +111,7 @@
                 <p ><img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="20px" alt=""> <span >Chaussures H & F</span></p>
             </a>
             <a href="/montre" style="text-decoration: none;">
-                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: #f60;"> Montres </span></p>
+                <p ><img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="20px" alt=""> <span style="color: rgba(255, 102, 0, 0.865);"> Montres </span></p>
             </a>
             
             
@@ -163,7 +163,7 @@
                         </li>
                         <li>
                             <div class="menue">
-                                <a href="#" class="menue" id="cleud" style="color: #f60;">> Montres</a>
+                                <a href="#" class="menue" id="cleud" style="color: rgba(255, 102, 0, 0.865);">> Montres</a>
                             </div>
                         </li>
                     </ul>
@@ -226,7 +226,7 @@
                         height = "120px" alt="">
                         <div class="poircentag">
                             {% if i.porce != '0' %}
-                            <p style="font-size:0.8rem;color: #f60;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                            <p style="font-size:0.8rem;color: rgba(255, 102, 0, 0.865);font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
                             {% endif %}
                         </div>
                     </div>
@@ -345,7 +345,8 @@
                             <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
                         </div>
                         <input type="text" name="recher" id="" placeholder="Cherchez un produit">
-                        <button type="submit">RECHERCHER</button>
+                        <button type="submit"><h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                                ">RECHERCHER</h1></button>
                     </form>
                 </div>
                 
@@ -370,7 +371,41 @@
 
             <div class="hwkediide">
                 <div class="indikdfhef1">
-                    
+                    <div class="meselele1" style="width: 100%;box-shadow: none;">
+                        <div class="jdidsedf">
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;padding-bottom: 15px;">DETAILS DU PANIER { {{conueww}} }</p>
+                        </div>
+                        <div class="jdidsed2">
+                            <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Quantite de produits { {{conueww}} }</p>
+                            <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;">Vous pouvez toujours ajouté des produits et vous faire livré gratuitement</p>
+                        </div>
+                        <div class="jdidsed2">
+                            <p style="padding-top: 5px;color: black;font-size: 0.8rem;">Cout total de produits { FCFA }</p>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;">{{somme}} FCFA</p>
+                            {% if conueww > 4 %}
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 105px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison gratuite</p>
+                            </div>
+                            {% endif %}
+                            {% if conueww <= 4 %}
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 125px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison a vos frais</p>
+                            </div>
+                            {% endif %}
+                        </div>
+                      
+                        
+                        <div class="jdidsed2">
+                            <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Pourquoi c'est gratuit ?</p>
+                            <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;padding-bottom: 15px;">La livraison est gratuite sur abidjan a partir de 5 articles commandés en un coup . </p>
+                            
+                            
+                                <a href="/monpanier" >
+                                <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: rgba(255, 102, 0, 0.865);width: 100%;"><h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
+                                ">COMMANDER MAINTENANT</h1></a>
+                           
+                        </div>
+                    </div>
                 </div>
                 <div class="indikdfhef2">
                     <div class="jjhfsdf54">
@@ -391,7 +426,7 @@
                             height = "120px" alt="">
                             <div class="poircentag">
                                 {% if i.porce != '0' %}
-                                <p style="font-size:0.8rem;color: #f60;font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
+                                <p style="font-size:0.8rem;color: rgba(255, 102, 0, 0.865);font-weight: bolder;background-color: blanchedalmond;padding-left: 5px;border-radius: 5px;">- {{i.porce}} %</p>
                                 {% endif %}
                             </div>
                         </div>
