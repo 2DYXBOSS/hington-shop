@@ -12,7 +12,7 @@ function activatione(cliqueurid,activeid,imagew) {
     cliquere.addEventListener('click',()=>{
         sortier.classList.add("active");
     
-        imahe.src = `/static/IMAGE/bacj.png`
+        imahe.src = `/static/IMAGE/cadeouver.png`
     })
 
 }
@@ -27,7 +27,7 @@ function effacfe(cliqueurid,activeid,imagew) {
     cliquere.addEventListener('click',()=>{
         sortier.classList.remove("active");
     
-        imahe.src = `/static/IMAGE/inf.png`
+        imahe.src = `/static/IMAGE/cadefer.png`
     })
 
 }

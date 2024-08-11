@@ -23,18 +23,18 @@ body {
     
     
 }
-.enveleopp {
-    width: 100%;
-    height: 700px;
-    /* background-color: yellow; */
-}
 
 #deuxlogo {
     padding-left: 5px;
     padding-right: 5px;
     background-color: rgba(255, 102, 0, 0.865);
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+}
+.enveleopp {
+    width: 100%;
+    height: 700px;
+    /* background-color: yellow; */
 }
 
 .plain {

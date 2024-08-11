@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template , redirect , request,url_for,flash,Response
 from flask import render_template , redirect , request,url_for,flash,session ,Response
+from sqlalchemy import ARRAY
 from werkzeug.utils import secure_filename
 from flask_mail import Mail, Message
 import os
@@ -68,6 +69,36 @@ db = SQLAlchemy(app)
 
 
 debug = True
+
+class Adminit(db.Model):
+
+    id = db.Column(db.Integer, primary_key = True)
+    nom = db.Column(db.String(100), unique = False , nullable = False) 
+    description = db.Column(db.String(100), unique = False , nullable = False) 
+    nom = db.Column(db.String(100), unique = False , nullable = False) 
+    derfjj = db.Column(db.String(), unique = False , nullable = False)
+    
+   
+    def __init__(self,nom,numero,tags):
+        self.nom = nom
+        self.numero = numero
+        self.tags = tags
+       
+       
+    def __repr__(self):
+        
+        return {
+            "nom": self.nom,
+            "numero": self.numero,
+            "tags": self.tags,
+        }
+    
+
+with app.app_context() :
+    try :
+        db.create_all()
+    except Exception as e:
+        print("error de creation de la table")
 
 class Maboutik(db.Model):
 
@@ -664,7 +695,7 @@ def sacs(id):
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        return redirect(f'/pre/sac')
     useruo = Profil.query.get(useru.id)
     tableaus = Panieruser.query.all()
     gdhsuud = []
@@ -708,7 +739,7 @@ def sac():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        return redirect('/pre/sac')
     data = []
     a = Ajouter.query.all()
     for i in a:
@@ -777,7 +808,7 @@ def acc():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        return redirect('/pre/vente')
     data = []
     a = Ajouter.query.all()
     for i in a:
@@ -807,7 +838,7 @@ def montre():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        return redirect('/montrels')
     data = []
     a = Ajouter.query.all()
     for i in a:
@@ -833,6 +864,17 @@ def montre():
     for i in gdhsuud :
         somme += int(i["pource"])  
     return render_template("montre.html", data = data,conueww=conueww,somme=somme)
+@app.route("/montrels")
+def montrels():
+    data = []
+    a = Ajouter.query.all()
+    for i in a:
+        if i.categorie == 'Montre':
+            data.append(i)
+    
+
+    return render_template("montrels.html", data = data)
+   
 
 @app.route('/mesrecherches',methods = ["POST"])
 def rechepo():
@@ -884,13 +926,13 @@ def ajou():
    
     eude = Ajouter.query.all()
     return render_template("ajoufini.html")
-
+import json
 @app.route('/montres/<int:id>')
 def montres(id):
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
-    else:
-        return redirect('/pre')
+    else :
+        return redirect(f'/pre/montre')
     useruo = Profil.query.get(useru.id)
     tableaus = Panieruser.query.all()
     gdhsuud = []
@@ -915,7 +957,7 @@ def montres(id):
 
     if len(commenta)>10 :
         commenta = commenta[:10]
- 
+
 
 
 
@@ -931,6 +973,53 @@ def montres(id):
     print("MO")
 
     return redirect("/montre")
+  
+    
+
+
+@app.route('/montredetls/<int:id>')
+def montredetls(id):
+    
+    # useruo = Profil.query.get(useru.id)
+    # tableaus = Panieruser.query.all()
+    # gdhsuud = []
+    
+    # for i in tableaus : 
+        
+    #     if int(i.identifiant) == useruo.id :
+    #         print('prevdg', i.identifiant , 'prevdg' , useruo.id)
+    #         hdhdud = Ajouter.query.get(i.produite)
+    #         gdhsuud.append({"element":i.produite,"prix":hdhdud.prix,"image":i.image,"quantite":i.quantiteto,"taille":i.tailed,"nom":hdhdud.nom,"description":hdhdud.description,"pource":hdhdud.porceprix,"porce":hdhdud.porce ,"tailed":i.tailed,"categorie":hdhdud.categorie})
+
+    # conueww = len(gdhsuud)   
+
+
+
+    commenta = []
+    recupe = Ajouter.query.all()
+    
+    for i in recupe:
+        if i.categorie == "Montre" :
+            commenta.append(i)
+
+    if len(commenta)>10 :
+        commenta = commenta[:10]
+ 
+
+
+
+    
+    user = Ajouter.query.filter_by(id=id).first()
+    if user :
+        data = [user.image,user.twoimage,user.threeimage,user.forimage]
+        # a = Ajouter.query.all()
+        # for i in a:
+        #     if i.categorie == 'VetementFemme':
+        #         data.append(i)
+        return render_template('montredetls.html',user = user,data=data,commenta=commenta)
+    print("MO")
+
+    return redirect("/montrels")
 
     
 @app.route('/info/<int:id>')
@@ -938,7 +1027,8 @@ def info(id):
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        
+        return redirect(f'/pre/vente')
     useruo = Profil.query.get(useru.id)
     tableaus = Panieruser.query.all()
     gdhsuud = []
@@ -998,7 +1088,7 @@ def commandeznow():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
     else:
-        return redirect('/pre')
+        return redirect('/pre/monpanier')
     
     useruo = Profil.query.get(useru.id)
     tableaus = Panieruser.query.all()
@@ -1028,16 +1118,25 @@ def commandeznow():
 
 
     ms = macommande
+    tableauser = Adminit.query.all()
+    pani = Panieruser(nom="nom",numero = "numero",tags=ms)
+            
+    db.session.add(tableauser)
+    db.session.commit()
+    
     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
   
+[{'lien': 'Le lien : https://hington-shop.onrender.com/info/9 ', 'Categorie': 'VetementFemme', 'Nom': 'robe simple', 'Reduction': '48', 'Prixbarré': '2500', 'Prix final': '1300', 'Quantité': '2', 'taille': 's'}, {'lien': 'Le lien : https://hington-shop.onrender.com/info/9 ', 'Categorie': 'VetementFemme', 'Nom': 'robe simple', 'Reduction': '48', 'Prixbarré': '2500', 'Prix final': '1300', 'Quantité': '2', 'taille': 'xxl'}, {'Somme totale': 2600}]
 
 
-@app.route("/Supprimer/<int:id>", methods=["POST","GET"])
+
+
+@app.route('/Supprimer/<int:id>')
 def Supprimer(id):
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
-    else:
-        return redirect('/pre')
+    # else:
+    #     return redirect(f'/pre/Supprimer/{id}')
     
     useruo = Profil.query.get(useru.id)
     tableaus = Panieruser.query.all()
@@ -1063,24 +1162,42 @@ from urllib.parse import quote
 def ssm():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
-    else:
-        return redirect('/pre')
-    a = str(id)
-
+    # else :
+    #     return redirect('/pre/')
     nom = request.form.get("nom")
     livraison = request.form.get("livraison")
     image = request.form.get("image")
     noumeme = request.form.get("noumeme")
     prix = request.form.get("prix")
     quantite = request.form.get("quantiteplos")
-
-
-
     hfshggf = Ajouter.query.get(int(noumeme))
-    # eudeyyt = Profil.query.all()
-    if hfshggf.categorie == "Montre":
+    print("le voivi gegeghhdhjhdjhdjh",noumeme)
+    
+  
 
         
+
+
+        
+
+    # eudeyyt = Profil.query.all()
+    if hfshggf.categorie == "Montre":
+        print("les identifiants articles ",image,noumeme,prix,quantite)
+        print("les identifiants  ",noumeme,useru.id)
+        
+        # derst = Panieruser.query.filter_by(identifiant=useru.id,produite=int(noumeme))
+        derst = Panieruser.query.all()
+        for i in derst :
+            
+            if int(i.produite) == int(noumeme) and int(i.identifiant)==int(useru.id):
+                print("les articles ",i.produite,i.identifiant)
+                dhher = Panieruser.query.get(i.id)
+
+               
+                dhher.quantiteto = int(dhher.quantiteto) + int(quantite)
+                db.session.commit()
+                return redirect("/monpanier")
+
         pani = Panieruser(image=image,tailed = "",identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=quantite,xs="",xsn="",s="",sn="",l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
             
         db.session.add(pani)
@@ -1093,7 +1210,7 @@ def ssm():
     if int(xsnum) > 0 :
         xs = "xs"
         
-        pani = Panieruser(image=image,tailed=xs,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=xsnum,xs=xs,xsn=xsnum,s="",sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        pani = Panieruser(image=image,tailed =xs,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=xsnum,xs=xs,xsn=xsnum,s="",sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
         
         db.session.add(pani)
         db.session.commit()
@@ -1101,13 +1218,13 @@ def ssm():
         xs = ""
         xsnum = ""
 
-   
+
     s = request.form.get("s","")
     snum = request.form.get("snum","0")
     if int(snum) > 0 :
         s = "s"
         
-        pani = Panieruser(image=image,tailed=s,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=snum,xs="",xsn="",s=s,sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        pani = Panieruser(image=image,tailed =s,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=snum,xs="",xsn="",s=s,sn=snum,l="",ln="",m="",mn="",xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
         
         db.session.add(pani)
         db.session.commit()
@@ -1119,7 +1236,7 @@ def ssm():
     if int(mnum) > 0 :
         m = "m"
         
-        pani = Panieruser(image=image,tailed=m,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=mnum,xs="",xsn="",s="",sn="",l="",ln="",m=m,mn=mnum,xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
+        pani = Panieruser(image=image,tailed =m,identifiant=useru.id,produite=noumeme,prixtottal=prix,quantiteto=mnum,xs="",xsn="",s="",sn="",l="",ln="",m=m,mn=mnum,xl="",xln="",xxl="",xxln="",tranwite="",tranwiten="",tranneuf="",tranneufn="",karente="",karenten="",tranwiteun="",tranwiteunn="",tranwitedeux="",tranwitedeuxn="",tranwitrois="",tranwitroisn="",tranwitekate="",tranwitekaten="")
         
         db.session.add(pani)
         db.session.commit()
@@ -1188,7 +1305,7 @@ def ssm():
     if int(tranwitenum) == 0 :
         tranwite = ""
         tranwitenum = ""
-       
+    
     tranneuf = request.form.get("tranneuf","")
     tranneufnum = request.form.get("tranneufnum","0")
     if int(tranneufnum) > 0 :
@@ -1284,7 +1401,7 @@ def ssm():
     #     if int(quantite) < 1 :
     #         flash("Veuillez choisir la taille de l'article avant de commander svp ! ")
     #         return redirect(f'/info/{id}#formuhfh1')
-      
+    
     #     ms = f"Le lien : https://hington-shop.onrender.com/info/{a} , Quantite = {quantite} , Prix = {int(quantite)*int(prix)} , Nom = {nom} , Livraison = {livraison} , Numero = {numero} , Taille = {xs}{xsnum} {s}{snum} {l}{lnum} {m}{mnum} {xxl}{xxlnum} {xl}{xlnum} "
         
     #     return redirect(f"https://api.whatsapp.com/send/?phone=2250101678809&text={ms}&type=phone_number&app_absent=0")
@@ -1323,11 +1440,301 @@ def ssm():
     # 
     return redirect("/monpanier")
 
+        
+    
+
+    
+
+# @app.route('/dataze', methods=["POST"])
+# def dataze():
+#     data = {"image":"image","tailed" : "","produite":"noumeme","prixtottal":"prix","quantiteto":"quantite","xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+#     des = {"image":"image","tailed" : "","dee":"fggh"}    
+#     print(data)
+#     return des
+@app.route('/ssme', methods=["POST"])
+def ssme():
+    
+    nom = request.form.get("nom")
+    livraison = request.form.get("livraison")
+    image = request.form.get("image")
+    noumeme = request.form.get("noumeme")
+    prix = request.form.get("prix")
+    quantite = request.form.get("quantiteplos")
+
+        # eudeyyt = Profil.query.all()
+    if 1==1:
+        
+        print("les identifiants articles non connecter",image,noumeme,prix,quantite)
+    
+        data = {"image":image,"tailed" : "","produite":noumeme,"prixtottal":prix,"quantiteto":quantite,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+            
+        print(data)
+        detr = {
+            "image": "pho1.jpg",
+            "karente": "",
+            "karenten": "",
+            "l": "",
+            "ln": "",
+            "m": "",
+            "mn": "",
+            "prixtottal": "4800",
+            "produite": "1",
+            "quantiteto": "3",
+            "s": "",
+            "sn": "",
+            "tailed": "",
+            "tranneuf": "",
+            "tranneufn": "",
+            "tranwite": "",
+            "tranwitedeux": "",
+            "tranwitedeuxn": "",
+            "tranwitekate": "",
+            "tranwitekaten": "",
+            "tranwiten": "",
+            "tranwiteun": "",
+            "tranwiteunn": "",
+            "tranwitrois": "",
+            "tranwitroisn": "",
+            "xl": "",
+            "xln": "",
+            "xs": "",
+            "xsn": "",
+            "xxl": "",
+            "xxln": ""
+            }
+        return data
+
+
+    xs = request.form.get("xs","")
+    xsnum = request.form.get("xsnum","0")
+    if int(xsnum) > 0 :
+        xs = "xs"
+        
+        data = {"image":image,"tailed" :xs,"produite":noumeme,"prixtottal":prix,"quantiteto":xsnum,"xs":xs,"xsn":xsnum,"s":"","sn":snum,"l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(xsnum) == 0 :
+        xs = ""
+        xsnum = ""
+
+
+    s = request.form.get("s","")
+    snum = request.form.get("snum","0")
+    if int(snum) > 0 :
+        s = "s"
+        
+        data = {"image":image,"tailed" :s,"produite":noumeme,"prixtottal":prix,"quantiteto":snum,"xs":"","xsn":"","s":s,"sn":snum,"l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(snum) == 0 :
+        s = ""
+        snum = ""
+    m = request.form.get("m","")
+    mnum = request.form.get("mnum","0")
+    if int(mnum) > 0 :
+        m = "m"
+        
+        data = {"image":image,"tailed" :m,"produite":noumeme,"prixtottal":prix,"quantiteto":mnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":m,"mn":mnum,"xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(mnum) == 0 :
+        m = ""
+        mnum = ""
+    l = request.form.get("l","")
+    lnum = request.form.get("lnum","0")
+    if int(lnum) > 0 :
+        l = "l"
+        
+        data = {"image":image,"tailed" :l,"produite":noumeme,"prixtottal":prix,"quantiteto":lnum,"xs":"","xsn":"","s":"","sn":"","l":l,"ln":lnum,"m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(lnum) == 0 :
+        l = ""
+        lnum = ""
+    xl = request.form.get("xl","")
+    xlnum = request.form.get("xlnum","0")
+    if int(xlnum) > 0 :
+        xl = "xl"
+        
+        data = {"image":image, "tailed" : xl,"produite":noumeme,"prixtottal":prix,"quantiteto":xlnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":xl,"xln":xlnum,"xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(xlnum) == 0 :
+        xl = ""
+        xlnum = ""
+    xxlnum = request.form.get("xxlnum","0")
+    xxl = request.form.get("xxl","")
+    if int(xxlnum) > 0 :
+        xxl = "xxl"
+        
+        data = {"image":image, "tailed" : xxl,"produite":noumeme,"prixtottal":prix,"quantiteto":xxlnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":xxl,"xxln":xxlnum,"tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(xxlnum) == 0 :
+        xxl = ""
+        xxlnum = ""
+
+    tranwite = request.form.get("tranwite","")
+    tranwitenum = request.form.get("tranwitenum","0")
+    if int(tranwitenum) > 0 :
+        tranwite = "38 -> "
+        tranwitenum = tranwitenum
+        
+        data = {"image":image,"tailed" : tranwite,"produite":noumeme,"prixtottal":prix,"quantiteto":tranwitenum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":tranwite,"tranwiten":tranwitenum,"tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(tranwitenum) == 0 :
+        tranwite = ""
+        tranwitenum = ""
+    
+    tranneuf = request.form.get("tranneuf","")
+    tranneufnum = request.form.get("tranneufnum","0")
+    if int(tranneufnum) > 0 :
+        tranneuf = "39 -> "
+        tranneufnum = tranneufnum
+        
+        data = {"image":image,"tailed" : tranneuf,"produite":noumeme,"prixtottal":prix,"quantiteto":tranneufnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":tranneuf,"tranneufn":tranneufnum,"karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(tranneufnum) == 0 :
+        tranneuf = ""
+        tranneufnum = ""
+    karente = request.form.get("karente","")
+    karentenum = request.form.get("karentenum","0")
+    if int(karentenum) > 0 :
+        karente = "40 -> "
+        karentenum = karentenum
+        
+        data = {"image":image,"tailed" : karente,"produite":noumeme,"prixtottal":prix,"quantiteto":karentenum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":karente,"karenten":karentenum,"tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(karentenum) == 0 :
+        karente = ""
+        karentenum = ""
+    tranwiteun = request.form.get("tranwiteun","")
+    tranwiteunnum = request.form.get("tranwiteunnum","0")
+    if int(tranwiteunnum) > 0 :
+        tranwiteun = "41 -> "
+        tranwiteunnum = tranwiteunnum
+        
+        data = {"image":image,"tailed" :tranwiteun ,"produite":noumeme,"prixtottal":prix,"quantiteto":tranwiteunnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":tranwiteun,"tranwiteunn":tranwiteunnum,"tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(tranwiteunnum) == 0 :
+        tranwiteun = ""
+        tranwiteunnum = ""
+    tranwitedeux = request.form.get("tranwitedeux","")
+    tranwitedeuxnum = request.form.get("tranwitedeuxnum","0")
+    if int(tranwitedeuxnum) > 0 :
+        tranwitedeux = "42 -> "
+        tranwitedeuxnum = tranwitedeuxnum
+        
+        data = {"image":image,"tailed" : tranwitedeux ,"produite":noumeme,"prixtottal":prix,"quantiteto":tranwitedeuxnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":tranwitedeux,"tranwitedeuxn":tranwitedeuxnum,"tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(tranwitedeuxnum) == 0 :
+        tranwitedeux = ""
+        tranwitedeuxnum = ""
+    tranwitrois = request.form.get("tranwitrois","")
+    tranwitroisnum = request.form.get("tranwitroisnum","0")
+    if int(tranwitroisnum) > 0 :
+        tranwitrois = "43 -> "
+        tranwitroisnum = tranwitroisnum
+        
+        data = {"image":image,"tailed" : tranwitrois,"produite":noumeme,"prixtottal":prix,"quantiteto":tranwitroisnum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":tranwitrois,"tranwitroisn":tranwitroisnum,"tranwitekate":"","tranwitekaten":""}
+        print(data)
+        return data
+        
+    if int(tranwitroisnum) == 0 :
+        tranwitrois = ""
+        tranwitroisnum = ""
+    tranwitekate = request.form.get("tranwitekate","")
+    tranwitekatenum = request.form.get("tranwitekatenum","0")
+    if int(tranwitekatenum) > 0 :
+        tranwitekate = "44 -> "
+        tranwitekatenum = tranwitekatenum
+        
+        data = {"image":image,"tailed" : tranwitekate,"produite":noumeme,"prixtottal":prix,"quantiteto":tranwitekatenum,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":tranwitekate,"tranwitekaten":tranwitekatenum}
+        print(data)
+        return data
+        
+    if int(tranwitekatenum) == 0 :
+        tranwitekate = ""
+        tranwitekatenum = ""
+    
+    # sizes = ["xs", "s", "m", "l", "xl", "xxl", "tranwite", "tranneuf", "karente", "tranwiteun", "tranwitedeux", "tranwitrois", "tranwitekate"]
+    # size_suffixes = {"tranwite": "38 -> ", "tranneuf": "39 -> ", "karente": "40 -> ", "tranwiteun": "41 -> ", "tranwitedeux": "42 -> ", "tranwitrois": "43 -> ", "tranwitekate": "44 -> "}
+    
+    # image = request.form.get("image", "")
+    # noumeme = request.form.get("noumeme", "")
+    # prix = request.form.get("prix", "")
+    
+    # for size in sizes:
+    #     num_key = f"{size}num"
+    #     size_value = request.form.get(size, "")
+    #     num_value = request.form.get(num_key, "0")
+        
+    #     if int(num_value) > 0:
+    #         tailed = size_suffixes.get(size, size)
+    #         data = {
+    #             "image": image,
+    #             "tailed": tailed,
+    #             "produite": noumeme,
+    #             "prixtottal": prix,
+    #             "quantiteto": num_value,
+    #             "xs": "",
+    #             "xsn": "",
+    #             "s": "",
+    #             "sn": "",
+    #             "l": "",
+    #             "ln": "",
+    #             "m": "",
+    #             "mn": "",
+    #             "xl": "",
+    #             "xln": "",
+    #             "xxl": "",
+    #             "xxln": "",
+    #             "tranwite": "",
+    #             "tranwiten": "",
+    #             "tranneuf": "",
+    #             "tranneufn": "",
+    #             "karente": "",
+    #             "karenten": "",
+    #             "tranwiteun": "",
+    #             "tranwiteunn": "",
+    #             "tranwitedeux": "",
+    #             "tranwitedeuxn": "",
+    #             "tranwitrois": "",
+    #             "tranwitroisn": "",
+    #             "tranwitekate": "",
+    #             "tranwitekaten": ""
+    #         }
+    #         data[size] = tailed
+    #         data[num_key] = num_value
+    #         print(data)
+    #         return data
+    
+    return redirect("/monpanierls")
+
+    
+
 
 @app.route("/administa")
 def administa():
     try :
         administa = Ajouter.query.all()
+        pofil = Profil.query.all()
         VetementHomme = []
         a = Ajouter.query.all()
         for i in a:
@@ -1349,7 +1756,7 @@ def administa():
             if i.categorie == 'chaussure':
                 sac.append(i)
 
-        return render_template("administa.html",administa=administa,VetementHomme=VetementHomme,VetementFemme=VetementFemme,Montre=Montre,sac=sac)
+        return render_template("administa.html",administa=administa,VetementHomme=VetementHomme,VetementFemme=VetementFemme,Montre=Montre,sac=sac,pofil=pofil)
 
     except :
         return render_template("administa.html",administa=administa,VetementHomme=VetementHomme,VetementFemme=VetementFemme,Montre=Montre,sac=sac)
@@ -1359,8 +1766,270 @@ def indisponible():
 
     return render_template("indiso.html")
 
+
+# @app.route("/pacceuil",methods=["POST","GET"])
+# def pacceuil():
+#     if 'utilisateur_id' in session:
+#         useru = Profil.query.get(session['utilisateur_id'])
+#         data = request.get_json()
+#         print(data)
+#         pani = Panieruser(image=data.image,tailed =data.tailed,identifiant=useru.id,produite=data.produite,prixtottal=data.prixtottal,quantiteto=data.quantiteto,xs=data.xs,xsn=data.xsn,s=data.s,sn=data.sn,l=data.l,ln=data.ln,m=data.m,mn=data.mn,xl=data.xl,xln=data.xln,xxl=data.xxl,xxln=data.xxln,tranwite=data.tranwite,tranwiten=data.tranwiten,tranneuf=data.tranneuf,tranneufn=data.tranneufn,karente=data.karente,karenten=data.karenten,tranwiteun=data.tranwiteun,tranwiteunn=data.tranwiteunn,tranwitedeux=data.tranwitedeux,tranwitedeuxn=data.tranwitedeuxn,tranwitrois=data.tranwitrois,tranwitroisn=data.tranwitroisn,tranwitekate=data.tranwitekate,tranwitekaten=data.tranwitekaten)
+            
+#         db.session.add(pani)
+#         db.session.commit()
+
+        
+#         return redirect("/")
+#     return redirect("/pre")
+
+
+
+# CONNEXION {}
+@app.route('/pre/<routeure>')
+def pree(routeure):
+    catefemme = []
+    montre = []
+    chaussure = []
+    tout = Ajouter.query.all()
+    commenta = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
+
+
+    # print(commenta[0].mail)
+    
+    return render_template("connexion.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure,routeure=routeure)
+
+    # return render_template('connexion.html')
+@app.route('/sprome/<routeure>',methods = ["GET","POST"])
+def sprome(routeure) :
+   
+    user = Profil.query.filter_by(last_name = request.form.get("last_name"),age = request.form.get("age")).first()
+
+    if user :
+        
+      
+        
+        print(f"vous etes connecter{user.first_name}{user.id}")
+        
+
+        session['utilisateur_id'] = user.id
+        # return redirect('/pacceuil')
+        return redirect(f"/rediriger/{routeure}")
+
+    else :
+
+        flash("Email ou Mot de passe invalide")
+        return redirect(f"/pre/{routeure}")
+    
+    
+@app.route('/dedyiez/<routeure>',methods = ["GET","POST"])
+def dedyiez(routeure) :
+   
+    return redirect(f"{routeure}")
+    
+    
+
+
+# @app.route('/song',methods = ["GET","POST"])
+# def song() :
+   
+#     return {"nom": "cabri","prenom":"mamoud"}
+
+
+# FIN CONNEXION {}
+
+
+@app.route("/deconn")
+def deconn():
+    if 'utilisateur_id' in session:
+       
+        session.pop('utilisateur_id', None)
+        return redirect("/pre/deconn")
+    return redirect("/")
+
+@app.route("/rediriger/<routeure>")
+def rediriger(routeure):
+ 
+    return render_template("rediriger.html",routeure=routeure)
+@app.route("/redsete", methods=["POST"])
+def redsete():
+    data = request.get_json()['data']
+    print("voivi les ",data)
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+        print("je suis llllllll")
+        for i in data:
+            
+            b = i["data"]
+            pani = Panieruser(
+                image=b['image'],
+                tailed=b['tailed'],
+                identifiant=useru.id,
+                produite=b['produite'],
+                prixtottal=b['prixtottal'],
+                quantiteto=b['quantiteto'],
+                xs=b['xs'],
+                xsn=b['xsn'],
+                s=b['s'],
+                sn=b['sn'],
+                l=b['l'],
+                ln=b['ln'],
+                m=b['m'],
+                mn=b['mn'],
+                xl=b['xl'],
+                xln=b['xln'],
+                xxl=b['xxl'],
+                xxln=b['xxln'],
+                tranwite=b['tranwite'],
+                tranwiten=b['tranwiten'],
+                tranneuf=b['tranneuf'],
+                tranneufn=b['tranneufn'],
+                karente=b['karente'],
+                karenten=b['karenten'],
+                tranwiteun=b['tranwiteun'],
+                tranwiteunn=b['tranwiteunn'],
+                tranwitedeux=b['tranwitedeux'],
+                tranwitedeuxn=b['tranwitedeuxn'],
+                tranwitrois=b['tranwitrois'],
+                tranwitroisn=b['tranwitroisn'],
+                tranwitekate=b['tranwitekate'],
+                tranwitekaten=b['tranwitekaten']
+            )
+
+            derst = Panieruser.query.all()
+            crte = 0
+            for p in derst :
+                
+                if int(p.produite) == int(b['produite']) and int(p.identifiant)==int(useru.id):
+
+                    print("fghger",int(p.produite),"==",int(b['produite']))
+                    print("hger",int(p.identifiant),"==",int(int(useru.id)))
+
+                    crte +=1
+                    dhher = Panieruser.query.get(p.id)
+
+                
+                    dhher.quantiteto = int(dhher.quantiteto) + int(b['produite'])
+                    db.session.commit()
+            if crte == 0 :
+                print("on passe")
+                 
+                db.session.add(pani)
+                db.session.commit()
+        
+    return {"message":"enregistrement reussi"}
+
+
+
+@app.route("/pacceuil", methods=["POST"])
+def pacceuil():
+    print("je suis la 2")
+    if 'utilisateur_id' in session:
+        useru = Profil.query.get(session['utilisateur_id'])
+        print("je suis la 1")
+        # if request.method == 'POST':
+        #     data = request.get_json()['data']
+        #     for i in data:
+        #         pani = Panieruser(
+        #             image=data['image'],
+        #             tailed=data['tailed'],
+        #             identifiant=useru.id,
+        #             produite=data['produite'],
+        #             prixtottal=data['prixtottal'],
+        #             quantiteto=data['quantiteto'],
+        #             xs=data['xs'],
+        #             xsn=data['xsn'],
+        #             s=data['s'],
+        #             sn=data['sn'],
+        #             l=data['l'],
+        #             ln=data['ln'],
+        #             m=data['m'],
+        #             mn=data['mn'],
+        #             xl=data['xl'],
+        #             xln=data['xln'],
+        #             xxl=data['xxl'],
+        #             xxln=data['xxln'],
+        #             tranwite=data['tranwite'],
+        #             tranwiten=data['tranwiten'],
+        #             tranneuf=data['tranneuf'],
+        #             tranneufn=data['tranneufn'],
+        #             karente=data['karente'],
+        #             karenten=data['karenten'],
+        #             tranwiteun=data['tranwiteun'],
+        #             tranwiteunn=data['tranwiteunn'],
+        #             tranwitedeux=data['tranwitedeux'],
+        #             tranwitedeuxn=data['tranwitedeuxn'],
+        #             tranwitrois=data['tranwitrois'],
+        #             tranwitroisn=data['tranwitroisn'],
+        #             tranwitekate=data['tranwitekate'],
+        #             tranwitekaten=data['tranwitekaten']
+        #         )
+        #         db.session.add(pani)
+        #         db.session.commit()
+        #     return jsonify({'status': 'success'}), 200
+            
+        return redirect("/")
+    return redirect("/pre/acceuilconnect")
+
 @app.route("/")
 def acceuil():
+    
+   
+    
+    catefemme = []
+    montre = []
+    chaussure = []
+    tout = Ajouter.query.all()
+    commenta = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
+
+
+    print(commenta[0].mail)
+    
+    return render_template("acceuil.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
+@app.route("/acceuilconnect")
+def acceuilconnect():
+    
+   
+    
     catefemme = []
     montre = []
     chaussure = []
@@ -1393,6 +2062,18 @@ def acceuil():
     return render_template("acceuil.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
 
 
+@app.route("/Suppesss/<int:id>")
+def Suppesss(id):
+    try :
+        adm= Profil.query.get(id)
+        db.session.delete(adm)
+        db.session.commit()
+
+        return redirect("/administa")
+    
+    except :
+
+        return redirect("/administa")
 @app.route("/Suppesz/<int:id>")
 def Suppesz(id):
     try :
@@ -1476,8 +2157,9 @@ def add_objetwere():
 def panierus():
     if 'utilisateur_id' in session:
         useru = Profil.query.get(session['utilisateur_id'])
+        
     else:
-        return redirect('/pre')
+        return redirect('/pre/monpanier')
     
     useruo = Profil.query.get(useru.id)
     eudeyyt = Profil.query.all()
@@ -1509,7 +2191,7 @@ def panierus():
     conueww = len(gdhsuud)    
     somme = 0     
     for i in gdhsuud :
-        somme += int(i["pource"])
+        somme += int(i["pource"])*int(i["quantite"])
     for i in tout:
         if i.categorie == "VetementFemme" :
             catefemme.append(i)
@@ -1529,6 +2211,54 @@ def panierus():
     print(commenta[0].mail)
     
     return render_template("panierus.html",gdhsuud=gdhsuud,commenta=commenta,catefemme=catefemme,montre=montre,id=id,chaussure=chaussure,somme=somme,conueww=conueww,useruo=useruo.id)
+@app.route('/monpanierls')
+def monpanierls():
+    
+    # data = request.get_json()
+   
+    # if not data:
+    #     return jsonify({"error": "No data received"}), 400
+    # print(data)  
+    # return jsonify({"message": "Data received successfully", "data": data}), 200
+    gdhsuud = "data"
+    conueww = len(gdhsuud)  
+    eudeyyt = Profil.query.all()
+    
+    catefemme = []
+    montre = []
+ 
+    chaussure = []
+    tout = Ajouter.query.all()
+    commenta = []
+    articeldd = []
+    recupe = Comment.query.all()
+    
+    for i in recupe:
+        commenta.append(i)
+
+    for i in eudeyyt:
+        articeldd.append(i)
+
+  
+    for i in tout:
+        if i.categorie == "VetementFemme" :
+            catefemme.append(i)
+
+        if i.categorie == "Montre" :
+            montre.append(i)
+        if i.categorie == "chaussure" :
+            chaussure.append(i)
+    if len(catefemme)>10 :
+        catefemme = catefemme[:10]
+    if len(montre) >10 :
+        montre = montre[:10]
+    if len(chaussure) >10 :
+        chaussure = chaussure[:10]
+
+
+    print(commenta[0].mail)
+    
+    return render_template("panierls.html",commenta=commenta,conueww=conueww,gdhsuud=gdhsuud,catefemme=catefemme,montre=montre,chaussure=chaussure)
 
   
 @app.route('/mofiedd/<int:id>')
@@ -1652,7 +2382,7 @@ def profile() :
 
             db.session.add(p)
             db.session.commit()
-            return redirect("/pre")
+            return redirect("/pre/acceuilconnect")
         else :
             return redirect("/add_data")
         
@@ -1664,61 +2394,21 @@ def profile() :
 
 
 
-# CONNEXION {}
-@app.route('/pre')
-def pree():
-    catefemme = []
-    montre = []
-    chaussure = []
-    tout = Ajouter.query.all()
-    commenta = []
-    recupe = Comment.query.all()
+
+
+# @app.route('/receive_data', methods=['POST'])
+# def receive_data():
+#     data = request.json  # Receives JSON data sent from JavaScript
+#     data_from_js = data['data']
     
-    for i in recupe:
-        commenta.append(i)
-
-    for i in tout:
-        if i.categorie == "VetementFemme" :
-            catefemme.append(i)
-
-        if i.categorie == "Montre" :
-            montre.append(i)
-
-        if i.categorie == "chaussure" :
-            chaussure.append(i)
-    if len(catefemme)>10 :
-        catefemme = catefemme[:10]
-    if len(montre) >10 :
-        montre = montre[:10]
-    if len(chaussure) >10 :
-        chaussure = chaussure[:10]
-
-
-    print(commenta[0].mail)
+#     # Now you can use data_from_js as needed in your Python application
+#     print('Data received from JavaScript:', data_from_js)
     
-    return render_template("connexion.html",commenta=commenta,catefemme=catefemme,montre=montre,chaussure=chaussure)
+#     # Optionally, you can send a response back to JavaScript
+#     response = {'message': 'Data received successfully'}
+#     return jsonify(response)
 
-    # return render_template('connexion.html')
-@app.route('/sprome',methods = ["GET","POST"])
-def sprome() :
-   
-    user = Profil.query.filter_by(last_name = request.form.get("last_name"),age = request.form.get("age")).first()
 
-    if user :
-        
-      
-        
-        print(f"vous etes connecter{user.first_name}{user.id}")
-        
-
-        session['utilisateur_id'] = user.id
-        return redirect('/')
-
-    else :
-
-        flash("Email ou Mot de passe invalide")
-        return redirect("/pre")
-# FIN CONNEXION {}
 
 
 

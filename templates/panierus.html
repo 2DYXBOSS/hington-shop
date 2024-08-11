@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page acceuil</title>
+    <title>Mon panier</title>
     <link rel="shortcut icon" href="{{url_for('static', filename='IMAGE/logo.jpg')}}">
 
     <link rel="stylesheet" href="/static/CSS/panierse.css">
@@ -23,16 +23,53 @@
             </div>
         </div>
     </a> 
+    <!-- le menu telephone -->
     <div class="menuddg">
         <div class="menuddg2">
             <div class="menuddg3">
                 
 
-                <div class="etdjff">
-                    <img src="{{url_for('static', filename='IMAGE/homedd.png')}}"  width="15px" alt="">
-                    <a href="/" style="font-size: 0.8rem;">Acceuil</a>
-                </div>
-                <div class="etdjff">
+                <!-- <div class="etdjff1">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                       
+                        <p style="font-size: 1rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-weight: bolder;">Menu</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/croix.png')}}"  width="15px" alt="">
+                </div> -->
+                <a href="/" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/homedd.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif;">Acceuil</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/sac" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/chas3.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Chaussure Homme & Femme</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/vente" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/robeee.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Vetement Femme</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/montre" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/hansb2.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Montre H & F</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <!-- <div class="etdjff">
                     <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="15px" alt="">
                     <a href="/vente" style="font-size: 0.8rem;">Vetements femmes</a>
                 </div>
@@ -47,19 +84,38 @@
                 <div class="etdjff">
                     <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
                     <a href="/#contace" style="font-size: 0.8rem;">Contacts</a>
+                </div> -->
+                <div class="boases">
+                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;padding-bottom: 10px;">Contactez - Nous</p>
+                    <p style="font-size: 0.7rem;padding-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. RLorem ipsum dolor sit amet consectetur adipisicing elit. R</p>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
+                        <p style="font-size: 1rem;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;">+225 0101678809</p>
+                    </a>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/emmqs.png')}}"  width="15px" alt="">
+                        <p style="font-size: 1rem;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;">hington-shop@gmail.com</p>
+                    </a>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/wha.png')}}"  width="15px" alt="">
+                        <p style="font-size: 0.8rem;color: black;">Posez vos questions sur <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">WhatsApp</span></p>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- le menu telephone -->
+    <!-- navbar ordinateur -->
     <header>
-       <div class="hedaf">
+        <div class="hedaf">
             <div class="logo">
-                <div class="tete">
-                    <div class="te1">
-                        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: rgb(36, 36, 116);
+                <div class="tete" style="padding-top: 10px;">
+                    <!-- <div class="te1">
+                        <h1 style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 2rem;color: black;
                    ;font-size: 1.1rem; ">HING<span id="deuxlogo">TON SHOP</span></h1>
-                    </div>
-                    
+                    </div> -->
+                    <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" width="150px"  alt="">
+                    <!-- <img src="{{url_for('static',filename='IMAGE/logoze.jpg')}}" width="70px" style="filter: invert();" alt=""> -->
                     
                    
                    
@@ -67,16 +123,22 @@
             </div>
             <div class="recherche">
                 <form action="/mesrecherches" method="post" id="hjdsd">
-                    <div class="imsdghde">
+                    <!-- <div class="imsdghde">
                         <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
-                    </div>
+                    </div> -->
                     <input type="text" name="recher" id="" placeholder="Cherchez un produit">
-                    <button type="submit"><h1 style="font-size: 0.9rem;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: white;
-                                ">RECHERCHER</h1></button>
+                    <button type="submit"><div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div></button>
                 </form>
             </div>
             
+            
             <div class="menu">
+                <a href="" class="menuaze" >
+                    <img src="{{url_for('static', filename='IMAGE/pppp.png')}}"  width="30px" alt="" >
+                </a>
+                
                 <div class="imsdghde1">
                     <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
                 </div>
@@ -89,6 +151,7 @@
         </div>
        
     </header>
+    <!-- navbar ordinateur -->
     <div class="hdueu">
         
     </div>
@@ -96,7 +159,7 @@
         <div class="monpsjf1">
             <div class="meselele">
                 <div class="jjhfsdf">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 10px;">PANIER { {{conueww}} }</p>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 10px;">PANIER { {{conueww}} }</p>
                 </div>
                
                
@@ -111,22 +174,16 @@
                             </a>
                         </div>
                         <div class="imahdjd2">
+                            <p class="gradfs" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p class="gradfs1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:40:]}} ...</span></p>
                             {% if i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
-                            {% endif %}
-                            {% if not i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
-                            {% endif %}
-                            {% if i.tailed %}
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Size : <span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
                             {% endif %}
                         </div>
                         <div class="imahdjd3">
                             
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
                             <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
                                 <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
                             </div>
@@ -137,31 +194,46 @@
                         <div class="jujdcuudwucd">
                             <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
                             <a href="/Supprimer/{{i.id}}">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
                             </a>
                         </div>
-                        <div class="jujdcuudwucd1">
+                        <!-- <div class="jujdcuudwucd1">
+                            <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{i.porceprix}}">
                             <div class="ududdw2" onclick="moinsp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">-</p>
                             </div>
                             <div class="ududdw1">
                                 <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
                             </div>
                             <div class="ududdw" onclick="plusp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div> -->
+                        <div class="jujdcuudwucd1">
+                            <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{i.porceprix}}">
+                            <input type="text" name="" id="gdhsuuzed" style="width: 0;height: 0;border: none;"  value="{{gdhsuud}}">
+                            <div class="ududdw2" onclick="moinsp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="quantity" id="mnumq_{{ i.id }}" style="width: 100%; height: 100%; padding-left: 10px; border: none; outline: none;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;" value="{{ i.quantite }}">
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">+</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 
                 
                 {% endif %}
-                {% if i["categorie" ]== "chaussure" %}
+                {% if i["categorie"]== "chaussure" %}
                 
                 
                 <div class="lesvrai">
                     <div class="geujdjd">
-                        
+                        <input type="checkbox" name="" id="esfsdr">
                         <div class="imahdjd1">
                             <a href="/sacs/{{i.element}}">
                             <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
@@ -169,22 +241,18 @@
                         </div>
                       
                         <div class="imahdjd2">
+                            
+                            <p class="gradfs" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p class="gradfs1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:40:]}} ...</span></p>
+                           
                             {% if i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
-                            {% endif %}
-                            {% if not i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
-                            {% endif %}
-                            {% if i.tailed %}
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Size : <span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
                             {% endif %}
                         </div>
                         <div class="imahdjd3">
                             
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
                             <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
                                 <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
                             </div>
@@ -195,18 +263,33 @@
                         <div class="jujdcuudwucd">
                             <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
                             <a href="/Supprimer/{{i.id}}">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
                             </a>
                         </div>
-                        <div class="jujdcuudwucd1">
-                            <div class="ududdw2" onclick="moinsp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                        <!-- <div class="jujdcuudwucd1">
+                            <div class="ududdw2" onclick="moinsp('mnumq${i.id}')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">-</p>
                             </div>
                             <div class="ududdw1">
-                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
+                                <input type="text" name="" id="mnumq{{i.id}}"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
                             </div>
-                            <div class="ududdw" onclick="plusp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            <div class="ududdw" onclick="plusp('mnumq${i.id}')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div> -->
+
+
+                        <div class="jujdcuudwucd1">
+                            <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{i.porceprix}}">
+                            <input type="text" name="" id="gdhsuuzed" style="width: 0;height: 0;border: none;"  value="{{gdhsuud}}">
+                            <div class="ududdw2" onclick="moinsp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="quantity" id="mnumq_{{ i.id }}" style="width: 100%; height: 100%; padding-left: 10px; border: none; outline: none;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;" value="{{ i.quantite }}">
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">+</p>
                             </div>
                         </div>
                     </div>
@@ -227,22 +310,16 @@
                         </div>
                        
                         <div class="imahdjd2">
+                            <p class="gradfs" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p class="gradfs1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:40:]}} ...</span></p>
                             {% if i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:200]}} ...</p>
-                            {% endif %}
-                            {% if not i.tailed %}
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: rgb(155, 155, 155);">{{i.description[:300]}} ...</p>
-                            {% endif %}
-                            {% if i.tailed %}
-                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Taille du produit : <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Size : <span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
                             {% endif %}
                         </div>
                         <div class="imahdjd3">
                             
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
                             <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
                                 <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
                             </div>
@@ -253,19 +330,20 @@
                         <div class="jujdcuudwucd">
                             <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
                             <a href="/Supprimer/{{i.id}}">
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
                             </a>
                         </div>
                         <div class="jujdcuudwucd1">
-                            <div class="ududdw2" onclick="moinsp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                            <input type="text" name="" id="couterw" style="width: 0;height: 0;border: none;"  value="{{i.porceprix}}">
+                            <input type="text" name="" id="gdhsuuzed" style="width: 0;height: 0;border: none;"  value="{{gdhsuud}}">
+                            <div class="ududdw2" onclick="moinsp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">-</p>
                             </div>
                             <div class="ududdw1">
-                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
-                                
+                                <input type="text" name="quantity" id="mnumq_{{ i.id }}" style="width: 100%; height: 100%; padding-left: 10px; border: none; outline: none;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;" value="{{ i.quantite }}">
                             </div>
-                            <div class="ududdw" onclick="plusp('mnumq')">
-                                <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            <div class="ududdw" onclick="plusp('mnumq_{{ i.id }}','{{i.pource}}')">
+                                <p style="color: black;font-size: 2rem;">+</p>
                             </div>
                         </div>
                     </div>
@@ -277,34 +355,40 @@
             </div>
             <div class="meselele1">
                 <div class="jdidsedf">
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">DETAILS DU PANIER</p>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">INFORMATION POUR LIVRAISON</p>
                 </div>
-                <div class="jdidsed2">
-                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Quantite de produits { {{conueww}} }</p>
-                    <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;">Vous pouvez toujours ajouté des produits et vous faire livré gratuitement</p>
-                </div>
-                <div class="jdidsed2">
-                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;">Cout total de produits { FCFA }</p>
-                    <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;">{{somme}} FCFA</p>
-                    {% if conueww > 4 %}
-                    <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 105px;border-radius: 5px;margin-top: 10px;">
-                        <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison gratuite</p>
-                    </div>
-                    {% endif %}
-                    {% if conueww <= 4 %}
-                    <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 125px;border-radius: 5px;margin-top: 10px;">
-                        <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison a vos frais</p>
-                    </div>
-                    {% endif %}
-                </div>
-              
                 
                 <div class="jdidsed2">
-                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Pourquoi c'est gratuit ?</p>
-                    <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;padding-bottom: 15px;">La livraison est gratuite sur abidjan a partir de 5 articles commandés en un coup . </p>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;font-size: 0.8rem;" >PRIX TOTAL</p>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;font-weight: bolder;font-size: 1.3rem;" ><span id="somiu" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-weight: bolder;font-size: 1.3rem;">{{somme}}</span> FCFA</p>
                     
-                    <form action="commandeznow" method="post" class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 97%;border-radius: 5px;margin-top: 10px;">
-                        <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: rgba(255, 102, 0, 0.865);width: 100%;">COMMANDER MAINTENANT</button>
+                </div>
+              
+                <div class="kidndhus" >
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;font-size: 0.8rem;" >CHOISIR LIEU DE UN LIVRAISON</p>
+                    <!-- <input type="text" name="recher" id="" placeholder="Choisir un lieu pour la livraison"> -->
+                    <select name="" id="" >
+                        <option value="">KOUMASSI</option>
+                        <option value="">MARCORY</option>
+                        <option value="">TREICHVILLE</option>
+                        <option value="">PORT-BOUET</option>
+                        <option value="">PLATEAU</option>
+                        <option value="">ADJAME</option>
+                        <option value="">COCODY</option>
+                        <option value="">BINGERVILLE</option>
+                        <option value="">YOPOUGON</option>
+                        <option value="">ANYAMA</option>
+                    </select>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;font-size: 0.8rem;" >DESCRIPTION DU LIEU</p>
+                    <input type="text" name="recher" id="" placeholder="Description du lieu de livraison">
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;font-size: 0.8rem;" >ENTRER UN NUMERO VALIDE</p>
+                    <input type="text" name="recher" id="" placeholder="Entrer numero valide pour la livraison">
+                      
+                </div>
+                <div class="jdidsed2">
+                    
+                    <form action="commandeznow" method="post" class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 100%;border-radius: 5px;margin-top: 10px;">
+                        <button type="submit" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;color: white;">VALIDER COMMANDE</button>
                     </form>
                 </div>
             </div>
@@ -319,7 +403,7 @@
     <div class="jjhfsdf54">
         <div class="jdudu">
             
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/montre" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie montre</a> </p>
+            <p class="romodd" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/montre" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie montre</a> </p>
         </div>
     </div>
     
@@ -344,9 +428,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -365,9 +450,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -387,7 +473,7 @@
     <div class="jjhfsdf54">
         <div class="jdudu">
             
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie vetement femme</a> </p>
+            <p class="romodd" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie vetement femme</a> </p>
         </div>
     </div>
     <div class="listedeselements">
@@ -409,9 +495,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -428,9 +515,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -448,7 +536,7 @@
        <!-- listedeselemet -->
        <div class="jjhfsdf54">
         <div class="jdudu">
-            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/sac" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie Chaussures Hommes & Femmmes</a> </p>
+            <p class="romodd" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/sac" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie Chaussures Hommes & Femmmes</a> </p>
         </div>
     </div>
        <div class="listedeselements">
@@ -469,9 +557,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -490,9 +579,10 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <p style="font-size: 0.9rem;padding-top: 5px;color: black;">{{i.nom}}</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
-                        <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                        <p class="palhde" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p class="palhde1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: rgb(53, 53, 53);font-size: 1rem;"><span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.8rem;color: rgb(53, 53, 53);">{{i.nom[:20:]}} ...</span></p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
 
                     </div>
                 </a>
@@ -507,16 +597,39 @@
         
     </div>
     <!-- listedeselemet -->
-    <footer id="foot">
-        <div id="head">
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 1.5rem;text-align: center;padding-bottom: 30px;padding-top: 10px;color: white;
-            ">HING<span id="deuxlogo23">TON SHOP</span></h1>
-        </div>
-        <!-- <p >Nous sommes une boutique de vente en ligne ...
-
-        </p> -->
-        
-    </footer>
+    <div class="insedfole">
+        <footer id="foot" >
+            <div id="head " style="padding-top: 20px;">
+                <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" style="filter: invert();" width="170px"  alt="">
+            </div>
+            <div class="recherche111" style="background-color: black;">
+                <form action="/mesrecherches" method="post" id="hjdsd123">
+                    <!-- <div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div> -->
+                    <input type="text" name="recher" id="" placeholder="Ecrivez - nous pour vos preoccupations et suggestions ">
+                    <button type="submit"><div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/emmqs.png')}}"  width="20px" alt="">
+                    </div></button>
+                </form>
+            </div>
+            <div id="head " style="padding-top: 20px;padding-left: 20px;">
+                <h1 style="color: white;font-size: 0.9rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif">RETROUVEZ-NOUS SUR</h1>
+                <div class="zghdes">
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/fza.png')}}"  width="25px" alt="">
+                    </a>
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/wha.png')}}"  width="30px" alt="">
+                    </a>
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/tikti.png')}}"  width="35px" alt="">
+                    </a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
 
 
     <script src="/static/CSS/panied.js"></script>

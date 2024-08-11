@@ -1,17 +1,70 @@
 
 
-// const bouto = document.querySelector('.bouto');
-// const formuhfh = document.querySelector('.formuhfh');
-// const formuhfhe = document.querySelector('.ccrrooii');
 
-// bouto.addEventListener('click',()=>{
-//     formuhfh.classList.add("active");
-// });
-// formuhfhe.addEventListener('click',()=>{
-//     formuhfh.classList.remove("active");
-// })
 
-// ;
+let ecran = document.querySelector('#ecran')
+let image0 = document.querySelector('#image0')
+let image0Input = document.querySelector('#image0Input').value
+let image1 = document.querySelector('#image1')
+let image1Input = document.querySelector('#image1Input').value
+let image2 = document.querySelector('#image2')
+let image2Input = document.querySelector('#image2Input').value
+let image3 = document.querySelector('#image3');
+let image3Input = document.querySelector('#image3Input').value;
+
+
+let im1 = document.querySelector('#im1')
+let im2 = document.querySelector('#im2')
+    
+
+image0.addEventListener('click',()=>{
+    ecran.src = `/static/uploads/${image0Input}`
+
+    // ecran.style.background = `url(/static/uploads/${image0Input}) 50% no-repeat `
+    // ecran.style.backgroundSize= "cover";
+    image1.style.border = "none"
+    image3.style.border = "none"
+    image2.style.border = "none"
+    image0.style.border = "2px solid black"
+
+}
+
+)
+image1.addEventListener('click',()=>{
+   
+    ecran.src = `/static/uploads/${image1Input}`
+    image2.style.border = "none"
+    image3.style.border = "none"
+    image0.style.border = "none"
+    image1.style.border = "2px solid black"
+}
+
+)
+image2.addEventListener('click',()=>{
+   
+    ecran.src = `/static/uploads/${image2Input}`
+    image1.style.border = "none"
+    image3.style.border = "none"
+    image0.style.border = "none"
+    image2.style.border = "2px solid black"
+
+}
+
+)
+image3.addEventListener('click',()=>{
+   
+    ecran.src = `/static/uploads/${image3Input}`
+    image1.style.border = "none"
+    image2.style.border = "none"
+    image0.style.border = "none"
+    image3.style.border = "2px solid black"
+
+}
+
+)
+
+
+
 
 const aee = document.querySelector('#hdhdj')
 const hdhdj2 = document.querySelector('#hdhdj2')
@@ -50,6 +103,88 @@ imsdghde12.addEventListener('click',()=>{
     
    
 });
+
+
+
+
+const boutonshd = document.querySelector("#boutonshd")
+boutonshd.addEventListener('click',()=>{
+    
+    // let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+    // let image = document.querySelector(".image").value
+    // let noumeme = document.querySelector(".noumeme").value
+    // let prix = document.querySelector(".prix").value
+    // let quantite = document.querySelector("#quantiteplos").value
+    // let categorie = document.querySelector("#categorie").value
+    // let data = {"image":image,"tailed" : "","produite":noumeme,"prixtottal":prix,"quantiteto":quantite,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}
+    let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+    let image = document.querySelector(".image").value
+    let noumeme = document.querySelector(".noumeme").value
+    let prix = document.querySelector(".prix").value
+    let quantite = document.querySelector("#quantiteplos").value
+    let porce = document.querySelector(".porce").value
+    let porceprix = document.querySelector(".porceprix").value
+    let categorie = document.querySelector(".categorie").value
+
+    let data = {"image":image,"tailed" : "","produite":noumeme,"categorie":categorie,"porce":porce,"porceprix":porceprix,"prixtottal":prix,"quantiteto":quantite,"xs":"","xsn":"","s":"","sn":"","l":"","ln":"","m":"","mn":"","xl":"","xln":"","xxl":"","xxln":"","tranwite":"","tranwiten":"","tranneuf":"","tranneufn":"","karente":"","karenten":"","tranwiteun":"","tranwiteunn":"","tranwitedeux":"","tranwitedeuxn":"","tranwitrois":"","tranwitroisn":"","tranwitekate":"","tranwitekaten":""}  
+    let usere = {
+        data : data ,
+    }
+    
+    tabUsere.push(usere)
+    localStorage.setItem('inscpce',JSON.stringify(tabUsere))
+    console.log('Data successfully sent to Python:', data);
+    window.location.href = "http://127.0.0.1:5005/monpanierls"
+})
+// boutonshd.addEventListener('click',()=>{
+//     let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+//     // let nameid = document.querySelector("#nome").value;
+    
+    
+    
+
+//     // let dataz = JSON.parse(localStorage.getItem("inscpce"))
+//     fetch('/ssme', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         // body: JSON.stringify({ data: dataz })
+        
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         let usere = {
+//             data:data,
+//         }
+    
+//         tabUsere.push(usere)
+//         localStorage.setItem('inscpce',JSON.stringify(tabUsere))
+//         console.log('Data successfully sent to Python:', data);
+//         window.location.href = "/monpanierls"
+        
+//     })
+//     .catch(error => {
+//         console.error('Error sending data to Python:', error);
+//     });
+
+// })
+
+
+// const bouto = document.querySelector('.bouto');
+// const formuhfh = document.querySelector('.formuhfh');
+// const formuhfhe = document.querySelector('.ccrrooii');
+
+// bouto.addEventListener('click',()=>{
+//     formuhfh.classList.add("active");
+// });
+// formuhfhe.addEventListener('click',()=>{
+//     formuhfh.classList.remove("active");
+// })
+
+// ;
+
+
 
 
 const moins = document.querySelectorAll('#moins');
@@ -149,70 +284,6 @@ monfixder.addEventListener('click',()=>{
 
 
 
-
-
-
-
-let ecran = document.querySelector('#ecran')
-let image0 = document.querySelector('#image0')
-let image0Input = document.querySelector('#image0Input').value
-let image1 = document.querySelector('#image1')
-let image1Input = document.querySelector('#image1Input').value
-let image2 = document.querySelector('#image2')
-let image2Input = document.querySelector('#image2Input').value
-let image3 = document.querySelector('#image3');
-let image3Input = document.querySelector('#image3Input').value;
-
-
-let im1 = document.querySelector('#im1')
-let im2 = document.querySelector('#im2')
-    
-
-image0.addEventListener('click',()=>{
-    ecran.src = `/static/uploads/${image0Input}`
-
-    // ecran.style.background = `url(/static/uploads/${image0Input}) 50% no-repeat `
-    // ecran.style.backgroundSize= "cover";
-    image1.style.border = "none"
-    image3.style.border = "none"
-    image2.style.border = "none"
-    image0.style.border = "2px solid black"
-
-}
-
-)
-image1.addEventListener('click',()=>{
-   
-    ecran.src = `/static/uploads/${image1Input}`
-    image2.style.border = "none"
-    image3.style.border = "none"
-    image0.style.border = "none"
-    image1.style.border = "2px solid black"
-}
-
-)
-image2.addEventListener('click',()=>{
-   
-    ecran.src = `/static/uploads/${image2Input}`
-    image1.style.border = "none"
-    image3.style.border = "none"
-    image0.style.border = "none"
-    image2.style.border = "2px solid black"
-
-}
-
-)
-image3.addEventListener('click',()=>{
-   
-    ecran.src = `/static/uploads/${image3Input}`
-    image1.style.border = "none"
-    image2.style.border = "none"
-    image0.style.border = "none"
-    image3.style.border = "2px solid black"
-
-}
-
-)
 
 
 
@@ -442,3 +513,137 @@ function verif(ide,quantep) {
 // });
 // });
 
+// function dedy() {
+//     let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+//     // let nameid = document.querySelector("#nome").value;
+    
+    
+    
+
+//     // let dataz = JSON.parse(localStorage.getItem("inscpce"))
+//     fetch('/ssme', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         // body: JSON.stringify({ data: dataz })
+        
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         let usere = {
+//             data:data,
+//         }
+    
+//         tabUsere.push(usere)
+//         localStorage.setItem('inscpce',JSON.stringify(tabUsere))
+//         console.log('Data successfully sent to Python:', data);
+//         window.location.href = "/monpanierls"
+        
+//     })
+//     .catch(error => {
+//         console.error('Error sending data to Python:', error);
+//     });
+
+// }
+// function dedy() {
+    
+
+//     function updateTime() {
+//         let now = new Date();
+//         let hours = now.getHours();
+//         let minutes = now.getMinutes();
+//         let seconds = now.getSeconds();
+//         console.log(seconds,"nom");
+//     }
+
+   
+//     window.onload = function() {
+//         updateTime();
+//         let intervalId = setInterval(updateTime, 1000);
+
+       
+//         setTimeout(function() {
+//             clearInterval(intervalId);
+//             let now = new Date();
+            
+//             let seconds = now.getSeconds();
+//             console.log(seconds,"pres")
+//             let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+//             // let nameid = document.querySelector("#nome").value;
+            
+            
+            
+
+//             // let dataz = JSON.parse(localStorage.getItem("inscpce"))
+//             fetch('/ssme', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 // body: JSON.stringify({ data: dataz })
+                
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 let usere = {
+//                     data:data,
+//                 }
+            
+//                 tabUsere.push(usere)
+//                 localStorage.setItem('inscpce',JSON.stringify(tabUsere))
+//                 console.log('Data successfully sent to Python:', data);
+//                 window.location.href = "/monpanierls"
+                
+//             })
+//             .catch(error => {
+//                 console.error('Error sending data to Python:', error);
+//             });
+//         }, 0); // 5000 millisecondes = 10 secondes
+
+        
+//     };
+        
+            
+        
+    
+    
+// }
+// let boutonid = document.querySelector("#bouste");
+// boutonid.addEventListener("click",(event)=>{
+//     event.preventDefault()
+    
+   
+//     fetch('http://127.0.0.1:5005/song', {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+        
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         let tabUsere = JSON.parse(localStorage.getItem("inscpce")) || []
+//         let nom =data["prenom"];
+//         let prenom =data["prenom"];
+    
+//         let usere = {
+//             nom,
+//             prenom,
+//         }
+//         tabUsere.push(usere)
+
+//         localStorage.setItem('inscpce',JSON.stringify(tabUsere))
+//         console.log('Data successfully sent to Python:', data);
+//     })
+//     .catch(error => {
+//         console.error('Error sending data to Python:', error);
+//     });
+// }) 
+
+
+
+
+function zoommer() {
+    
+}

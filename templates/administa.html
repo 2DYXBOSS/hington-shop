@@ -1,215 +1,781 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page admin</title>
-    <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">    
-    <link rel="stylesheet" href="/static/CSS/administa.css">
+    <link rel="shortcut icon" href="static/IMAGES/blaye.jpeg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files -->
+    <link href="/static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/static/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/static/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/static/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+
+    <link rel="stylesheet" href="/static/CSS/administa.css">
 </head>
+
 <body>
 
-    <header>
-        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 2rem;color: white;
-    ">HING<span id="deuxlogo">TON SHOP</span></h1>
-    </header>
-    <h1 style="font-family: Arial, Helvetica, sans-serif;text-align:center;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETAIRE</h1>
-    
-    {% for i in VetementHomme %}
-    <div class="image">
-        <div class="ima1">
-            <a href="/info/{{i.id}}" class="image1">
-                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                
-               
-            </a>
-        </div>
-        <div class="desc">
-            <p>Taille : <span>{{i.description}}</span></p>
-        </div>
-        <div class="bouton">
-            <div class="supeir1">
-                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-            </div>
-            <div class="supeir2">
-                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-            </div>
-        </div>
-    </div>
-    {%endfor%}
- 
-    <div id="cahsied2" >
-        
-        <div class="imhdolp" onclick="activatione('cahsied2','blogale2','mondewq2')" >
-            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Vetements femmes</p>
-        </div>
-        <div class="imhdol" onclick="effacfe('cahsied2','blogale2','mondewq2')">
-            <img id="mondewq2" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
-        </div>
-        
-    </div>
-    <div id="blogale2">
-    {% for i in VetementFemme %}
-    <div id="cahsiedid">
-        <div class="ima1">
-            <a href="/info/{{i.id}}" class="image1">
-                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                
-               
-            </a>
-        </div>
-        <div class="desc">
-            <p>TAILLES : <span style="font-size: 1rem;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;"><br>
-                {% if not i.xs == 'rien' %}
-                {{i.xs}}
-                {% endif %}
-                {% if not i.s == 'rien' %}
-                {{i.s}}
-                {% endif %}
-                {% if not i.l == 'rien' %}
-                {{i.l}}
-                {% endif %}
-                {% if not i.m == 'rien' %}
-                {{i.m}}
-                {% endif %}
-                {% if not i.xxl == 'rien' %}
-                {{i.xxl}}
-                {% endif %}
-                {% if not i.xl == 'rien' %}
-                {{i.xl}}
-                {% endif %}
-                
-                
-                
-                
-                
-                
-            </span></p>
-        </div>
-        <div class="bouton">
-            <div class="supeir1">
-                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-            </div>
-            <div class="supeir2">
-                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-            </div>
-        </div>
-    </div>
-    {%endfor%}
-    </div>
-    <div id="cahsied1" >
-        
-        <div class="imhdolp" onclick="activatione('cahsied1','blogale1','mondewq1')" >
-            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Montres</p>
-        </div>
-        <div class="imhdol" onclick="effacfe('cahsied1','blogale1','mondewq1')">
-            <img id="mondewq1" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
-        </div>
-        
-    </div>
-    <div id="blogale1">
-        {% for i in Montre %}
-
-        <div id="cahsiedid">
-            <div class="ima1">
-                <a href="/info/{{i.id}}" class="image1">
-                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                    
-                   
-                </a>
-            </div>
-            <div class="desc">
-               
-                
-            </div>
-            <div class="bouton">
-                <div class="supeir1">
-                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-                </div>
-                <div class="supeir2">
-                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
-                </div>
-            </div>
-        </div>
-        {%endfor%}
-    </div>
-    <div id="cahsied" >
-        
-        <div class="imhdolp" onclick="activatione('cahsied','blogale','mondewq')" >
-            <p style="font-family: Arial, Helvetica, sans-serif;color: white;">Chaussures</p>
-        </div>
-        <div class="imhdol" onclick="effacfe('cahsied','blogale','mondewq')">
-            <img id="mondewq" src="{{url_for('static', filename='IMAGE/inf.png')}}" style="filter: invert();" width="20px" height="20px" alt="">
-        </div>
-        
-    </div>
-    <div id="blogale">
-        {% for i in sac %}
     
 
-        <div id="cahsiedid">
-            <div class="ima1">
-                <a href="/info/{{i.id}}" class="image1">
-                    <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
-                    
-                   
-                </a>
-            </div>
-            <div class="desc">
-                <p>TAILLES : <span style="font-size: 1rem;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;"><br>
-                    {% if not i.tranwite == 'rien' %}
-                    {{i.tranwite}}
-                    {% endif %}
-                    {% if not i.tranneuf == 'rien' %}
-                    {{i.tranneuf}}
-                    {% endif %}
-                    {% if not i.karente == 'rien' %}
-                    {{i.karente}}
-                    {% endif %}
-                    {% if not i.tranwiteun == 'rien' %}
-                    {{i.tranwiteun}}
-                    {% endif %}
-                    {% if not i.tranwitedeux == 'rien' %}
-                    {{i.tranwitedeux}}
-                    {% endif %}
-                    {% if not i.tranwitrois == 'rien' %}
-                    {{i.tranwitrois}}
-                    {% endif %}
-                    {% if not i.tranwitekate == 'rien' %}
-                    {{i.tranwitekate}}
-                    {% endif %}
-                    
-                    
-                    
-                    
-                    
-                    
-                </span></p>
-            </div>
-            <div class="bouton">
-                <div class="supeir1">
-                    <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
+    <div class="enetdde">
+        <div class="header1">
+
+            <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" width="150px"  alt="">
+
+        </div>
+
+    </div>
+
+    <div class="beufgeir">
+        <header id="a1">
+            <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" width="150px"  alt="">
+        </header>
+        <header id="a2">
+            <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" width="150px"  alt="">
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/administa">
+
+                        <img src="{{url_for('static', filename='IMAGE/dates.png')}}" width="15px" height="15px" alt="">
+                        <p style="font-size: 0.8rem;font-weight: bolder;color: rgb(36, 36, 116);">Ma liste de produits
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/add_objet">
+                        <img src="{{url_for('static', filename='IMAGE/azjjje.png')}}" width="15px" height="15px" alt="">
+                        <p style="font-size: 0.8rem;font-weight: bolder;">Ajouter un produit</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/administa">
+                        <img src="{{url_for('static', filename='IMAGE/dolla.png')}}" width="15px" height="15px" alt="">
+                        <p style="font-size: 0.8rem;font-weight: bolder;">Ma liste de commandes</p>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a href="/administa">
+                        <img src="{{url_for('static', filename='IMAGE/efddh.png')}}" width="15px" height="15px" alt="">
+                        <p style="font-size: 0.8rem;font-weight: bolder;">Vision user</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="dgghjsksc">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/administa">
+
+                            <img src="{{url_for('static', filename='IMAGE/pppp.png')}}" width="15px" height="15px"
+                                alt="">
+                            <p style="font-size: 0.8rem;font-weight: bolder;">Profil Admin</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/administa">
+
+                            <img src="{{url_for('static', filename='IMAGE/sup.png')}}" width="15px" height="15px"
+                                alt="">
+                            <p style="font-size: 0.8rem;font-weight: bolder;">Déconnexion</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- <div class="beufgeir1">
+    
+    </div> -->
+    <div class="comehdhd">
+        <div class="gdjfyf">
+            <p style="text-align: end;padding-right: 20px;padding-top: 25px;font-size: 0.8rem;padding-bottom: 60px;">
+                Bonjour a vous , chers administrateur</p>
+        </div>
+        <div class="dghgff">
+            <div class="megdghs">
+                <div class="ghdghjhze">
+                    <a href="/add_objet"><img style="filter: invert()"
+                            src="{{url_for('static', filename='IMAGE/azjjje.png')}}" width="25px" height="25px"
+                            alt=""></a>
                 </div>
-                <div class="supeir2">
-                    <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" style="filter: invert();" width="40px" height="40px" alt=""></a>
+                <div class="ghdghjhze">
+                    <a href="/vente"><img style="filter: invert();"
+                            src="{{url_for('static', filename='IMAGE/efddh.png')}}" width="25px" height="25px"
+                            alt=""></a>
                 </div>
+            </div>
+            <div class="megdghs1">
+                <div class="dhhghd">
+
+                </div>
+                <div class="dhhghd">
+
+                </div>
+                <div class="dhhghd">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="mesadggd">
+            <div class="hejdds">
+                <p style="font-size: 0.8rem;color: blueviolet;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Provident corrupti eum quia assumenda. Vitae delectus repellat officia quis architecto laborum ex
+                    quo ipsum illo molestiae corporis, perferendis soluta quidem dolorum.</p>
             </div>
         </div>
-    {%endfor%}
-       
-    </div>
+        <div class="gzhez">
+            
+        </div>
+        <div class="gdghshjs">
+
+            <div class="hjduee">
+                <!-- <h3 style="font-family: Arial, Helvetica, sans-serif;text-align:start;padding:30px 5px;color: white;">PARAMETRE DU PROPRIETAIRE</h3>
+                <div >
+                    <a href="/add_objet" class="voiir"><img style="filter: invert();margin-right: 20px;" src="{{url_for('static', filename='IMAGE/azjjje.png')}}"  width="40px" height="40px" alt=""></a>
+                    <a href="/vente" class="voiir"><img style="filter: invert();" src="{{url_for('static', filename='IMAGE/efddh.png')}}"  width="40px" height="40px" alt=""></a>
+                    
+                </div> -->
+                <p style="padding-bottom: 10px;padding-top: 20px;font-size: 1rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;">Ma liste de produits</p>
+                {% for i in VetementHomme %}
+                <div class="image">
+                    <div class="ima1">
+                        <a href="/info/{{i.id}}" class="image1">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%"
+                                alt="">
+
+
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <p>Taille : <span>{{i.description}}</span></p>
+                    </div>
+                    <div class="bouton">
+                        <div class="supeir1">
+                            <a href="/mofiedd/{{i.id}}"><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}"
+                                    style="filter: invert();" width="40px" height="40px" alt=""></a>
+                        </div>
+                        <div class="supeir2">
+                            <a href="/Suppesz/{{i.id}}"><img src="{{url_for('static', filename='IMAGE/croix.png')}}"
+                                    style="filter: invert();" width="40px" height="40px" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+
+                <div id="cahsied2">
+
+                    <div class="imhdolp" onclick="activatione('cahsied2','blogale2','mondewq2')">
+                        <p style="padding-bottom: 10px;padding-top: 20px;font-size: 0.8rem;">Vetements femmes</p>
+                    </div>
+                    <div class="imhdol" onclick="effacfe('cahsied2','blogale2','mondewq2')">
+                        <img id="mondewq2" src="{{url_for('static', filename='IMAGE/cadefer.png')}}" width="20px"
+                            height="20px" alt="">
+                    </div>
+
+                </div>
+                <div id="blogale2">
+
+
+
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="data-table table-responsive">
+                                <table class="table mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width:30px;"></th>
+                                            <th>#</th>
+                                            <th>Nom & Prenom</th>
+                                            <th>Addresse mail</th>
+                                            <th>Action</th>
+                                            <th>Creation du compte</th>
+                                            <th>Nombre de commande</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
     
+                                        {% for i in VetementFemme %}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="40px" height="40px"
+                                                alt="">
+                                            </td>
+                                            <td><a href="https://board.ekeplus.com/video/18/edit">{{i.nom[:10:]}} ...</a></td>
+                                            <td style="display: flex;padding-top: 35px;">
+                                                {% if not i.xs == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.xs}} </p>
+                                                {% endif %}
+                                                {% if not i.s == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.s}} </p>
+                                                {% endif %}
+                                                {% if not i.l == 'rien' %}
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.xls}} </p>
+
+                                                {% endif %}
+                                                {% if not i.m == 'rien' %}
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.m}} </p>
+
+                                                {% endif %}
+                                                {% if not i.xxl == 'rien' %}
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.xxl}} </p>
+
+                                                {% endif %}
+                                                {% if not i.xl == 'rien' %}
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.xl}} </p>
+
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <!-- <div class="badge text-success bg-light-success p-2 text-uppercase px-3">
+    
+                                                   
+                                                    
+                                                </div> -->
+                                                <div class="d-grid gap-2 d-md-block">
+                                                    <a href="/mofiedd/{{i.id}}" type="button" class="btn btn-outline-success">Modifier</a>
+                                                    <a href="/Suppesss/{{i.id}}" type="button" class="btn btn-outline-danger">Supprimer</a>
+                                                    <!-- <button class="btn btn-primary" type="button">Button</button>
+                                                    <button class="btn btn-primary" type="button">Button</button> -->
+                                                </div>
+                                            </td>
+                                            <td>28/05/2024 à 11:09</td>
+                                            <td>925.076</td>
+                                        </tr>
+                                        {%endfor%}
+    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cahsied1">
+
+                    <div class="imhdolp" onclick="activatione('cahsied1','blogale1','mondewq1')">
+
+                        <p style="padding-bottom: 10px;padding-top: 20px;font-size: 0.8rem;">Montres</p>
+                    </div>
+                    <div class="imhdol" onclick="effacfe('cahsied1','blogale1','mondewq1')">
+                        <img id="mondewq1" src="{{url_for('static', filename='IMAGE/cadefer.png')}}" width="20px"
+                            height="20px" alt="">
+                    </div>
+
+                </div>
+                <div id="blogale1">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="data-table table-responsive">
+                                <table class="table mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width:30px;"></th>
+                                            <th>#</th>
+                                            <th>Nom & Prenom</th>
+                                            <th>Addresse mail</th>
+                                            <th>Action</th>
+                                            <th>Creation du compte</th>
+                                            <th>Nombre de commande</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+    
+                                        {% for i in Montre %}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="40px" height="40px"
+                                                alt="">
+                                            </td>
+                                            <td><a href="https://board.ekeplus.com/video/18/edit">{{i.nom[:10:]}} ...</a></td>
+                                            <td >
+                                                {% if not i.tranwite == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwite}} </p>
+
+                                                {% endif %}
+                                                {% if not i.tranneuf == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranneuf}} </p>
+                                                {% endif %}
+                                                {% if not i.karente == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.karente}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwiteun == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwiteun}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitedeux == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitedeux}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitrois == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitrois}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitekate == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitekate}} </p>
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <!-- <div class="badge text-success bg-light-success p-2 text-uppercase px-3">
+    
+                                                   
+                                                    
+                                                </div> -->
+                                                <div class="d-grid gap-2 d-md-block">
+                                                    <a href="/mofiedd/{{i.id}}" type="button" class="btn btn-outline-success">Modifier</a>
+                                                    <a href="/Suppesss/{{i.id}}" type="button" class="btn btn-outline-danger">Supprimer</a>
+                                                    <!-- <button class="btn btn-primary" type="button">Button</button>
+                                                    <button class="btn btn-primary" type="button">Button</button> -->
+                                                </div>
+                                            </td>
+                                            <td>28/05/2024 à 11:09</td>
+                                            <td>925.076</td>
+                                        </tr>
+                                        {%endfor%}
+    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div id="cahsied">
+
+                    <div class="imhdolp" onclick="activatione('cahsied','blogale','mondewq')">
+                        <p style="padding-bottom: 10px;padding-top: 20px;font-size: 0.8rem;">Chaussures</p>
+                    </div>
+                    <div class="imhdol" onclick="effacfe('cahsied','blogale','mondewq')">
+                        <img id="mondewq" src="{{url_for('static', filename='IMAGE/cadefer.png')}}" width="20px"
+                            height="20px" alt="">
+                    </div>
+
+                </div>
+                <div id="blogale">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="data-table table-responsive">
+                                <table class="table mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th style="width:30px;"></th>
+                                            <th>#</th>
+                                            <th>Nom & Prenom</th>
+                                            <th>Addresse mail</th>
+                                            <th>Action</th>
+                                            <th>Creation du compte</th>
+                                            <th>Nombre de commande</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+    
+                                        {% for i in sac %}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <input class="form-check-input" type="checkbox">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="40px" height="40px"
+                                                alt="">
+                                            </td>
+                                            <td><a href="https://board.ekeplus.com/video/18/edit">{{i.nom[:10:]}} ...</a></td>
+                                            <td style="display: flex;padding-top: 35px;">
+                                                {% if not i.tranwite == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwite}} </p>
+
+                                                {% endif %}
+                                                {% if not i.tranneuf == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranneuf}} </p>
+                                                {% endif %}
+                                                {% if not i.karente == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.karente}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwiteun == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwiteun}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitedeux == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitedeux}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitrois == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitrois}} </p>
+                                                {% endif %}
+                                                {% if not i.tranwitekate == 'rien' %}
+
+                                                <p style="font-size: 0.8rem;font-weight: bolder;padding-left: 3px;"> {{i.tranwitekate}} </p>
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                <!-- <div class="badge text-success bg-light-success p-2 text-uppercase px-3">
+    
+                                                   
+                                                    
+                                                </div> -->
+                                                <div class="d-grid gap-2 d-md-block">
+                                                    <a href="/mofiedd/{{i.id}}" type="button" class="btn btn-outline-success">Modifier</a>
+                                                    <a href="/Suppesss/{{i.id}}" type="button" class="btn btn-outline-danger">Supprimer</a>
+                                                    <!-- <button class="btn btn-primary" type="button">Button</button>
+                                                    <button class="btn btn-primary" type="button">Button</button> -->
+                                                </div>
+                                            </td>
+                                            <td>28/05/2024 à 11:09</td>
+                                            <td>925.076</td>
+                                        </tr>
+                                        {%endfor%}
+    
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <!-- {% for i in sac %}
+            
         
-    <div class="dgud">
-        <a href="/vente" class="voiir">VOIR LES PRODUITS</a>
-        <a href="/add_objet" class="voiir">AJOUTER DES PRODUITS</a>
+                    <div id="cahsiedid">
+                        <div class="ima1">
+                            <a href="/info/{{i.id}}" class="image1">
+                                <img src="{{url_for('static', filename='uploads/' + i.image)}}" width=" 100%" height="100%" alt="">
+                                
+                            
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <p>TAILLES : <span style="font-size: 1rem;font-family: Arial, Helvetica, sans-serif;text-transform: uppercase;"><br>
+                                {% if not i.tranwite == 'rien' %}
+                                {{i.tranwite}}
+                                {% endif %}
+                                {% if not i.tranneuf == 'rien' %}
+                                {{i.tranneuf}}
+                                {% endif %}
+                                {% if not i.karente == 'rien' %}
+                                {{i.karente}}
+                                {% endif %}
+                                {% if not i.tranwiteun == 'rien' %}
+                                {{i.tranwiteun}}
+                                {% endif %}
+                                {% if not i.tranwitedeux == 'rien' %}
+                                {{i.tranwitedeux}}
+                                {% endif %}
+                                {% if not i.tranwitrois == 'rien' %}
+                                {{i.tranwitrois}}
+                                {% endif %}
+                                {% if not i.tranwitekate == 'rien' %}
+                                {{i.tranwitekate}}
+                                {% endif %}
+                                
+                                
+                                
+                                
+                                
+                                
+                            </span></p>
+                        </div>
+                        <div class="bouton">
+                            <div class="supeir1">
+                                <a href="/mofiedd/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/nofiid.png')}}"  width="40px" height="40px" alt=""></a>
+                            </div>
+                            <div class="supeir2">
+                                <a href="/Suppesz/{{i.id}}" ><img src="{{url_for('static', filename='IMAGE/croix.png')}}" width="40px" height="40px" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    -->
+                </div>
+                <p style="padding-bottom: 10px;padding-top: 20px;font-size: 1rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;">Ma liste de commandes</p>
+
+
+                <div id="cahsied91">
+
+                    <div class="imhdolp" onclick="activatione('cahsied91','blogale91','mondewq91')">
+                        <p style="padding-bottom: 10px;padding-top: 20px;font-size: 0.8rem;">Mes commandes</p>
+                    </div>
+                    <div class="imhdol" onclick="effacfe('cahsied91','blogale91','mondewq91')">
+                        <img id="mondewq91" src="{{url_for('static', filename='IMAGE/cadefer.png')}}" width="20px"
+                            height="20px" alt="">
+                    </div>
+
+                </div>
+                
+                <div id="blogale91">
+
+
+                    {% for i in pofil %}
+                    <!-- bouclons -->
+                    
+                    <div id="cahsied7">
+
+                        <div class="imhdolpz" onclick="activatione('cahsied7','blogaleID','mondewq7')">
+                            <p style="font-size: 0.8rem;"><img src="{{url_for('static', filename='IMAGE/tle.png')}}"
+                                    width="10px" height="10px" alt=""> +225 0102030405</p>
+                            <p style="font-size: 0.8rem;"><img
+                                    src="{{url_for('static', filename='IMAGE/ghdfhddd.png')}}" width="15px"
+                                    height="15px" alt=""> Koumassi - Abidjan , CI</p>
+
+                            <div class="jekjee">
+                                <img src="{{url_for('static', filename='IMAGE/keys.png')}}" width="20px"
+                                    height="20px" alt="">
+                            </div>
+                        </div>
+                        <div class="imhdol" onclick="effacfe('cahsied7','blogaleID','mondewq7')">
+                            <img id="mondewq7" src="{{url_for('static', filename='IMAGE/cadefer.png')}}"
+                                width="20px" height="20px" alt="">
+                        </div>
+
+                    </div>
+                 
+                    
+                    <div id="blogaleID">
+                        <div class="zeuuejds">
+                            <div class="dayesd">
+
+
+                                <p style="font-size: 0.8rem;">29 Juil. 24</p>
+                            </div>
+                            <div class="dayesd1">
+                                <a href="">
+                                    <p style="font-size: 0.8rem;">5</p>
+                                </a>
+
+                            </div>
+                            <div class="dayesd2">
+                                <img src="{{url_for('static', filename='IMAGE/im10.jpg')}}" width="40px"
+                                    height="40px" alt="">
+                            </div>
+                            <div class="dayesd3">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 5780 Fcfa</p>
+                            </div>
+                            <div class="dayesd4">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 23 </p>
+                            </div>
+                            <div class="dayesd5">
+                                <p
+                                    style="font-size: 0.8rem;font-weight: bolder;color: green;background-color: rgba(112, 184, 112, 0.457);padding: 3px 15px;">
+                                    LIVRÉE </p>
+                            </div>
+                        </div>
+                        <div class="zeuuejds">
+                            <div class="dayesd">
+
+
+                                <p style="font-size: 0.8rem;">29 Juil. 24</p>
+                            </div>
+                            <div class="dayesd1">
+                                <a href="">
+                                    <p style="font-size: 0.8rem;">5</p>
+                                </a>
+
+                            </div>
+                            <div class="dayesd2">
+                                <img src="{{url_for('static', filename='IMAGE/im10.jpg')}}" width="40px"
+                                    height="40px" alt="">
+                            </div>
+                            <div class="dayesd3">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 5780 Fcfa</p>
+                            </div>
+                            <div class="dayesd4">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 23 </p>
+                            </div>
+                            <div class="dayesd5">
+                                <p
+                                    style="font-size: 0.8rem;font-weight: bolder;color: red;background-color: rgba(184, 123, 112, 0.457);padding: 3px 15px;">
+                                    NON LIVRÉE </p>
+                            </div>
+                        </div>
+                        <div class="zeuuejds">
+                            <div class="dayesd">
+
+
+                                <p style="font-size: 0.8rem;">29 Juil. 24</p>
+                            </div>
+                            <div class="dayesd1">
+                                <a href="">
+                                    <p style="font-size: 0.8rem;">5</p>
+                                </a>
+
+                            </div>
+                            <div class="dayesd2">
+                                <img src="{{url_for('static', filename='IMAGE/im10.jpg')}}" width="40px"
+                                    height="40px" alt="">
+                            </div>
+                            <div class="dayesd3">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 5780 Fcfa</p>
+                            </div>
+                            <div class="dayesd4">
+                                <p style="font-size: 0.8rem;font-weight: bolder;"> 23 </p>
+                            </div>
+                            <div class="dayesd5">
+                                <p
+                                    style="font-size: 0.8rem;font-weight: bolder;color: green;background-color: rgba(112, 184, 112, 0.457);padding: 3px 15px;">
+                                    LIVRÉE </p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    {%endfor%}
+                </div>
+
+            </div>
+
+
+            <!-- user -->
+
+            <p style="padding-bottom: 10px;padding-top: 20px;font-size: 1rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;">Ma liste d'utilisateurs</p>
+            <!-- <div class="zeuuejds">
+                    <div class="imhdolpz"  >
+                        <p style="font-size: 0.8rem;padding-left: 20px;"><img src="{{url_for('static', filename='IMAGE/pppp.png')}}"  width="10px" height="10px" alt=""> Nom & Prénom</p>
+                        <p style="font-size: 0.8rem;"><img src="{{url_for('static', filename='IMAGE/emmqs.png')}}"  width="15px" height="15px" alt=""> E-mail</p>
+                        <p style="font-size: 0.8rem;"><img src="{{url_for('static', filename='IMAGE/efddh.png')}}"  width="10px" height="10px" alt=""> Identifiant</p>
+
+                        
+                        
+                    </div>
+                </div> -->
+
+
+
+            
+
+            <div id="cahsied9">
+
+                <div class="imhdolp" onclick="activatione('cahsied9','blogale9','mondewq9')">
+                    <p style="padding-bottom: 10px;padding-top: 20px;font-size: 0.8rem;">Mes utilisateurs</p>
+                </div>
+                <div class="imhdol" onclick="effacfe('cahsied9','blogale9','mondewq9')">
+                    <img id="mondewq9" src="{{url_for('static', filename='IMAGE/cadefer.png')}}" width="20px"
+                        height="20px" alt="">
+                </div>
+
+            </div>
+            <div id="blogale9">
+
+                <!-- bouclons -->
+                <!-- <div id="cahsied7">
+                        
+                        <div class="imhdolpz"  id="zer3">
+                            <p style="font-size: 0.8rem;color: black;"></p>
+                            <p style="font-size: 0.8rem;"></p>
+                            <p style="font-size: 0.8rem;"></p>
+
+                            
+                            <div class="dayesd2" >
+                                
+
+                                
+                                
+                            </div>
+                        </div>
+                        
+                        
+                    </div> -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-table table-responsive">
+                            <table class="table mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th style="width:30px;"></th>
+                                        <th>#</th>
+                                        <th>Nom & Prenom</th>
+                                        <th>Addresse mail</th>
+                                        <th>Action</th>
+                                        <th>Creation du compte</th>
+                                        <th>Nombre de commande</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {% for i in pofil %}
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <input class="form-check-input" type="checkbox">
+                                            </div>
+                                        </td>
+                                        <td>{{i.id}}</td>
+                                        <td><a href="https://board.ekeplus.com/video/18/edit">{{i.first_name}} </a></td>
+                                        <td>{{i.last_name}}</td>
+                                        <td>
+                                            <div class="badge text-success bg-light-success p-2 text-uppercase px-3">
+
+                                                <!-- <a href="/Suppesss/{{i.id}}"
+                                                    style="font-size: 0.8rem;font-weight: bolder;color: red;background-color: rgba(255, 0, 0, 0.793);padding: 3px 15px;">
+                                                    SUPRRIMER</a> -->
+
+                                                <a href="/Suppesss/{{i.id}}" type="button" class="btn btn-outline-danger">Supprimer</a>
+                                            </div>
+                                        </td>
+                                        <td>28/05/2024 à 11:09</td>
+                                        <td>925.076</td>
+                                    </tr>
+                                    {%endfor%}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- bouclons avec id -->
+
+
+
     </div>
-    
-    
+    </div>
+
+
+
     <script src="/static/CSS/admins.js"></script>
 </body>
+
 </html>

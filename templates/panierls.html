@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon panier</title>
+    <link rel="shortcut icon" href="{{url_for('static', filename='IMAGE/logo.jpg')}}">
+
+    <link rel="stylesheet" href="/static/CSS/panierse.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    
+</head>
+
+
+<body> 
+    <a href="/monpanier">
+        <div class="marcher">
+            <img src="{{url_for('static', filename='IMAGE/panier.png')}}" style="filter: invert();" width="20px" alt="">
+            <div class="rondquant">
+                <p style="font-size: 1rem;">ls</p>
+            </div>
+        </div>
+    </a> 
+    <div class="menuddg">
+        <div class="menuddg2">
+            <div class="menuddg3">
+                
+
+                <!-- <div class="etdjff1">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                       
+                        <p style="font-size: 1rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-weight: bolder;">Menu</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/croix.png')}}"  width="15px" alt="">
+                </div> -->
+                <a href="/" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/homedd.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif;">Acceuil</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/sac" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/chas3.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Chaussure Homme & Femme</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/vente" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/robeee.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Vetement Femme</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <a href="/montre" class="etdjff">
+                    
+                    <div style="width: 90%;display: flex;gap: 20px;">
+                        <img src="{{url_for('static', filename='IMAGE/hansb2.png')}}"  width="20px" alt="">
+                        <p style="font-size: 0.8rem;font-family: sans-serif">Montre H & F</p>
+                    </div>
+                    <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="15px" alt="">
+                </a>
+                <!-- <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/habifeme.png')}}" width="15px" alt="">
+                    <a href="/vente" style="font-size: 0.8rem;">Vetements femmes</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/shoe.png')}}" width="15px" alt="" >
+                    <a href="/sac" style="font-size: 0.8rem;">Chaussures H & F</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/montre.png')}}" width="15px" alt="">
+                    <a href="/montre" style="font-size: 0.8rem;">Montres</a>
+                </div>
+                <div class="etdjff">
+                    <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
+                    <a href="/#contace" style="font-size: 0.8rem;">Contacts</a>
+                </div> -->
+                <div class="boases">
+                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;padding-bottom: 10px;">Contactez - Nous</p>
+                    <p style="font-size: 0.7rem;padding-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. RLorem ipsum dolor sit amet consectetur adipisicing elit. R</p>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/tle.png')}}"  width="15px" alt="">
+                        <p style="font-size: 1rem;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;">+225 0101678809</p>
+                    </a>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/emmqs.png')}}"  width="15px" alt="">
+                        <p style="font-size: 1rem;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;color: black;">hington-shop@gmail.com</p>
+                    </a>
+                    <a href="" class="zghghz">
+                        <img src="{{url_for('static', filename='IMAGE/wha.png')}}"  width="15px" alt="">
+                        <p style="font-size: 0.8rem;color: black;">Posez vos questions sur <span style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">WhatsApp</span></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="hedaf">
+            <div class="logo">
+                <div class="tete" style="padding-top: 10px;">
+                    <!-- <div class="te1">
+                        <h1 style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 2rem;color: black;
+                   ;font-size: 1.1rem; ">HING<span id="deuxlogo">TON SHOP</span></h1>
+                    </div> -->
+                    <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" width="150px"  alt="">
+                    <!-- <img src="{{url_for('static',filename='IMAGE/logoze.jpg')}}" width="70px" style="filter: invert();" alt=""> -->
+                    
+                   
+                   
+                </div>
+            </div>
+            <div class="recherche">
+                <form action="/mesrecherches" method="post" id="hjdsd">
+                    <!-- <div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div> -->
+                    <input type="text" name="recher" id="" placeholder="Cherchez un produit">
+                    <button type="submit"><div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div></button>
+                </form>
+            </div>
+            
+            <div class="menu">
+                <a href="" class="menuaze" >
+                    <img src="{{url_for('static', filename='IMAGE/pppp.png')}}"  width="30px" alt="" >
+                </a>
+                
+                <div class="imsdghde1">
+                    <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                </div>
+                <div class="imsdghde12">
+                    <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                </div>
+                <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj">
+                <img src="{{url_for('static', filename='IMAGE/menu.png')}}"  width="20px" alt="" id="hdhdj2">
+            </div>
+        </div>
+       
+    </header>
+    <div class="hdueu">
+        
+    </div>
+    <div class="monpsjf">
+        <div class="monpsjf1">
+            <div class="meselele">
+                <div class="jjhfsdf">
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 10px;">PANIER { }</p>
+                </div>
+               
+               
+                {% for i in gdhsuud %}
+                {% if i["categorie" ] == "Montre" %}
+                
+                <div class="lesvrai">
+                    <div class="geujdjd">
+                        <div class="imahdjd1">
+                            <a href="/montres/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
+                        </div>
+                        <div class="imahdjd2">
+                            <p class="gradfs" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p class="gradfs1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:40:]}} ...</p>
+                            {% if i.tailed %}
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Size : <span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            {% endif %}
+                        </div>
+                        <div class="imahdjd3">
+                            
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="duudcddc">
+                        <div class="jujdcuudwucd">
+                            <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
+                            <a href="/Supprimer/{{i.id}}">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                            </a>
+                        </div>
+                        <div class="jujdcuudwucd1">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                {% endif %}
+                {% if i["categorie" ]== "chaussure" %}
+                
+                
+                <div class="lesvrai">
+                    <div class="geujdjd">
+                        
+                        <div class="imahdjd1">
+                            <a href="/sacs/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
+                        </div>
+                      
+                        <div class="imahdjd2">
+                            <p class="gradfs" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom}}</p>
+                            <p class="gradfs1" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:40:]}} ...</p>
+                            {% if i.tailed %}
+                            <p style="font-size: 0.7rem;padding-top: 5px;color: blackgreen;">Size : <span style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1rem;padding-top: 5px;color: rgb(53, 53, 53);">{{i.tailed}}</span></p>
+                            {% endif %}
+                        </div>
+                        <div class="imahdjd3">
+                            
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="duudcddc">
+                        <div class="jujdcuudwucd">
+                            <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
+                            <a href="/Supprimer/{{i.id}}">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                            </a>
+                        </div>
+                        <div class="jujdcuudwucd1">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+             
+                {% endif %}
+                {% if i["categorie" ] == "VetementFemme" %}
+               
+                
+                <div class="lesvrai">
+                    <div class="geujdjd">
+                        
+                        <div class="imahdjd1">
+                            <a href="/info/{{i.element}}">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}"  width="100%" height="90%" alt="" >
+                            </a>
+                        </div>
+                       
+                        <div class="imahdjd2">
+                            
+                        </div>
+                        <div class="imahdjd3">
+                            
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;" id="sadtdyayuda" >{{i.pource}} FCFA</p>
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+                            <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 50px;border-radius: 5px;margin-top: 10px;">
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">- {{i.porce}} %</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="duudcddc">
+                        <div class="jujdcuudwucd">
+                            <img src="{{url_for('static', filename='IMAGE/pouebd.png')}}"  width="15px" style="filter: invert(38%) sepia(73%) saturate(4864%) hue-rotate(1deg) brightness(102%) contrast(105%);" height="15px" alt="" >
+                            <a href="/Supprimer/{{i.id}}">
+                            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgba(255, 102, 0, 0.865);">SUPPRIMER</p>
+                            </a>
+                        </div>
+                        <div class="jujdcuudwucd1">
+                            <div class="ududdw2" onclick="moinsp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">-</p>
+                            </div>
+                            <div class="ududdw1">
+                                <input type="text" name="" id="mnumq"   style="width: 100%;height: 100%;padding-left: 10px;border: none;outline: none;" value="{{i.quantite}}">
+                                
+                            </div>
+                            <div class="ududdw" onclick="plusp('mnumq')">
+                                <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 1.2rem;color: white;">+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+            <div class="meselele1">
+                <div class="jdidsedf">
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">DETAILS DU PANIER</p>
+                </div>
+                <div class="jdidsed2">
+                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;" >Quantite de produits { <span class="darsghd"></span> }</p>
+                    <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;">Vous pouvez toujours ajouté des produits et vous faire livré gratuitement</p>
+                </div>
+                <div class="jdidsed2">
+                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;">Cout total de produits { FCFA }</p>
+                    <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;"> <span id="darsghdzs"></span>  FCFA</p>
+                    <!-- {% if 2 > 4 %} -->
+                    <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 105px;border-radius: 5px;margin-top: 10px;">
+                        <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison gratuite</p>
+                    </div>
+                    <!-- {% endif %} -->
+                    <!-- {% if 2 <= 4 %} -->
+                    <div class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 125px;border-radius: 5px;margin-top: 10px;">
+                        <p style="color: green;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 5px;padding-bottom: 5px;">Livraison a vos frais</p>
+                    </div>
+                    <!-- {% endif %} -->
+                </div>
+              
+                
+                <div class="jdidsed2">
+                    <p style="padding-top: 5px;color: black;font-size: 0.8rem;padding-bottom: 5px;">Pourquoi c'est gratuit ?</p>
+                    <p style="padding-top: 5px;color: rgb(100, 100, 100);font-size: 0.8rem;padding-bottom: 15px;">La livraison est gratuite sur abidjan a partir de 5 articles commandés en un coup . </p>
+                    
+                    <form action="commandeznow" method="post" class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 97%;border-radius: 5px;margin-top: 10px;">
+                        <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: rgba(255, 102, 0, 0.865);width: 100%;">COMMANDER MAINTENANT</button>
+                    </form>
+                    <!-- <form action="commandeznow" method="post" class="uufw" style="background-color: rgba(170, 170, 170, 0.289);width: 97%;border-radius: 5px;margin-top: 10px;">
+                        <button style="color: white;font-size: 0.7rem;padding-left: 5px;padding-right: 5px;padding-top: 10px;padding-bottom: 10px;border: none;background-color: rgba(255, 102, 0, 0.865);width: 100%;">COMMANDER MAINTENANT</button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- listedeselemet -->
+    <div class="jjhfsdf54">
+        <div class="jdudu">
+            
+            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/montre" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie montre</a> </p>
+        </div>
+    </div>
+    
+    <div class="listedeselements">
+        
+        <div class="grsgjd">
+            <div class="flevdh1">
+               
+                <img src="{{url_for('static', filename='IMAGE/sup.png')}}"  width="30px" alt="" >
+            </div>
+           
+            <div class="listedeselements1">
+                
+                {% for i in montre %}
+                <a href="/montres/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% if not montre[5] %}
+                {% for i in montre %}
+                <a href="/montres/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% endif %}
+               
+            </div>
+            <div class="flevdh1">
+                <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="30px" alt="" >
+            </div>
+        </div>
+        
+    </div>
+    <!-- listedeselemet -->
+
+    <!-- listedeselemet -->
+    <div class="jjhfsdf54">
+        <div class="jdudu">
+            
+            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/vente" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie vetement femme</a> </p>
+        </div>
+    </div>
+    <div class="listedeselements">
+        <div class="grsgjd">
+            <div class="flevdh1">
+               
+                <img src="{{url_for('static', filename='IMAGE/sup.png')}}"  width="30px" alt="" >
+            </div>
+            <div class="listedeselements1">
+                
+                {% for i in catefemme %}
+                 <a href="/info/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% if not catefemme[5] %}
+                {% for i in catefemme %}
+                 <a href="/info/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="flevdh1">
+                <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="30px" alt="" >
+            </div>
+        </div>
+        
+    </div>
+    <!-- listedeselemet -->
+
+       <!-- listedeselemet -->
+       <div class="jjhfsdf54">
+        <div class="jdudu">
+            <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 10px;color: black;padding-left: 25px;"><a href="/sac" style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;color: black;text-decoration: none;padding-left: 20px;">Catégorie Chaussures Hommes & Femmmes</a> </p>
+        </div>
+    </div>
+       <div class="listedeselements">
+        <div class="grsgjd">
+            <div class="flevdh1">
+               
+                <img src="{{url_for('static', filename='IMAGE/sup.png')}}"  width="30px" alt="" >
+            </div>
+            <div class="listedeselements1">
+                {% for i in chaussure %}
+                <a href="/sacs/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% if not chaussure[5] %}
+                {% for i in chaussure %}
+                <a href="/sacs/{{i.id}}">
+                    <div class="uneldd">
+                        <div class="imahhd">
+                            <img src="{{url_for('static', filename='uploads/' + i.image)}}" width="100%" height="100%"  alt="">
+                            <div class="reghd">
+                                {% if i.porce != "0" %}
+                                {% if i.porce != "0" %}
+                                <p style="color: rgba(255, 102, 0, 0.865);font-size: 0.7rem;padding-left: 5px;padding-right: 5px;">- {{i.porce}} %</p>
+                                {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;font-size: 1rem;">{{i.nom[:20:]}} ...</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;padding-top: 5px;color: black;">{{i.porceprix}} FCFA</p>
+                        <p style="font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;font-size: 0.7rem;padding-top: 5px;color: rgb(53, 53, 53);"><s>{{i.prix}} FCFA</s></p>
+
+                    </div>
+                </a>
+                {% endfor %}
+                {% endif %}
+               
+            </div>
+            <div class="flevdh1">
+                <img src="{{url_for('static', filename='IMAGE/inf.png')}}"  width="30px" alt="" >
+            </div>
+        </div>
+        
+    </div>
+    <!-- listedeselemet -->
+    <div class="insedfole">
+        <footer id="foot" >
+            <div id="head " style="padding-top: 20px;">
+                <img src="{{url_for('static',filename='IMAGE/hinglogo.png')}}" style="filter: invert();" width="170px"  alt="">
+            </div>
+            <div class="recherche11" style="background-color: black;">
+                <form action="/mesrecherches" method="post" id="hjdsd">
+                    <!-- <div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/recdgdg.png')}}"  width="20px" alt="">
+                    </div> -->
+                    <input type="text" name="recher" id="" placeholder="Ecrivez - nous pour vos preoccupations et suggestions ">
+                    <button type="submit"><div class="imsdghde">
+                        <img src="{{url_for('static', filename='IMAGE/emmqs.png')}}"  width="20px" alt="">
+                    </div></button>
+                </form>
+            </div>
+            <div id="head " style="padding-top: 20px;padding-left: 20px;">
+                <h1 style="color: white;font-size: 0.9rem;font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif">RETROUVEZ-NOUS SUR</h1>
+                <div class="zghdes">
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/fza.png')}}"  width="25px" alt="">
+                    </a>
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/wha.png')}}"  width="30px" alt="">
+                    </a>
+                    <a href="" class="hdsj">
+                        <img src="{{url_for('static', filename='IMAGE/tikti.png')}}"  width="35px" alt="">
+                    </a>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="/static/CSS/panied.js"></script>
+</body>
+</html>
